@@ -1,113 +1,122 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function Page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <section className="relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16">
+          <div className="text-center">
+            <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-elkpd-4/60 border border-elkpd-3 mb-4 sm:mb-6">
+              <span className="text-xs sm:text-sm font-medium text-elkpd-1">✨ Platform Pembelajaran Interaktif</span>
+            </div>
+            
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-elkpd-1 mb-4 sm:mb-6 leading-tight px-2">
+              Selamat Datang di{" "}
+              <span className="bg-gradient-to-r from-elkpd-2 to-elkpd-1 bg-clip-text text-transparent">
+                ELKPD
+              </span>
+            </h1>
+            
+            <p className="text-lg sm:text-xl text-elkpd-1/80 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
+              Media evaluasi dan Lembar Kerja Peserta Didik berbasis web yang dirancang untuk membuat pembelajaran lebih menarik dan efektif.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+              <Link 
+                href="/post-test" 
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-base sm:text-lg"
+              >
+                Mulai Post Test
+              </Link>
+              <Link 
+                href="/materi" 
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-elkpd-1 font-semibold rounded-xl border-2 border-elkpd-3 hover:bg-elkpd-4/50 transition-all duration-300 text-base sm:text-lg"
+              >
+                Pelajari Materi
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
+        
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-elkpd-3/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/2 transform translate-x-1/2 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-elkpd-4/20 rounded-full blur-3xl"></div>
+        </div>
+      </section>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className="py-16 sm:py-20 bg-white/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl font-bold text-elkpd-1 mb-3 sm:mb-4">Fitur Utama</h2>
+            <p className="text-base sm:text-lg text-elkpd-1/70 max-w-2xl mx-auto px-4">
+              Platform yang dirancang khusus untuk mendukung proses pembelajaran yang efektif dan menyenangkan.
+            </p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-br from-elkpd-3 to-elkpd-2 rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-6 sm:w-8 h-6 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="text-lg sm:text-xl font-semibold text-elkpd-1 mb-2 sm:mb-3">Materi Pembelajaran</h3>
+              <p className="text-sm sm:text-base text-elkpd-1/70 leading-relaxed">
+                Akses materi pembelajaran yang lengkap dan terstruktur untuk mendukung pemahaman konsep.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-br from-elkpd-2 to-elkpd-1 rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-6 sm:w-8 h-6 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg sm:text-xl font-semibold text-elkpd-1 mb-2 sm:mb-3">Evaluasi Interaktif</h3>
+              <p className="text-sm sm:text-base text-elkpd-1/70 leading-relaxed">
+                Sistem evaluasi yang interaktif dengan timer dan feedback langsung untuk mengukur pemahaman.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group sm:col-span-2 lg:col-span-1">
+              <div className="w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-br from-elkpd-4 to-elkpd-3 rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-6 sm:w-8 h-6 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-lg sm:text-xl font-semibold text-elkpd-1 mb-2 sm:mb-3">Laporan Real-time</h3>
+              <p className="text-sm sm:text-base text-elkpd-1/70 leading-relaxed">
+                Dapatkan laporan performa pembelajaran secara real-time untuk monitoring kemajuan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <section className="py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center text-white">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Siap untuk Memulai?</h2>
+            <p className="text-lg sm:text-xl mb-6 sm:mb-8 opacity-90 px-4">
+              Bergabunglah dengan ribuan siswa yang telah menggunakan ELKPD untuk pembelajaran yang lebih efektif.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+              <Link 
+                href="/post-test" 
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-elkpd-1 font-semibold rounded-xl hover:bg-elkpd-5 transition-colors duration-300 text-base sm:text-lg"
+              >
+                Mulai Sekarang
+              </Link>
+              <Link 
+                href="/materi" 
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-elkpd-1 transition-all duration-300 text-base sm:text-lg"
+              >
+                Pelajari Lebih Lanjut
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

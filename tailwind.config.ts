@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        elkpd: {
+          1: "#395624",
+          2: "#4F7D2C",
+          3: "#9CC97C",
+          4: "#BEDFAF",
+          5: "#D9EDD0",
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
