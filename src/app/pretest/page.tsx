@@ -115,24 +115,24 @@ export default function PretestPage() {
               atau langsung mencoba post test untuk menguji pemahaman.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
+              {/* <Link 
                 href="/materi" 
                 className="px-8 py-4 bg-white text-elkpd-1 font-semibold rounded-xl hover:bg-elkpd-5 transition-colors duration-300 text-lg shadow-md hover:shadow-lg"
               >
                 Pelajari Materi
-              </Link>
+              </Link> */}
               <Link 
-                href="/post-test" 
+                href="https://www.instagram.com/ninditayp" 
                 className="px-8 py-4 bg-elkpd-2 text-white font-semibold rounded-xl hover:bg-elkpd-1 transition-colors duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                Coba Post Test
+                Mulai Pretest
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white/60">
+      {/* <section className="py-20 bg-white/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-3xl p-12 text-center text-white">
             <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -181,7 +181,7 @@ export default function PretestPage() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 } 

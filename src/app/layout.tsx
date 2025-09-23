@@ -39,8 +39,11 @@ export default function RootLayout({
                 <a href="/pretest" className="px-4 py-2 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-colors duration-200 font-medium">
                   Pretest
                 </a>
-                <a href="/post-test" className="px-4 py-2 rounded-lg bg-elkpd-2 text-white hover:bg-elkpd-1 transition-colors duration-200 font-medium shadow-md hover:shadow-lg">
+                <a href="/post-test" className="px-4 py-2 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-colors duration-200 font-medium">
                   Post Test
+                </a>
+                <a href="#petunjuk-penggunaan" className="px-4 py-2 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-colors duration-200 font-medium">
+                  Petunjuk
                 </a>
               </nav>
 

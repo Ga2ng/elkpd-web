@@ -102,14 +102,22 @@ export default function MobileMenu() {
                 <span className="text-lg group-hover:scale-110 transition-transform duration-200">🎯</span>
                 <span>Pretest</span>
               </a>
-              <a 
-                href="/post-test" 
-                className="px-4 py-3 rounded-lg bg-elkpd-2 text-white hover:bg-elkpd-1 transition-all duration-200 font-medium shadow-md hover:shadow-lg border border-transparent hover:border-elkpd-1 flex items-center gap-3 group"
-                onClick={closeMobileMenu}
-              >
-                <span className="text-lg group-hover:scale-110 transition-transform duration-200">✍️</span>
-                <span>Post Test</span>
-              </a>
+                     <a
+                       href="/post-test"
+                       className="px-4 py-3 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-all duration-200 font-medium border border-transparent hover:border-elkpd-3/50 flex items-center gap-3 group"
+                       onClick={closeMobileMenu}
+                     >
+                       <span className="text-lg group-hover:scale-110 transition-transform duration-200">✍️</span>
+                       <span>Post Test</span>
+                     </a>
+                     <a
+                       href="#petunjuk-penggunaan"
+                       className="px-4 py-3 rounded-lg bg-elkpd-2 text-white hover:bg-elkpd-1 transition-all duration-200 font-medium shadow-md hover:shadow-lg border border-transparent hover:border-elkpd-1 flex items-center gap-3 group"
+                       onClick={closeMobileMenu}
+                     >
+                       <span className="text-lg group-hover:scale-110 transition-transform duration-200">📋</span>
+                       <span>Petunjuk</span>
+                     </a>
             </nav>
             
             <div className="mt-4 pt-4 border-t border-elkpd-3/30">
