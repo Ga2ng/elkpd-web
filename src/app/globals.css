@@ -2,6 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Rich Text Editor Styles - ReactQuill */
+.rich-text-editor {
+  width: 100%;
+}
+
+.rich-text-editor .ql-container {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.rich-text-editor .ql-editor {
+  padding: 12px;
+  min-height: 120px;
+}
+
+.rich-text-editor .ql-toolbar {
+  border-top: 1px solid #e2e8f0;
+  border-left: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  background-color: #f8f9fa;
+}
+
+.rich-text-editor .ql-container {
+  border-bottom: 1px solid #e2e8f0;
+  border-left: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.rich-text-editor .ql-editor.ql-blank::before {
+  color: #9ca3af;
+  font-style: normal;
+}
+
+.rich-text-editor .ql-editor h1,
+.rich-text-editor .ql-editor h2,
+.rich-text-editor .ql-editor h3 {
+  color: #395624;
+  font-weight: 600;
+  margin: 0.5em 0;
+}
+
+.rich-text-editor .ql-editor p {
+  margin: 0.3em 0;
+}
+
+.rich-text-editor .ql-editor img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.rich-text-editor .ql-editor blockquote {
+  border-left: 3px solid #395624;
+  margin: 0.5em 0;
+  padding: 0.3em 0.8em;
+  background-color: #f8f9fa;
+}
+
+.rich-text-editor .ql-editor code {
+  background-color: #f1f1f1;
+  padding: 1px 3px;
+  border-radius: 2px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+}
+
+.rich-text-editor .ql-editor pre {
+  background-color: #f1f1f1;
+  padding: 0.5em;
+  border-radius: 3px;
+  overflow-x: auto;
+  font-size: 12px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

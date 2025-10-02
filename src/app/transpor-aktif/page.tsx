@@ -2,8 +2,10 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
+import { PDFDownloadLink, Document, Page, Text, View, StyleSheet, Image } from "@react-pdf/renderer";
 import PhETEmbed from "../components/PhETEmbed";
+import TextEditor from "../components/TextEditor";
+import ImageUpload from "../components/ImageUpload";
 
 type Question = {
   id: number;
@@ -150,10 +152,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const TestPDF = ({ studentData, selectedAnswers, questions }: {
+const TestPDF = ({ studentData, selectedAnswers, questions, uploadedImages }: {
   studentData: StudentData;
   selectedAnswers: string[];
   questions: Question[];
+  uploadedImages: {[questionIdx: number]: {[key: string]: {preview: string, base64: string, originalName: string}}};
 }) => (
   <Document>
     <Page size="A4" style={styles.page}>
@@ -187,10 +190,36 @@ const TestPDF = ({ studentData, selectedAnswers, questions }: {
         <Text style={styles.sectionTitle}>Detail Jawaban:</Text>
         {questions.map((q, idx) => {
           const answer = selectedAnswers[idx] || "Tidak dijawab";
+          
           return (
             <View key={idx} style={styles.questionItem}>
               <Text style={styles.questionText}>{q.id}. {q.text}</Text>
-              <Text style={styles.answerText}>Jawaban Anda: {answer}</Text>
+              <Text style={styles.answerText}>Jawaban Teks: {answer || "Tidak dijawab"}</Text>
+              
+              {/* Display uploaded images for this question in PDF */}
+              {uploadedImages[idx] && Object.keys(uploadedImages[idx]).length > 0 && (
+                <View style={{ marginVertical: 8 }}>
+                  <Text style={{ fontSize: 10, fontWeight: 'bold', marginBottom: 4 }}>Gambar yang Di-upload:</Text>
+                  {Object.entries(uploadedImages[idx]).map(([filename, imageData], imgIdx) => (
+                    <View key={imgIdx} style={{ marginVertical: 4, alignItems: 'center' }}>
+                      <Image 
+                        src={imageData.base64} 
+                        style={{ 
+                          width: 200, 
+                          height: 150, 
+                          objectFit: 'contain',
+                          border: '1px solid #e2e8f0',
+                          borderRadius: 4
+                        }} 
+                      />
+                      <Text style={{ fontSize: 10, color: '#666', marginTop: 4 }}>
+                        {imageData.originalName}
+                      </Text>
+                    </View>
+                  ))}
+                </View>
+              )}
+              
               <Text style={styles.answerText}>Jawaban Benar: {q.correctAnswer}</Text>
               <Text style={styles.essayAnswer}>*Soal isian memerlukan penilaian manual oleh guru</Text>
             </View>
@@ -210,6 +239,7 @@ export default function TransporAktifPage() {
   const [submitted, setSubmitted] = useState(false);
   const [showFinalResult, setShowFinalResult] = useState(false);
   const [showStartModal, setShowStartModal] = useState(true);
+  const [uploadedImages, setUploadedImages] = useState<{[questionIdx: number]: {[key: string]: {preview: string, base64: string, originalName: string}}}>({});
   const [studentData, setStudentData] = useState<StudentData>({
     namaKelompok: "",
     kelas: "",
@@ -484,9 +514,35 @@ export default function TransporAktifPage() {
                       {q.id}. {q.text.substring(0, 50)}...
                     </div>
                     <div className="space-y-1 text-xs">
-                      <div>Jawaban Anda: <span className="font-medium">{answer || "Tidak dijawab"}</span></div>
+            <div className="mb-2">
+              <span className="font-medium">Jawaban Teks:</span>
+              <div className="mt-1 p-2 bg-white rounded border text-xs">
+                {answer || "Tidak dijawab"}
+              </div>
+            </div>
+            
+            {/* Display uploaded images for this question */}
+            {uploadedImages[idx] && Object.keys(uploadedImages[idx]).length > 0 && (
+              <div className="mb-2">
+                <span className="font-medium">Gambar yang Di-upload:</span>
+                <div className="mt-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+                  {Object.entries(uploadedImages[idx]).map(([filename, imageData]) => (
+                    <div key={filename} className="relative">
+                      <img
+                        src={imageData.preview}
+                        alt={imageData.originalName}
+                        className="w-full h-20 object-cover rounded border border-gray-300"
+                      />
+                      <div className="text-xs text-gray-500 mt-1 truncate" title={imageData.originalName}>
+                        {imageData.originalName}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
                       <div>Jawaban Benar: <span className="font-medium text-blue-600">{q.correctAnswer}</span></div>
-                      <div className="text-blue-600 font-bold">📝 Soal Isian</div>
+                      <div className="text-blue-600 font-bold">📝 Soal Isian dengan Rich Text</div>
                     </div>
                   </div>
                 );
@@ -501,6 +557,7 @@ export default function TransporAktifPage() {
                   studentData={studentData}
                   selectedAnswers={selectedAnswers}
                   questions={QUESTIONS}
+                  uploadedImages={uploadedImages}
                 />
               }
               fileName={`QuizTransporAktif_${studentData.namaKelompok.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.pdf`}
@@ -635,15 +692,35 @@ export default function TransporAktifPage() {
                   </div>
                 </div>
                 
-                <div className="ml-12">
-                  <textarea
-                    value={selectedAnswers[qi] || ""}
-                    onChange={(e) => setAnswer(qi, e.target.value)}
-                    disabled={submitted}
-                    placeholder="Tulis jawaban Anda di sini..."
-                    className="w-full px-4 py-3 border-2 border-blue-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors resize-none"
-                    rows={4}
-                  />
+                <div className="ml-12 space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Jawaban Teks:
+                    </label>
+                    <TextEditor
+                      value={selectedAnswers[qi] || ""}
+                      onChange={(content) => setAnswer(qi, content)}
+                      placeholder="Tulis jawaban Anda di sini..."
+                      height={120}
+                      disabled={submitted}
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Upload Gambar (Opsional):
+                    </label>
+                    <ImageUpload
+                      questionIdx={qi}
+                      onImagesChange={(questionIdx, images) => {
+                        setUploadedImages(prev => ({
+                          ...prev,
+                          [questionIdx]: images
+                        }));
+                      }}
+                      disabled={submitted}
+                    />
+                  </div>
                   
                   {submitted && (
                     <div className="mt-3 p-3 bg-white rounded-lg border border-blue-200">
