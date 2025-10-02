@@ -49,7 +49,31 @@ export default function Page() {
                 <div className="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl shadow-lg border border-gray-100 flex items-center justify-center group-hover:shadow-xl transition-all duration-300">
                   <div className="w-12 h-12 lg:w-14 lg:h-14 relative">
                     <Image
-                      src="/images/logo.png"
+                      src="/images/1.png"
+                      alt="Logo Kemendikbud"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="group">
+                <div className="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl shadow-lg border border-gray-100 flex items-center justify-center group-hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 relative">
+                    <Image
+                      src="/images/2.png"
+                      alt="Logo Kemendikbud"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="group">
+                <div className="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl shadow-lg border border-gray-100 flex items-center justify-center group-hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 relative">
+                    <Image
+                      src="/images/3.png"
                       alt="Logo Kemendikbud"
                       fill
                       className="object-contain"
@@ -58,27 +82,15 @@ export default function Page() {
                 </div>
               </div>
               
-              <div className="group">
-                <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg flex items-center justify-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                  <span className="text-white font-bold text-xs lg:text-sm text-center leading-tight">
-                    Kurikulum<br/>Merdeka
-                  </span>
-                </div>
-              </div>
-              
-              <div className="group">
-                <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl shadow-lg flex items-center justify-center group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                  <span className="text-white font-bold text-sm lg:text-base">UNESA</span>
-                </div>
+                
               </div>
             </div>
-          </div>
 
-          {/* Visual Content Section - Modern Grid */}
-          <div className="mb-20">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              
-              {/* Images Section */}
+            {/* Visual Content Section - Modern Grid */}
+            <div className="mb-20">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                {/* Images Section */}
               <div className="grid grid-cols-2 gap-6">
                 <div className="group">
                   <div className="aspect-square relative overflow-hidden rounded-3xl shadow-xl border-2 border-white group-hover:scale-105 transition-transform duration-500">

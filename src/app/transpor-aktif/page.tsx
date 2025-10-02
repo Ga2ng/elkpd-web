@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
+import PhETEmbed from "../components/PhETEmbed";
 
 type Question = {
   id: number;
@@ -585,6 +586,32 @@ export default function TransporAktifPage() {
             <h1 className="text-3xl md:text-4xl font-bold mb-2">Quiz Transpor Aktif</h1>
             <p className="text-lg opacity-90">
               {studentData.namaKelompok} - {studentData.kelas} ({studentData.anggota.length} anggota)
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* PhET Simulation Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-elkpd-1 mb-4">
+              Simulasi Interaktif PhET
+            </h2>
+            <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
+              Eksplorasi konsep transpor membran melalui simulasi interaktif dari PhET Colorado. 
+              Gunakan simulasi ini untuk memahami mekanisme transpor aktif sebelum mengerjakan quiz.
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-2xl shadow-2xl border border-elkpd-3/20 overflow-hidden">
+            <PhETEmbed />
+          </div>
+          
+          <div className="mt-6 text-center">
+            <p className="text-sm text-elkpd-1/60">
+              💡 <strong>Tips:</strong> Interaksi dengan simulasi di atas untuk memahami konsep transpor membran, 
+              kemudian lanjutkan ke quiz di bawah untuk menguji pemahaman Anda.
             </p>
           </div>
         </div>
