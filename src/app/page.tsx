@@ -583,7 +583,7 @@ export default function Page() {
                </div>
 
                {/* Call to Action */}
-               <div className="mt-12 pt-8 border-t border-elkpd-3/20">
+               {/* <div className="mt-12 pt-8 border-t border-elkpd-3/20">
                  <div className="text-center">
                    <h3 className="text-xl font-semibold text-elkpd-1 mb-4">Siap Memulai Perjalanan Belajar?</h3>
                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -601,7 +601,7 @@ export default function Page() {
                      </Link>
                    </div>
                  </div>
-               </div>
+               </div> */}
              </div>
            </div>
          </div>

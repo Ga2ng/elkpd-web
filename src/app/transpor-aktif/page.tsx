@@ -160,7 +160,7 @@ const TestPDF = ({ studentData, selectedAnswers, questions, uploadedImages }: {
 }) => (
   <Document>
     <Page size="A4" style={styles.page}>
-      <Text style={styles.header}>QUIZ TRANSPOR AKTIF - HASIL EVALUASI</Text>
+      <Text style={styles.header}>PRAKTIKUM TRANSPOR AKTIF - HASIL EVALUASI</Text>
       
       <View style={styles.studentInfo}>
         <View>
@@ -180,7 +180,7 @@ const TestPDF = ({ studentData, selectedAnswers, questions, uploadedImages }: {
       </View>
 
       <View style={styles.scoreSection}>
-        <Text style={styles.scoreText}>Jenis Quiz: Transpor Aktif</Text>
+        <Text style={styles.scoreText}>Jenis Praktikum: Transpor Aktif</Text>
         <Text style={styles.scoreText}>Total Soal: {questions.length}</Text>
         <Text style={styles.scoreText}>Jawaban Terisi: {selectedAnswers.filter(answer => answer.trim() !== '').length}</Text>
         <Text style={styles.scoreText}>Status: Menunggu Penilaian Guru</Text>
@@ -321,9 +321,9 @@ export default function TransporAktifPage() {
               </svg>
             </div>
             
-            <h1 className="text-3xl font-bold text-elkpd-1 mb-4">Quiz Transpor Aktif</h1>
+            <h1 className="text-3xl font-bold text-elkpd-1 mb-4">Praktikum Transpor Aktif</h1>
             <p className="text-lg text-elkpd-1/70 mb-8 leading-relaxed">
-              Uji pemahaman Anda tentang transpor aktif dengan 8 soal isian. Jawab semua pertanyaan dengan lengkap dan jelas.
+              Praktikkan pemahaman Anda tentang transpor aktif dengan 8 soal isian. Jawab semua pertanyaan dengan lengkap dan jelas.
             </p>
             
             <div className="bg-elkpd-5 rounded-2xl p-6 mb-8">
@@ -404,7 +404,7 @@ export default function TransporAktifPage() {
             </div>
             
             <div className="bg-elkpd-4/60 rounded-2xl p-6 mb-8">
-              <h3 className="font-semibold text-elkpd-1 mb-4">Informasi Quiz:</h3>
+              <h3 className="font-semibold text-elkpd-1 mb-4">Informasi Praktikum:</h3>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-elkpd-2 rounded-full"></span>
@@ -434,7 +434,7 @@ export default function TransporAktifPage() {
                   : "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white hover:shadow-xl transform hover:-translate-y-1"
               }`}
             >
-              Mulai Quiz
+              Mulai Praktikum
             </button>
           </div>
         </div>
@@ -453,9 +453,9 @@ export default function TransporAktifPage() {
               </svg>
             </div>
             
-            <h1 className="text-4xl font-bold text-elkpd-1 mb-4">Hasil Quiz Transpor Aktif</h1>
+            <h1 className="text-4xl font-bold text-elkpd-1 mb-4">Hasil Praktikum Transpor Aktif</h1>
             <p className="text-lg text-elkpd-1/70 mb-6">
-              Selamat! Anda telah menyelesaikan Quiz Transpor Aktif
+              Selamat! Anda telah menyelesaikan Praktikum Transpor Aktif
             </p>
           </div>
 
@@ -491,7 +491,7 @@ export default function TransporAktifPage() {
             </div>
             
             <div className="bg-gradient-to-br from-elkpd-2 to-elkpd-1 rounded-2xl p-6 text-white">
-              <h3 className="font-semibold mb-4 text-center">Hasil Quiz</h3>
+              <h3 className="font-semibold mb-4 text-center">Hasil Praktikum</h3>
               <div className="text-center">
                 <div className="text-5xl font-bold mb-2">{answeredCount}/{QUESTIONS.length}</div>
                 <div className="text-xl mb-2">Jawaban Terisi</div>
@@ -560,18 +560,18 @@ export default function TransporAktifPage() {
                   uploadedImages={uploadedImages}
                 />
               }
-              fileName={`QuizTransporAktif_${studentData.namaKelompok.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.pdf`}
+              fileName={`PraktikumTransporAktif_${studentData.namaKelompok.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.pdf`}
               className="px-8 py-4 bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg"
             >
               {({ blob, url, loading, error }) =>
-                loading ? 'Generating PDF...' : '📥 Download PDF Hasil Quiz'
+                loading ? 'Generating PDF...' : '📥 Download PDF Hasil Praktikum'
               }
             </PDFDownloadLink>
             <button
               onClick={handleReset}
               className="px-8 py-4 bg-white border-2 border-elkpd-3 text-elkpd-1 font-semibold rounded-xl hover:bg-elkpd-4/50 transition-colors duration-300 text-lg shadow-md hover:shadow-lg"
             >
-              🔄 Ulangi Quiz
+              🔄 Ulangi Praktikum
             </button>
             <Link
               href="/"
@@ -583,9 +583,9 @@ export default function TransporAktifPage() {
 
           <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-xl">
             <div className="text-center">
-              <h4 className="font-semibold text-blue-800 mb-2">📁 Pengumpulan Hasil Quiz</h4>
+              <h4 className="font-semibold text-blue-800 mb-2">📁 Pengumpulan Hasil Praktikum</h4>
               <p className="text-blue-700 text-sm mb-3">
-                Setelah download hasil quiz, silakan upload ke Google Drive yang telah disediakan
+                Setelah download hasil praktikum, silakan upload ke Google Drive yang telah disediakan
               </p>
               <a
                 href="https://drive.google.com/drive/folders/1ABC123DEF456GHI789JKL012MNO345PQR678STU901VWX234YZA567BCD890EFG"
@@ -627,7 +627,7 @@ export default function TransporAktifPage() {
             
             <div className="flex items-center gap-4">
               <div className="text-center">
-                <div className="text-sm text-elkpd-1/70">Quiz Transpor Aktif</div>
+                <div className="text-sm text-elkpd-1/70">Praktikum Transpor Aktif</div>
                 <div className="font-mono text-xl font-bold text-elkpd-2">
                   Tanpa Waktu
                 </div>
@@ -640,7 +640,7 @@ export default function TransporAktifPage() {
       <section className="bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">Quiz Transpor Aktif</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">Praktikum Transpor Aktif</h1>
             <p className="text-lg opacity-90">
               {studentData.namaKelompok} - {studentData.kelas} ({studentData.anggota.length} anggota)
             </p>
@@ -657,7 +657,7 @@ export default function TransporAktifPage() {
             </h2>
             <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
               Eksplorasi konsep transpor membran melalui simulasi interaktif dari PhET Colorado. 
-              Gunakan simulasi ini untuk memahami mekanisme transpor aktif sebelum mengerjakan quiz.
+              Gunakan simulasi ini untuk memahami mekanisme transpor aktif sebelum mengerjakan praktikum.
             </p>
           </div>
           
@@ -668,7 +668,7 @@ export default function TransporAktifPage() {
           <div className="mt-6 text-center">
             <p className="text-sm text-elkpd-1/60">
               💡 <strong>Tips:</strong> Interaksi dengan simulasi di atas untuk memahami konsep transpor membran, 
-              kemudian lanjutkan ke quiz di bawah untuk menguji pemahaman Anda.
+              kemudian lanjutkan ke praktikum di bawah untuk menguji pemahaman Anda.
             </p>
           </div>
         </div>
@@ -758,18 +758,18 @@ export default function TransporAktifPage() {
                   >
                     {answeredCount < QUESTIONS.length 
                       ? `Jawab ${QUESTIONS.length - answeredCount} soal lagi` 
-                      : "📝 Selesai & Lihat Hasil"
+                      : "📝 Selesai & Lihat Hasil Praktikum"
                     }
                   </button>
                   
                   <div className="text-sm text-elkpd-1/50">
-                    Pastikan semua soal telah dijawab sebelum menyelesaikan quiz
+                    Pastikan semua soal telah dijawab sebelum menyelesaikan praktikum
                   </div>
                 </div>
               ) : (
                 <div className="flex items-center justify-center gap-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-elkpd-2">Quiz Selesai!</div>
+                    <div className="text-2xl font-bold text-elkpd-2">Praktikum Selesai!</div>
                     <div className="text-sm text-elkpd-1/70">Menunggu hasil final...</div>
                   </div>
                 </div>
