@@ -104,7 +104,7 @@ export default function MateriPage() {
               Download PDF Materi
             </a> */}
             <button
-              onClick={() => document.getElementById('content').scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('content')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 border-2 border-white/30"
             >
               Mulai Belajar
