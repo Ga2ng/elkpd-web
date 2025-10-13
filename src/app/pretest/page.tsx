@@ -122,7 +122,7 @@ export default function PretestPage() {
                 Pelajari Materi
               </Link> */}
               <Link 
-                href="https://www.instagram.com/ninditayp" 
+                href="https://forms.gle/s9QWsGLbVWab7UnD6" 
                 className="px-8 py-4 bg-elkpd-2 text-white font-semibold rounded-xl hover:bg-elkpd-1 transition-colors duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Mulai Pretest

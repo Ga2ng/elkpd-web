@@ -95,7 +95,7 @@ export default function Page() {
                 <div className="group">
                   <div className="aspect-square relative overflow-hidden rounded-3xl shadow-xl border-2 border-white group-hover:scale-105 transition-transform duration-500">
                     <Image
-                      src="/images/gambar1.jpg"
+                      src="/images/gambar3.png"
                       alt="Gambar Materi 1"
                       fill
                       className="object-cover"
@@ -107,7 +107,7 @@ export default function Page() {
                 <div className="group mt-8">
                   <div className="aspect-square relative overflow-hidden rounded-3xl shadow-xl border-2 border-white group-hover:scale-105 transition-transform duration-500">
                     <Image
-                      src="/images/gambar2.jpg"
+                      src="/images/gambar1.png"
                       alt="Gambar Materi 2"
                       fill
                       className="object-cover"
@@ -421,6 +421,93 @@ export default function Page() {
         </div>
       </section> */}
 
+      {/* Tujuan Pembelajaran Section */}
+      <section id="tujuan-pembelajaran" className="py-16 sm:py-20 bg-gradient-to-br from-white via-elkpd-5/30 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-elkpd-2 to-elkpd-1 rounded-2xl mb-6 shadow-lg">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-elkpd-1 mb-4">Tujuan Pembelajaran</h2>
+            <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
+              Capaian pembelajaran yang akan Anda kuasai melalui E-LKPD Transpor Membran
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {/* Tujuan 1 */}
+            <div className="group relative bg-white rounded-2xl p-6 border-2 border-elkpd-3/30 hover:border-elkpd-2 transition-all duration-300 shadow-md hover:shadow-xl">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-elkpd-3 to-elkpd-2 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  1
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-elkpd-1 mb-2 group-hover:text-elkpd-2 transition-colors duration-300">
+                    Analisis Mekanisme Transpor
+                  </h3>
+                  <p className="text-elkpd-1/70 leading-relaxed">
+                    Peserta didik dapat menganalisis perbedaan mekanisme <span className="font-semibold text-elkpd-2">Transpor Aktif</span> dan <span className="font-semibold text-elkpd-2">Transpor Pasif</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Tujuan 2 */}
+            <div className="group relative bg-white rounded-2xl p-6 border-2 border-elkpd-3/30 hover:border-elkpd-2 transition-all duration-300 shadow-md hover:shadow-xl">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-elkpd-3 to-elkpd-2 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  2
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-elkpd-1 mb-2 group-hover:text-elkpd-2 transition-colors duration-300">
+                    Evaluasi Faktor-Faktor Transpor
+                  </h3>
+                  <p className="text-elkpd-1/70 leading-relaxed">
+                    Peserta didik dapat mengevaluasi faktor-faktor yang memengaruhi transpor membran dalam berbagai kondisi (misal: <span className="font-semibold text-elkpd-2">suhu, konsentrasi, tekanan</span>)
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Tujuan 3 */}
+            <div className="group relative bg-white rounded-2xl p-6 border-2 border-elkpd-3/30 hover:border-elkpd-2 transition-all duration-300 shadow-md hover:shadow-xl">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-elkpd-3 to-elkpd-2 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  3
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-elkpd-1 mb-2 group-hover:text-elkpd-2 transition-colors duration-300">
+                    Kreasi Representasi Visual
+                  </h3>
+                  <p className="text-elkpd-1/70 leading-relaxed">
+                    Peserta didik dapat menciptakan representasi visual (<span className="font-semibold text-elkpd-2">mind map/poster/model</span>) yang menjelaskan konsep transpor membran secara inovatif
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Tujuan 4 */}
+            <div className="group relative bg-white rounded-2xl p-6 border-2 border-elkpd-3/30 hover:border-elkpd-2 transition-all duration-300 shadow-md hover:shadow-xl">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-elkpd-3 to-elkpd-2 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  4
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-elkpd-1 mb-2 group-hover:text-elkpd-2 transition-colors duration-300">
+                    Aplikasi Konsep dalam Fenomena Nyata
+                  </h3>
+                  <p className="text-elkpd-1/70 leading-relaxed">
+                    Peserta didik dapat mengaitkan konsep transpor membran dengan fenomena nyata (misalnya <span className="font-semibold text-elkpd-2">kesehatan sel, bioteknologi, lingkungan</span>) untuk menyusun solusi kreatif
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
        {/* Petunjuk Penggunaan Section */}
        <section id="petunjuk-penggunaan" className="py-20 bg-gradient-to-br from-elkpd-5/30 via-white to-elkpd-4/20 relative overflow-hidden">
          {/* Background Elements */}
@@ -468,7 +555,7 @@ export default function Page() {
                        2
                      </div>
                      <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Login menggunakan akun yang tersedia atau buat akun baru.
+                       Sebelum memulai aktivitas pastikan sudah mengerjakan Pre-Test terlebih dahulu.
                      </p>
                    </div>
                  </div>
@@ -480,7 +567,7 @@ export default function Page() {
                        3
                      </div>
                      <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Bacalah petunjuk umum dan pahami tujuan pembelajaran.
+                       Bacalah petunjuk umum penggunaan website dan pahami tujuan pembelajaran.
                      </p>
                    </div>
                  </div>
@@ -492,7 +579,7 @@ export default function Page() {
                        4
                      </div>
                      <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Pelajari materi Transpor Membran melalui teks, gambar, dan video interaktif.
+                       Bentuklah kelompok dengan 1 kelompok beranggotakan 4-5 orang.
                      </p>
                    </div>
                  </div>
@@ -504,7 +591,7 @@ export default function Page() {
                        5
                      </div>
                      <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Kerjakan aktivitas interaktif (peta konsep, studi kasus, simulasi).
+                       Untuk mengingat materi Transpor Membran yang sudah dipelajari, lihatlah pada Bio Info untuk mereview/mengingat kembali mengenai materi Transpor Membran lalu kerjakan tugas yang terdapat di Bio Info secara berkelompok.
                      </p>
                    </div>
                  </div>
@@ -516,7 +603,7 @@ export default function Page() {
                        6
                      </div>
                      <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Coba simulasi/eksperimen virtual, ubah variabel, lalu amati hasilnya.
+                       E-LKPD ini berbasis Web dengan pendekatan mendalam yang dirancang untuk melatihkan keterampilan berpikir kreatif Peserta Didik.
                      </p>
                    </div>
                  </div>
@@ -528,7 +615,7 @@ export default function Page() {
                        7
                      </div>
                      <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Jawab kuis atau tantangan untuk menguji pemahaman.
+                       Konten yang terdapat dalam E-LKPD adalah berupa materi, video, gambar, PhET simulasi virtual lab, langkah-langkah kegiatan peserta didik, pertanyaan dan kesimpulan.
                      </p>
                    </div>
                  </div>
@@ -540,7 +627,7 @@ export default function Page() {
                        8
                      </div>
                      <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Tulis refleksi belajar (ide, pengalaman, atau analogi).
+                       Bacalah terlebih dahulu mengenai permasalahan yang ada. Kemudian pahami Bio Info dengan membaca dengan seksama dan teliti.
                      </p>
                    </div>
                  </div>
@@ -552,7 +639,7 @@ export default function Page() {
                        9
                      </div>
                      <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Simpan/submit hasil pekerjaan agar tersimpan di sistem.
+                       Kerjakan E-LKPD secara berkelompok sesuai dengan topik yang telah dipilih yaitu Transpor Aktif dan Transpor Pasif.
                      </p>
                    </div>
                  </div>
@@ -564,7 +651,7 @@ export default function Page() {
                        10
                      </div>
                      <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Gunakan E-LKPD secara mandiri, jujur, dan kreatif.
+                       Diskusikanlah dengan anggota kelompok kalian untuk melakukan percobaan dan jawablah pertanyaan-pertanyaan yang ada dalam E-LKPD berbasis web.
                      </p>
                    </div>
                  </div>
@@ -576,7 +663,19 @@ export default function Page() {
                        11
                      </div>
                      <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Manfaatkan forum/kolaborasi untuk berbagi ide dengan sikap saling menghargai.
+                       Tanyakan mintalah bimbingan guru jika mengalami kesulitan dalam mengerjakan E-LKPD.
+                     </p>
+                   </div>
+                 </div>
+
+                 {/* Step 12 */}
+                 <div className="group">
+                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                       12
+                     </div>
+                     <p className="text-elkpd-1 font-medium leading-relaxed">
+                       Gunakan buku ajar sebagai sumber informasi tambahan untuk menjawab pertanyaan.
                      </p>
                    </div>
                  </div>
@@ -607,25 +706,140 @@ export default function Page() {
          </div>
        </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center text-white">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Siap untuk Memulai?</h2>
-            <p className="text-lg sm:text-xl mb-6 sm:mb-8 opacity-90 px-4">
-              Bergabunglah dengan ribuan siswa yang telah menggunakan ELKPD untuk pembelajaran yang lebih efektif.
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-elkpd-1 mb-4">Fitur-Fitur E-LKPD</h2>
+            <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto leading-relaxed">
+              E-LKPD dilengkapi dengan berbagai fitur interaktif yang dirancang untuk meningkatkan pemahaman 
+              materi transpor membran melalui pendekatan pembelajaran yang sistematis dan menyenangkan.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-              <Link 
-                href="/post-test" 
-                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-elkpd-1 font-semibold rounded-xl hover:bg-elkpd-5 transition-colors duration-300 text-base sm:text-lg"
-              >
-                Mulai Sekarang
-              </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
+                <img 
+                  src="/images/Bio Info.png" 
+                  alt="Bio Info" 
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-elkpd-1 mb-3 flex items-center gap-2">
+                <span className="text-2xl">📚</span>
+                Bio Info
+              </h3>
+              <p className="text-elkpd-1/70 leading-relaxed">
+                Fitur yang menyajikan materi transpor membran secara umum untuk mendorong peserta didik 
+                agar bisa mereview dan mengingat kembali mengenai materi transpor membran sebelum 
+                mengerjakan kegiatan yang ada pada E-LKPD.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
+                <img 
+                  src="/images/Bio Mapping.png" 
+                  alt="Bio Mapping" 
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-elkpd-1 mb-3 flex items-center gap-2">
+                <span className="text-2xl">🗺️</span>
+                Bio Mapping
+              </h3>
+              <p className="text-elkpd-1/70 leading-relaxed">
+                Fitur yang menampung hasil pemahaman peserta didik mengenai konsep transpor membran 
+                yang disajikan dalam bentuk Mind Mapping agar semua berjalan dengan selaras.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
+                <img 
+                  src="/images/Bio Task.png" 
+                  alt="Bio Task" 
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-elkpd-1 mb-3 flex items-center gap-2">
+                <span className="text-2xl">📝</span>
+                Bio Task
+              </h3>
+              <p className="text-elkpd-1/70 leading-relaxed">
+                Fitur yang menyajikan suatu permasalahan nyata di sekitar kita untuk peserta didik 
+                agar bisa merumuskan suatu Rumusan Masalah dalam praktikum yang akan mereka lakukan.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
+                <img 
+                  src="/images/Bio Experiment.png" 
+                  alt="Bio Experiment" 
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-elkpd-1 mb-3 flex items-center gap-2">
+                <span className="text-2xl">🔬</span>
+                Bio Experiment
+              </h3>
+              <p className="text-elkpd-1/70 leading-relaxed">
+                Fitur yang berupa aktivitas atau rancangan percobaan mengenai topik Transpor Aktif 
+                dan Transpor Pasif untuk mendapatkan suatu data hasil percobaan.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
+                <img 
+                  src="/images/Bio Communication.png" 
+                  alt="Bio Communication" 
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-elkpd-1 mb-3 flex items-center gap-2">
+                <span className="text-2xl">💬</span>
+                Bio Communication
+              </h3>
+              <p className="text-elkpd-1/70 leading-relaxed">
+                Fitur yang menampung hasil/data yang sudah diperoleh peserta didik dalam Bio Experiment 
+                berupa Poster dan akan dipresentasikan oleh semua kelompok. Juga akan merefleksikan 
+                pembelajaran yang telah dilaksanakan.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
+                <img 
+                  src="/images/Bio Quiz.png" 
+                  alt="Bio Quiz" 
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-elkpd-1 mb-3 flex items-center gap-2">
+                <span className="text-2xl">✅</span>
+                Bio Quiz
+              </h3>
+              <p className="text-elkpd-1/70 leading-relaxed">
+                Fitur yang berupa soal-soal yang akan dikerjakan oleh peserta didik untuk mengecek 
+                tingkat pemahaman sementara peserta didik mengenai Transpor Membran.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <div className="bg-gradient-to-r from-elkpd-4 to-elkpd-3 rounded-2xl p-8 max-w-3xl mx-auto">
+              <h3 className="text-2xl font-bold text-elkpd-1 mb-3">Pembelajaran Interaktif & Terstruktur</h3>
+              <p className="text-elkpd-1/80 mb-6 leading-relaxed">
+                Dengan fitur-fitur yang saling terintegrasi, peserta didik dapat belajar secara sistematis 
+                dari pemahaman konsep hingga aplikasi dalam praktikum dan evaluasi.
+              </p>
               <Link 
                 href="/materi" 
-                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-elkpd-1 transition-all duration-300 text-base sm:text-lg"
+                className="inline-block px-8 py-3 bg-elkpd-2 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
               >
-                Pelajari Lebih Lanjut
+                Jelajahi Materi Sekarang
               </Link>
             </div>
           </div>

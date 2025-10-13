@@ -588,7 +588,7 @@ export default function TransporAktifPage() {
                 Setelah download hasil praktikum, silakan upload ke Google Drive yang telah disediakan
               </p>
               <a
-                href="https://drive.google.com/drive/folders/1ABC123DEF456GHI789JKL012MNO345PQR678STU901VWX234YZA567BCD890EFG"
+                href="https://drive.google.com/drive/folders/1HaAJlrtyZoV2ktoo9QXbHyGaVbmKvRSs?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"

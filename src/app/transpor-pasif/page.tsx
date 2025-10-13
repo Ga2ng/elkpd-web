@@ -1,15 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
-import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
-
-type Question = {
-  id: number;
-  text: string;
-  type: "essay";
-  correctAnswer: string;
-};
+import { PDFDownloadLink, Document, Page, Text, View, StyleSheet, Image } from "@react-pdf/renderer";
+import PhETEmbed from "../components/PhETEmbed";
+import TextEditor from "../components/TextEditor";
+import ImageUpload from "../components/ImageUpload";
 
 type StudentData = {
   namaKelompok: string;
@@ -17,66 +13,64 @@ type StudentData = {
   anggota: { nama: string; noSiswa: string }[];
 };
 
-const QUESTIONS: Question[] = [
-  { 
-    id: 1, 
-    text: "Apa yang dimaksud dengan transpor pasif? Jelaskan secara singkat!", 
-    type: "essay", 
-    correctAnswer: "Transpor pasif adalah perpindahan zat dari konsentrasi tinggi ke konsentrasi rendah yang tidak memerlukan energi." 
+type SectionAnswers = {
+  dataPercobaan: string;
+  analisisPembahasan: string[];
+  diskusi: string[];
+  kesimpulan: string;
+};
+
+const SECTIONS = [
+  {
+    id: "difusi",
+    title: "DIFUSI",
+    prosedur: [
+      "Siapkan 2 buah gelas, gelas A, gelas B, dan stopwatch.",
+      "Tuangkan air biasa sebanyak 100 ml pada gelas A dan gelas B",
+      "Masukkan tinta pada gelas A sebanyak dua tetes menggunakan pipet dan masukkan pewarna bubuk tekstil pada gelas B sebanyak satu sendok makan pada saat yang bersamaan (jangan diaduk).",
+      "Memulai menghitung waktu menggunakan stopwatch bersamaan dengan saat meneteskan ketiga larutan pada gelas masing masing dan melakukan pengulangan tiga kali.",
+      "Mengamati penyebaran warna masing masing larutan tanpa pengadukan.",
+      "Mencatat berapa lama waktu yang diperlukan saat mengalami perubahan warna secara merata."
+    ],
+    analisisPembahasan: [
+      "Buatlah diagram yang menunjukkan hubungan jenis wujud cair maupun padat terhadap lama waktu perubahan warna!",
+      "Jelaskan diagram yang telah kamu buat dan penjelasan jenis wujud cair maupun padat terhadap lama waktu perubahan warna!",
+      "Jelaskan mekanisme faktor-faktor yang memengaruhi difusi pada percobaan tersebut!",
+      "Jelaskan mengapa melakukan perlakuan tiga kali pengulangan!",
+      "Tentukan mana larutan yang bersifat hipotonik atau hipertonik!",
+      "Buat dalam bentuk Poster!"
+    ],
+    diskusi: [
+      "Mengapa jenis wujud larutan tinta cair mengalami perubahan warna secara sempurna dengan waktu yang paling cepat dibanding jenis larutan lainnya?",
+      "Apa yang terjadi apabila percobaan tersebut ketiga jenis larutan diubah menggunakan minyak? apakah tetap terjadi peristiwa difusi? jika tidak, mengapa?"
+    ]
   },
-  { 
-    id: 2, 
-    text: "Sebutkan 3 jenis transpor pasif yang terjadi di dalam sel!", 
-    type: "essay", 
-    correctAnswer: "Difusi sederhana, difusi terfasilitasi, dan osmosis." 
-  },
-  { 
-    id: 3, 
-    text: "Apa perbedaan antara difusi sederhana dan difusi terfasilitasi?", 
-    type: "essay", 
-    correctAnswer: "Difusi sederhana terjadi langsung melalui membran tanpa bantuan protein, sedangkan difusi terfasilitasi memerlukan bantuan protein pembawa (carrier protein) atau saluran (channel protein)." 
-  },
-  { 
-    id: 4, 
-    text: "Jelaskan proses osmosis dan berikan contohnya!", 
-    type: "essay", 
-    correctAnswer: "Osmosis adalah perpindahan molekul air melalui membran semipermeabel dari konsentrasi tinggi ke rendah. Contoh: penyerapan air oleh akar tanaman dan penyerapan air di usus besar." 
-  },
-  { 
-    id: 5, 
-    text: "Apa yang dimaksud dengan gradien konsentrasi dalam transpor pasif?", 
-    type: "essay", 
-    correctAnswer: "Gradien konsentrasi adalah perbedaan konsentrasi zat antara dua daerah yang memungkinkan terjadinya perpindahan zat secara alami dari konsentrasi tinggi ke rendah." 
-  },
-  { 
-    id: 6, 
-    text: "Mengapa transpor pasif tidak memerlukan energi? Jelaskan alasannya!", 
-    type: "essay", 
-    correctAnswer: "Transpor pasif tidak memerlukan energi karena zat bergerak mengikuti gradien konsentrasi (dari konsentrasi tinggi ke rendah), yang merupakan proses alami dan spontan." 
-  },
-  { 
-    id: 7, 
-    text: "Sebutkan contoh zat yang dapat berdifusi melalui membran sel secara sederhana!", 
-    type: "essay", 
-    correctAnswer: "Oksigen, karbon dioksida, nitrogen, dan molekul kecil non-polar lainnya dapat berdifusi langsung melalui membran sel." 
-  },
-  { 
-    id: 8, 
-    text: "Bagaimana protein pembawa membantu dalam difusi terfasilitasi?", 
-    type: "essay", 
-    correctAnswer: "Protein pembawa mengikat molekul zat tertentu dan mengubah konformasinya untuk memindahkan zat dari satu sisi membran ke sisi lainnya, memungkinkan zat polar atau besar melewati membran." 
-  },
-  { 
-    id: 9, 
-    text: "Apa yang terjadi pada sel darah merah jika dimasukkan ke dalam larutan hipotonik?", 
-    type: "essay", 
-    correctAnswer: "Sel darah merah akan mengalami hemolisis (pecah) karena air masuk ke dalam sel melalui osmosis, menyebabkan sel membengkak dan akhirnya pecah." 
-  },
-  { 
-    id: 10, 
-    text: "Jelaskan mengapa transpor pasif penting bagi kehidupan sel!", 
-    type: "essay", 
-    correctAnswer: "Transpor pasif penting karena memungkinkan sel mendapatkan nutrisi dan oksigen yang diperlukan, serta mengeluarkan limbah tanpa mengeluarkan energi, sehingga menghemat ATP untuk proses lain." 
+  {
+    id: "osmosis",
+    title: "OSMOSIS",
+    prosedur: [
+      "Kupas dan potong buah (bertekstur seperti bengkoang) berbentuk bujur sangkar dengan perbandingan panjang: lebar: tinggi 0,5 cm: 0,5 cm: 2 cm sebanyak tiga potong di kali tiga pengulangan dan catat tekstur awal tiap potongan buah.",
+      "Beri label yang berbeda pada masing-masing gelas kimia/gelas plastik dengan tiga pengulangan yakni, A, B, dan C.",
+      "Masukkan air suling 100 ml ke dalam gelas kimia A, masukkan larutan gula 15% (15 gr/100 ml) pada gelas kimia B, dan masukkan larutan gula 30% (30 gr/100 ml) pada gelas kimia C.",
+      "Masukkan 3 potong buah pada masing-masing gelas",
+      "Diamkan selama 30 menit.",
+      "Tiriskan buah, lalu ukur masing-masing buah pada tiap-tiap gelas kimia (panjang, lebar, dan tinggi).",
+      "Catat perubahan panjang dan tekstur akhir pada potongan buah tersebut dan lakukan pengulangan tiga kali."
+    ],
+    analisisPembahasan: [
+      "Buatlah grafik yang menunjukkan hubungan konsentrasi larutan gula terhadap perubahan panjang akhir!",
+      "Jelaskan grafik yang telah kamu buat dan kaitkan dengan konsentrasi larutan gula terhadap perubahan panjang akhir!",
+      "Jelaskan terkait perubahan tekstur pada percobaan ini terhadap osmosis!",
+      "Jelaskan mekanisme dan faktor-faktor yang mempengaruhi osmosis!",
+      "Jelaskan mengapa melakukan perlakuan tiga kali pengulangan!",
+      "Tentukan mana larutan yang bersifat hipotonik atau hipertonik!",
+      "Buat dalam bentuk Poster!"
+    ],
+    diskusi: [
+      "Mengapa potongan buah yang direndam pada larutan gula dengan konsentrasi 30% mengalami perubahan yang signifikan dibandingkan lainnya?",
+      "Mengapa perlakuan larutan gula dengan konsentrasi 0% diperlukan dalam percobaan osmosis tersebut?",
+      "Apa yang terjadi apabila percobaan tersebut penggunaan potongan buah diubah menggunakan biji salak? apakah tetap terjadi peristiwa osmosis?"
+    ]
   }
 ];
 
@@ -161,14 +155,14 @@ const styles = StyleSheet.create({
   },
 });
 
-const TestPDF = ({ studentData, selectedAnswers, questions }: {
+const TestPDF = ({ studentData, sectionAnswers, uploadedImages }: {
   studentData: StudentData;
-  selectedAnswers: string[];
-  questions: Question[];
+  sectionAnswers: Record<string, SectionAnswers>;
+  uploadedImages: Record<string, Record<string, Record<string, {preview: string, base64: string, originalName: string}>>>;
 }) => (
   <Document>
     <Page size="A4" style={styles.page}>
-      <Text style={styles.header}>QUIZ TRANSPOR PASIF - HASIL EVALUASI</Text>
+      <Text style={styles.header}>PRAKTIKUM TRANSPOR PASIF - HASIL EVALUASI</Text>
       
       <View style={styles.studentInfo}>
         <View>
@@ -188,26 +182,82 @@ const TestPDF = ({ studentData, selectedAnswers, questions }: {
       </View>
 
       <View style={styles.scoreSection}>
-        <Text style={styles.scoreText}>Jenis Quiz: Transpor Pasif</Text>
-        <Text style={styles.scoreText}>Total Soal: {questions.length}</Text>
-        <Text style={styles.scoreText}>Jawaban Terisi: {selectedAnswers.filter(answer => answer.trim() !== '').length}</Text>
+        <Text style={styles.scoreText}>Jenis Praktikum: Transpor Pasif (Difusi & Osmosis)</Text>
         <Text style={styles.scoreText}>Status: Menunggu Penilaian Guru</Text>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Detail Jawaban:</Text>
-        {questions.map((q, idx) => {
-          const answer = selectedAnswers[idx] || "Tidak dijawab";
-          return (
-            <View key={idx} style={styles.questionItem}>
-              <Text style={styles.questionText}>{q.id}. {q.text}</Text>
-              <Text style={styles.answerText}>Jawaban Anda: {answer}</Text>
-              <Text style={styles.answerText}>Jawaban Benar: {q.correctAnswer}</Text>
-              <Text style={styles.essayAnswer}>*Soal isian memerlukan penilaian manual oleh guru</Text>
-            </View>
-          );
-        })}
-      </View>
+      {SECTIONS.map((section) => (
+        <View key={section.id} style={styles.section}>
+          <Text style={[styles.sectionTitle, { fontSize: 18, marginTop: 15, marginBottom: 10 }]}>
+            {section.title}
+          </Text>
+          
+          <View style={styles.questionItem}>
+            <Text style={styles.questionText}>B. Data Hasil Percobaan</Text>
+            <Text style={styles.answerText}>
+              Jawaban: {sectionAnswers[section.id].dataPercobaan || "Tidak dijawab"}
+            </Text>
+          </View>
+
+          <View style={styles.questionItem}>
+            <Text style={styles.questionText}>C. Analisis Data dan Pembahasan</Text>
+            {section.analisisPembahasan.map((question, idx) => (
+              <View key={idx} style={{ marginBottom: 8 }}>
+                <Text style={[styles.answerText, { fontSize: 10, fontWeight: 'bold' }]}>
+                  {idx + 1}. {question}
+                </Text>
+                <Text style={styles.answerText}>
+                  Jawaban: {sectionAnswers[section.id].analisisPembahasan[idx] || "Tidak dijawab"}
+                </Text>
+                
+                {uploadedImages[section.id] && uploadedImages[section.id][`analisis_${idx}`] && Object.keys(uploadedImages[section.id][`analisis_${idx}`]).length > 0 && (
+                  <View style={{ marginVertical: 8 }}>
+                    <Text style={{ fontSize: 10, fontWeight: 'bold', marginBottom: 4 }}>Gambar yang Di-upload:</Text>
+                    {Object.entries(uploadedImages[section.id][`analisis_${idx}`]).map(([filename, imageData], imgIdx) => (
+                      <View key={imgIdx} style={{ marginVertical: 4, alignItems: 'center' }}>
+                        <Image 
+                          src={imageData.base64} 
+                          style={{ 
+                            width: 200, 
+                            height: 150, 
+                            objectFit: 'contain',
+                            border: '1px solid #e2e8f0',
+                            borderRadius: 4
+                          }} 
+                        />
+                        <Text style={{ fontSize: 10, color: '#666', marginTop: 4 }}>
+                          {imageData.originalName}
+                        </Text>
+                      </View>
+                    ))}
+                  </View>
+                )}
+              </View>
+            ))}
+          </View>
+
+          <View style={styles.questionItem}>
+            <Text style={styles.questionText}>D. Diskusi</Text>
+            {section.diskusi.map((question, idx) => (
+              <View key={idx} style={{ marginBottom: 8 }}>
+                <Text style={[styles.answerText, { fontSize: 10, fontWeight: 'bold' }]}>
+                  {idx + 1}. {question}
+                </Text>
+                <Text style={styles.answerText}>
+                  Jawaban: {sectionAnswers[section.id].diskusi[idx] || "Tidak dijawab"}
+                </Text>
+              </View>
+            ))}
+          </View>
+
+          <View style={styles.questionItem}>
+            <Text style={styles.questionText}>E. Kesimpulan</Text>
+            <Text style={styles.answerText}>
+              {sectionAnswers[section.id].kesimpulan || "Tidak dijawab"}
+            </Text>
+          </View>
+        </View>
+      ))}
 
       <Text style={styles.footer}>
         Dokumen ini digenerate otomatis oleh sistem ELKPD pada {new Date().toLocaleString('id-ID')}
@@ -217,30 +267,75 @@ const TestPDF = ({ studentData, selectedAnswers, questions }: {
 );
 
 export default function TransporPasifPage() {
-  const [selectedAnswers, setSelectedAnswers] = useState<string[]>(() => Array(QUESTIONS.length).fill(""));
+  const [sectionAnswers, setSectionAnswers] = useState<Record<string, SectionAnswers>>({
+    difusi: {
+      dataPercobaan: "",
+      analisisPembahasan: ["", "", "", "", "", ""],
+      diskusi: ["", ""],
+      kesimpulan: ""
+    },
+    osmosis: {
+      dataPercobaan: "",
+      analisisPembahasan: ["", "", "", "", "", "", ""],
+      diskusi: ["", "", ""],
+      kesimpulan: ""
+    }
+  });
   const [submitted, setSubmitted] = useState(false);
   const [showFinalResult, setShowFinalResult] = useState(false);
   const [showStartModal, setShowStartModal] = useState(true);
+  const [uploadedImages, setUploadedImages] = useState<Record<string, Record<string, Record<string, {preview: string, base64: string, originalName: string}>>>>({});
   const [studentData, setStudentData] = useState<StudentData>({
     namaKelompok: "",
     kelas: "",
     anggota: [{ nama: "", noSiswa: "" }]
   });
 
-  const answeredCount = useMemo(() => selectedAnswers.filter((v) => v.trim() !== "").length, [selectedAnswers]);
+  const answeredCount = useMemo(() => {
+    let count = 0;
+    Object.values(sectionAnswers).forEach(section => {
+      section.analisisPembahasan.forEach(ans => { if (ans.trim()) count++; });
+      section.diskusi.forEach(ans => { if (ans.trim()) count++; });
+      if (section.kesimpulan.trim()) count++;
+    });
+    return count;
+  }, [sectionAnswers]);
 
-  function setAnswer(questionIdx: number, answer: string) {
+  const totalQuestions = useMemo(() => {
+    return SECTIONS.reduce((total, section) => {
+      return total + section.analisisPembahasan.length + section.diskusi.length + 1;
+    }, 0);
+  }, []);
+
+  function downloadExcelTemplate(type: 'difusi' | 'osmosis') {
+    const link = document.createElement("a");
+    link.setAttribute("href", `/excel/${type === 'difusi' ? 'Difusi' : 'Osmosis'}.xlsx`);
+    link.setAttribute("download", `Template_Data_${type === 'difusi' ? 'Difusi' : 'Osmosis'}.xlsx`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  function setSectionAnswer(sectionId: string, field: keyof SectionAnswers, value: string | string[], index?: number) {
     if (submitted || showStartModal || showFinalResult) return;
-    setSelectedAnswers((prev) => {
-      const next = [...prev];
-      next[questionIdx] = answer;
-      return next;
+    setSectionAnswers(prev => {
+      const newAnswers = { ...prev };
+      if (Array.isArray(value)) {
+        (newAnswers[sectionId][field] as string[]) = value;
+      } else if (index !== undefined && Array.isArray(newAnswers[sectionId][field])) {
+        const arr = [...(newAnswers[sectionId][field] as string[])];
+        arr[index] = value;
+        (newAnswers[sectionId][field] as string[]) = arr;
+      } else {
+        (newAnswers[sectionId][field] as string) = value;
+      }
+      return newAnswers;
     });
   }
 
   function handleSubmit() {
-    if (answeredCount < QUESTIONS.length) {
-      alert(`Mohon lengkapi semua soal terlebih dahulu! Masih ada ${QUESTIONS.length - answeredCount} soal yang belum dijawab.`);
+    if (answeredCount < totalQuestions) {
+      alert(`Mohon lengkapi semua soal terlebih dahulu! Masih ada ${totalQuestions - answeredCount} soal yang belum dijawab.`);
       return;
     }
     
@@ -251,10 +346,24 @@ export default function TransporPasifPage() {
   }
 
   function handleReset() {
-    setSelectedAnswers(Array(QUESTIONS.length).fill(""));
+    setSectionAnswers({
+      difusi: {
+        dataPercobaan: "",
+        analisisPembahasan: ["", "", "", "", "", ""],
+        diskusi: ["", ""],
+        kesimpulan: ""
+      },
+      osmosis: {
+        dataPercobaan: "",
+        analisisPembahasan: ["", "", "", "", "", "", ""],
+        diskusi: ["", "", ""],
+        kesimpulan: ""
+      }
+    });
     setSubmitted(false);
     setShowFinalResult(false);
     setShowStartModal(true);
+    setUploadedImages({});
     setStudentData({ namaKelompok: "", kelas: "", anggota: [{ nama: "", noSiswa: "" }] });
   }
 
@@ -302,9 +411,9 @@ export default function TransporPasifPage() {
               </svg>
             </div>
             
-            <h1 className="text-3xl font-bold text-elkpd-1 mb-4">Quiz Transpor Pasif</h1>
+            <h1 className="text-3xl font-bold text-elkpd-1 mb-4">Praktikum Transpor Pasif</h1>
             <p className="text-lg text-elkpd-1/70 mb-8 leading-relaxed">
-              Uji pemahaman Anda tentang transpor pasif dengan 10 soal isian. Jawab semua pertanyaan dengan lengkap dan jelas.
+              Praktikum ini terdiri dari 2 percobaan: Difusi dan Osmosis. Jawab semua pertanyaan dengan lengkap dan jelas.
             </p>
             
             <div className="bg-elkpd-5 rounded-2xl p-6 mb-8">
@@ -385,15 +494,15 @@ export default function TransporPasifPage() {
             </div>
             
             <div className="bg-elkpd-4/60 rounded-2xl p-6 mb-8">
-              <h3 className="font-semibold text-elkpd-1 mb-4">Informasi Quiz:</h3>
+              <h3 className="font-semibold text-elkpd-1 mb-4">Informasi Praktikum:</h3>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-elkpd-2 rounded-full"></span>
-                  <span className="text-elkpd-1/70">10 Soal</span>
+                  <span className="text-elkpd-1/70">2 Percobaan</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-elkpd-2 rounded-full"></span>
-                  <span className="text-elkpd-1/70">Semua Isian</span>
+                  <span className="text-elkpd-1/70">{totalQuestions} Pertanyaan</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-elkpd-2 rounded-full"></span>
@@ -415,7 +524,7 @@ export default function TransporPasifPage() {
                   : "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white hover:shadow-xl transform hover:-translate-y-1"
               }`}
             >
-              Mulai Quiz
+              Mulai Praktikum
             </button>
           </div>
         </div>
@@ -434,9 +543,9 @@ export default function TransporPasifPage() {
               </svg>
             </div>
             
-            <h1 className="text-4xl font-bold text-elkpd-1 mb-4">Hasil Quiz Transpor Pasif</h1>
+            <h1 className="text-4xl font-bold text-elkpd-1 mb-4">Hasil Praktikum Transpor Pasif</h1>
             <p className="text-lg text-elkpd-1/70 mb-6">
-              Selamat! Anda telah menyelesaikan Quiz Transpor Pasif
+              Selamat! Anda telah menyelesaikan Praktikum Transpor Pasif
             </p>
           </div>
 
@@ -472,9 +581,9 @@ export default function TransporPasifPage() {
             </div>
             
             <div className="bg-gradient-to-br from-elkpd-2 to-elkpd-1 rounded-2xl p-6 text-white">
-              <h3 className="font-semibold mb-4 text-center">Hasil Quiz</h3>
+              <h3 className="font-semibold mb-4 text-center">Hasil Praktikum</h3>
               <div className="text-center">
-                <div className="text-5xl font-bold mb-2">{answeredCount}/{QUESTIONS.length}</div>
+                <div className="text-5xl font-bold mb-2">{answeredCount}/{totalQuestions}</div>
                 <div className="text-xl mb-2">Jawaban Terisi</div>
                 <div className="text-3xl font-bold mb-2">100%</div>
                 <div className="px-4 py-2 rounded-full text-sm font-medium bg-white/20 text-white inline-block">
@@ -485,23 +594,39 @@ export default function TransporPasifPage() {
           </div>
 
           <div className="bg-white border-2 border-elkpd-3/50 rounded-2xl p-6 mb-8">
-            <h3 className="font-semibold text-elkpd-1 mb-4 text-center">Detail Jawaban</h3>
-            <div className="grid md:grid-cols-2 gap-4 text-sm">
-              {QUESTIONS.map((q, idx) => {
-                const answer = selectedAnswers[idx];
-                return (
-                  <div key={idx} className="p-3 rounded-lg border border-blue-200 bg-blue-50">
-                    <div className="font-medium text-elkpd-1 mb-2">
-                      {q.id}. {q.text.substring(0, 50)}...
+            <h3 className="font-semibold text-elkpd-1 mb-4 text-center">Ringkasan Jawaban</h3>
+            <div className="space-y-6">
+              {SECTIONS.map((section) => (
+                <div key={section.id} className="border-b border-elkpd-3/30 pb-4 last:border-b-0">
+                  <h4 className="font-bold text-elkpd-2 mb-3 text-lg">{section.title}</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-start gap-2">
+                      <span className="font-semibold min-w-32">Data Percobaan:</span>
+                      <span className="text-elkpd-1/70">
+                        {sectionAnswers[section.id].dataPercobaan ? "✓ Sudah diisi" : "✗ Belum diisi"}
+                      </span>
                     </div>
-                    <div className="space-y-1 text-xs">
-                      <div>Jawaban Anda: <span className="font-medium">{answer || "Tidak dijawab"}</span></div>
-                      <div>Jawaban Benar: <span className="font-medium text-blue-600">{q.correctAnswer}</span></div>
-                      <div className="text-blue-600 font-bold">📝 Soal Isian</div>
+                    <div className="flex items-start gap-2">
+                      <span className="font-semibold min-w-32">Analisis:</span>
+                      <span className="text-elkpd-1/70">
+                        {sectionAnswers[section.id].analisisPembahasan.filter(a => a.trim()).length}/{section.analisisPembahasan.length} pertanyaan dijawab
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="font-semibold min-w-32">Diskusi:</span>
+                      <span className="text-elkpd-1/70">
+                        {sectionAnswers[section.id].diskusi.filter(a => a.trim()).length}/{section.diskusi.length} pertanyaan dijawab
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="font-semibold min-w-32">Kesimpulan:</span>
+                      <span className="text-elkpd-1/70">
+                        {sectionAnswers[section.id].kesimpulan ? "✓ Sudah diisi" : "✗ Belum diisi"}
+                      </span>
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
 
@@ -510,22 +635,22 @@ export default function TransporPasifPage() {
               document={
                 <TestPDF
                   studentData={studentData}
-                  selectedAnswers={selectedAnswers}
-                  questions={QUESTIONS}
+                  sectionAnswers={sectionAnswers}
+                  uploadedImages={uploadedImages}
                 />
               }
-              fileName={`QuizTransporPasif_${studentData.namaKelompok.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.pdf`}
+              fileName={`PraktikumTransporPasif_${studentData.namaKelompok.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.pdf`}
               className="px-8 py-4 bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg"
             >
               {({ blob, url, loading, error }) =>
-                loading ? 'Generating PDF...' : '📥 Download PDF Hasil Quiz'
+                loading ? 'Generating PDF...' : '📥 Download PDF Hasil Praktikum'
               }
             </PDFDownloadLink>
             <button
               onClick={handleReset}
               className="px-8 py-4 bg-white border-2 border-elkpd-3 text-elkpd-1 font-semibold rounded-xl hover:bg-elkpd-4/50 transition-colors duration-300 text-lg shadow-md hover:shadow-lg"
             >
-              🔄 Ulangi Quiz
+              🔄 Ulangi Praktikum
             </button>
             <Link
               href="/"
@@ -537,12 +662,12 @@ export default function TransporPasifPage() {
 
           <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-xl">
             <div className="text-center">
-              <h4 className="font-semibold text-blue-800 mb-2">📁 Pengumpulan Hasil Quiz</h4>
+              <h4 className="font-semibold text-blue-800 mb-2">📁 Pengumpulan Hasil Praktikum</h4>
               <p className="text-blue-700 text-sm mb-3">
-                Setelah download hasil quiz, silakan upload ke Google Drive yang telah disediakan
+                Setelah download hasil praktikum, silakan upload ke Google Drive yang telah disediakan
               </p>
               <a
-                href="https://drive.google.com/drive/folders/1ABC123DEF456GHI789JKL012MNO345PQR678STU901VWX234YZA567BCD890EFG"
+                href="https://drive.google.com/drive/folders/1o07_ZbOWvks-Qf6cuJcSmBZm19nA1aRy?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
@@ -550,7 +675,7 @@ export default function TransporPasifPage() {
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
-                Buka Google Drive
+                Buka Google Drive Pengumpulan Praktikum
               </a>
             </div>
           </div>
@@ -569,19 +694,19 @@ export default function TransporPasifPage() {
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-elkpd-2 rounded-full"></div>
                 <span className="text-elkpd-1 font-medium">Progress:</span>
-                <span className="text-lg font-bold text-elkpd-2">{answeredCount}/{QUESTIONS.length}</span>
+                <span className="text-lg font-bold text-elkpd-2">{answeredCount}/{totalQuestions}</span>
               </div>
               <div className="w-32 bg-elkpd-4 rounded-full h-2">
                 <div 
                   className="bg-gradient-to-r from-elkpd-2 to-elkpd-1 h-2 rounded-full transition-all duration-300"
-                  style={{ width: `${(answeredCount / QUESTIONS.length) * 100}%` }}
+                  style={{ width: `${(answeredCount / totalQuestions) * 100}%` }}
                 ></div>
               </div>
             </div>
             
             <div className="flex items-center gap-4">
               <div className="text-center">
-                <div className="text-sm text-elkpd-1/70">Quiz Transpor Pasif</div>
+                <div className="text-sm text-elkpd-1/70">Praktikum Transpor Pasif</div>
                 <div className="font-mono text-xl font-bold text-elkpd-2">
                   Tanpa Waktu
                 </div>
@@ -594,7 +719,7 @@ export default function TransporPasifPage() {
       <section className="bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">Quiz Transpor Pasif</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">Praktikum Transpor Pasif</h1>
             <p className="text-lg opacity-90">
               {studentData.namaKelompok} - {studentData.kelas} ({studentData.anggota.length} anggota)
             </p>
@@ -604,80 +729,187 @@ export default function TransporPasifPage() {
 
       <section className="py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6">
-            {QUESTIONS.map((q, qi) => (
-              <div 
-                key={q.id} 
-                className="rounded-2xl border-2 border-blue-300 bg-blue-50 p-6 shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">
-                    {q.id}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-elkpd-1 leading-relaxed mb-2">{q.text}</h3>
-                    <p className="text-sm text-blue-600 mb-3">📝 Soal Isian - Tulis jawaban Anda di bawah ini</p>
-                  </div>
+          <div className="space-y-12">
+            {SECTIONS.map((section) => (
+              <div key={section.id} className="bg-white rounded-3xl border-2 border-elkpd-3/50 shadow-xl overflow-hidden">
+                <div className="bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white p-6">
+                  <h2 className="text-2xl font-bold text-center">{section.title}</h2>
                 </div>
-                
-                <div className="ml-12">
-                  <textarea
-                    value={selectedAnswers[qi] || ""}
-                    onChange={(e) => setAnswer(qi, e.target.value)}
-                    disabled={submitted}
-                    placeholder="Tulis jawaban Anda di sini..."
-                    className="w-full px-4 py-3 border-2 border-blue-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors resize-none"
-                    rows={4}
-                  />
-                  
-                  {submitted && (
-                    <div className="mt-3 p-3 bg-white rounded-lg border border-blue-200">
-                      <div className="text-sm text-blue-800">
-                        <div className="font-medium mb-1">Jawaban Benar:</div>
-                        <div className="italic">{q.correctAnswer}</div>
-                        <div className="text-xs text-blue-600 mt-2">
-                          *Soal isian memerlukan penilaian manual oleh guru
-                        </div>
-                      </div>
+
+                <div className="p-8 space-y-8">
+                  <div className="bg-elkpd-5/50 rounded-2xl p-6">
+                    <h3 className="text-xl font-bold text-elkpd-1 mb-4">A. Prosedur Percobaan</h3>
+                    <ol className="space-y-2">
+                      {section.prosedur.map((step, idx) => (
+                        <li key={idx} className="text-elkpd-1/80 flex gap-3">
+                          <span className="font-semibold min-w-6">{idx + 1}.</span>
+                          <span>{step}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+
+                  <div className="bg-blue-50 rounded-2xl p-6 border-2 border-blue-200">
+                    <h3 className="text-xl font-bold text-elkpd-1 mb-4">B. Data Hasil Percobaan</h3>
+                    <div>
+                      <p className="text-sm text-elkpd-1/70 mb-3">
+                        Download template Excel, isi data hasil percobaan, lalu upload screenshot/foto tabel yang sudah terisi:
+                      </p>
+                      <button
+                        onClick={() => downloadExcelTemplate(section.id as 'difusi' | 'osmosis')}
+                        className="px-6 py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-colors shadow-md hover:shadow-lg inline-flex items-center gap-2"
+                      >
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                        Download Template Excel
+                      </button>
                     </div>
-                  )}
+                  </div>
+
+                  <div className="bg-purple-50 rounded-2xl p-6 border-2 border-purple-200">
+                    <h3 className="text-xl font-bold text-elkpd-1 mb-4">C. Analisis Data dan Pembahasan</h3>
+                    <div className="space-y-6">
+                      {section.analisisPembahasan.map((question, idx) => (
+                        <div key={idx} className="bg-white rounded-xl p-4 border border-purple-200">
+                          <p className="font-medium text-elkpd-1 mb-3">{idx + 1}. {question}</p>
+                          
+                          {idx === 0 ? (
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Upload Gambar Tabel/Grafik:
+                              </label>
+                              <ImageUpload
+                                questionIdx={`${section.id}_analisis_${idx}`}
+                                onImagesChange={(questionIdx, images) => {
+                                  setUploadedImages(prev => ({
+                                    ...prev,
+                                    [section.id]: {
+                                      ...prev[section.id],
+                                      [`analisis_${idx}`]: images
+                                    }
+                                  }));
+                                  const imageText = Object.values(images).map(img => img.originalName).join(', ');
+                                  setSectionAnswer(section.id, 'analisisPembahasan', imageText, idx);
+                                }}
+                                disabled={submitted}
+                              />
+                            </div>
+                          ) : idx === 5 || idx === 6 ? (
+                            <div className="space-y-4">
+                              <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                              <p className="text-sm text-blue-800 mb-3 font-medium">📁 Upload Poster ke Google Drive:</p>
+                              <a
+                                href="https://drive.google.com/drive/folders/13Xi7hvh7H0Zea_tKtXC3Scm0UbdawAv4?usp=drive_link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-md hover:shadow-lg"
+                              >
+                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                                Buka Google Drive Poster
+                              </a>
+                              </div>
+                              
+                              <div className="p-4 bg-white border border-blue-300 rounded-lg">
+                                <label className="flex items-center gap-3 cursor-pointer group">
+                                  <input
+                                    type="checkbox"
+                                    checked={!!sectionAnswers[section.id].analisisPembahasan[idx]}
+                                    onChange={(e) => {
+                                      setSectionAnswer(section.id, 'analisisPembahasan', e.target.checked ? 'Sudah upload ke Google Drive' : '', idx);
+                                    }}
+                                    disabled={submitted}
+                                    className="w-5 h-5 text-elkpd-2 border-2 border-gray-300 rounded focus:ring-2 focus:ring-elkpd-2"
+                                  />
+                                  <span className="text-sm font-medium text-elkpd-1 group-hover:text-elkpd-2 transition-colors">
+                                    ✓ Saya sudah upload poster ke Google Drive
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          ) : (
+                            <TextEditor
+                              value={sectionAnswers[section.id].analisisPembahasan[idx] || ""}
+                              onChange={(content) => setSectionAnswer(section.id, 'analisisPembahasan', content, idx)}
+                              placeholder="Tulis jawaban Anda di sini..."
+                              height={120}
+                              disabled={submitted}
+                            />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-orange-50 rounded-2xl p-6 border-2 border-orange-200">
+                    <h3 className="text-xl font-bold text-elkpd-1 mb-4">D. Diskusi</h3>
+                    <div className="space-y-6">
+                      {section.diskusi.map((question, idx) => (
+                        <div key={idx} className="bg-white rounded-xl p-4 border border-orange-200">
+                          <p className="font-medium text-elkpd-1 mb-3">{idx + 1}. {question}</p>
+                          <TextEditor
+                            value={sectionAnswers[section.id].diskusi[idx] || ""}
+                            onChange={(content) => setSectionAnswer(section.id, 'diskusi', content, idx)}
+                            placeholder="Tulis jawaban Anda di sini..."
+                            height={120}
+                            disabled={submitted}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-green-50 rounded-2xl p-6 border-2 border-green-200">
+                    <h3 className="text-xl font-bold text-elkpd-1 mb-4">E. Kesimpulan</h3>
+                    <p className="text-sm text-gray-600 italic mb-3">
+                      *Karakteristik: kalimat singkat, tidak menjelaskan data, menjawab rumusan masalah.
+                    </p>
+                    <TextEditor
+                      value={sectionAnswers[section.id].kesimpulan}
+                      onChange={(content) => setSectionAnswer(section.id, 'kesimpulan', content)}
+                      placeholder="Tulis kesimpulan Anda di sini..."
+                      height={120}
+                      disabled={submitted}
+                    />
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Submit Button Section - Fixed at Bottom */}
           <div className="mt-12 bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg">
             <div className="text-center">
               {!submitted ? (
                 <div className="space-y-4">
                   <div className="text-lg text-elkpd-1/70">
-                    Anda telah menjawab <span className="font-bold text-elkpd-2">{answeredCount}</span> dari <span className="font-bold text-elkpd-2">{QUESTIONS.length}</span> soal
+                    Anda telah menjawab <span className="font-bold text-elkpd-2">{answeredCount}</span> dari <span className="font-bold text-elkpd-2">{totalQuestions}</span> pertanyaan
                   </div>
                   
                   <button
                     onClick={handleSubmit}
-                    disabled={answeredCount < QUESTIONS.length}
+                    disabled={answeredCount < totalQuestions}
                     className={`px-12 py-4 rounded-xl font-semibold transition-all duration-300 text-lg ${
-                      answeredCount < QUESTIONS.length 
+                      answeredCount < totalQuestions 
                         ? "bg-elkpd-3 text-elkpd-1/60 cursor-not-allowed" 
                         : "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white hover:shadow-xl transform hover:-translate-y-1"
                     }`}
                   >
-                    {answeredCount < QUESTIONS.length 
-                      ? `Jawab ${QUESTIONS.length - answeredCount} soal lagi` 
+                    {answeredCount < totalQuestions 
+                      ? `Jawab ${totalQuestions - answeredCount} pertanyaan lagi` 
                       : "📝 Selesai & Lihat Hasil"
                     }
                   </button>
                   
                   <div className="text-sm text-elkpd-1/50">
-                    Pastikan semua soal telah dijawab sebelum menyelesaikan quiz
+                    Pastikan semua pertanyaan telah dijawab sebelum menyelesaikan praktikum
                   </div>
                 </div>
               ) : (
                 <div className="flex items-center justify-center gap-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-elkpd-2">Quiz Selesai!</div>
+                    <div className="text-2xl font-bold text-elkpd-2">Praktikum Selesai!</div>
                     <div className="text-sm text-elkpd-1/70">Menunggu hasil final...</div>
                   </div>
                 </div>
