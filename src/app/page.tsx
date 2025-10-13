@@ -444,11 +444,8 @@ export default function Page() {
                   1
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-elkpd-1 mb-2 group-hover:text-elkpd-2 transition-colors duration-300">
-                    Analisis Mekanisme Transpor
-                  </h3>
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat menganalisis perbedaan mekanisme <span className="font-semibold text-elkpd-2">Transpor Aktif</span> dan <span className="font-semibold text-elkpd-2">Transpor Pasif</span>
+                    Peserta didik dapat menganalisis perbedaan mekanisme <span className="font-semibold text-elkpd-2">Transpor Aktif</span> dan <span className="font-semibold text-elkpd-2">Transpor Pasif</span>.
                   </p>
                 </div>
               </div>
@@ -461,11 +458,8 @@ export default function Page() {
                   2
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-elkpd-1 mb-2 group-hover:text-elkpd-2 transition-colors duration-300">
-                    Evaluasi Faktor-Faktor Transpor
-                  </h3>
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat mengevaluasi faktor-faktor yang memengaruhi transpor membran dalam berbagai kondisi (misal: <span className="font-semibold text-elkpd-2">suhu, konsentrasi, tekanan</span>)
+                    Peserta didik dapat mengevaluasi faktor-faktor yang memengaruhi transpor membran dalam berbagai kondisi (misal: <span className="font-semibold text-elkpd-2">suhu, konsentrasi, tekanan</span>).
                   </p>
                 </div>
               </div>
@@ -478,11 +472,8 @@ export default function Page() {
                   3
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-elkpd-1 mb-2 group-hover:text-elkpd-2 transition-colors duration-300">
-                    Kreasi Representasi Visual
-                  </h3>
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat menciptakan representasi visual (<span className="font-semibold text-elkpd-2">mind map/poster/model</span>) yang menjelaskan konsep transpor membran secara inovatif
+                    Peserta didik dapat menciptakan representasi visual (<span className="font-semibold text-elkpd-2">mind map/poster/model</span>) yang menjelaskan konsep transpor membran secara inovatif.
                   </p>
                 </div>
               </div>
@@ -495,11 +486,8 @@ export default function Page() {
                   4
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-elkpd-1 mb-2 group-hover:text-elkpd-2 transition-colors duration-300">
-                    Aplikasi Konsep dalam Fenomena Nyata
-                  </h3>
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat mengaitkan konsep transpor membran dengan fenomena nyata (misalnya <span className="font-semibold text-elkpd-2">kesehatan sel, bioteknologi, lingkungan</span>) untuk menyusun solusi kreatif
+                    Peserta didik dapat mengaitkan konsep transpor membran dengan fenomena nyata dari <span className="font-semibold text-elkpd-2">hasil percobaan yang telah dilakukan</span> dan menghasilkan solusi kreatif.
                   </p>
                 </div>
               </div>
