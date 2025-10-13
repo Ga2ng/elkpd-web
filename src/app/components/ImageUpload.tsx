@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 interface ImageUploadProps {
-  questionIdx: number;
-  onImagesChange: (questionIdx: number, images: {[key: string]: {preview: string, base64: string, originalName: string}}) => void;
+  questionIdx: number | string;
+  onImagesChange: (questionIdx: number | string, images: {[key: string]: {preview: string, base64: string, originalName: string}}) => void;
   disabled?: boolean;
 }
 
