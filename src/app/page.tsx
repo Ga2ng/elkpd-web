@@ -718,9 +718,7 @@ export default function Page() {
                 Bio Info
               </h3>
               <p className="text-elkpd-1/70 leading-relaxed">
-                Fitur yang menyajikan materi transpor membran secara umum untuk mendorong peserta didik 
-                agar bisa mereview dan mengingat kembali mengenai materi transpor membran sebelum 
-                mengerjakan kegiatan yang ada pada E-LKPD.
+                Bio Info merupakan fitur yang menyajikan materi transpor membran secara umum untuk mendorong peserta didik agar bisa mereview dan mengingat kembali mengenai materi transpor membran sebelum mereka mengerjakan kegiatan selanjutnya. <span className="text-elkpd-2 font-medium">(Berkesadaran & Fluency)</span>
               </p>
             </div>
 
@@ -737,8 +735,7 @@ export default function Page() {
                 Bio Mapping
               </h3>
               <p className="text-elkpd-1/70 leading-relaxed">
-                Fitur yang menampung hasil pemahaman peserta didik mengenai konsep transpor membran 
-                yang disajikan dalam bentuk Mind Mapping agar semua berjalan dengan selaras.
+                Bio Mapping merupakan fitur yang menampung hasil pemahaman peserta didik mengenai konsep transpor membran yang disajikan dalam bentuk Mind Mapping agar menyelaraskan konsep. <span className="text-elkpd-2 font-medium">(Bermakna & Fluency)</span>
               </p>
             </div>
 
@@ -755,8 +752,7 @@ export default function Page() {
                 Bio Task
               </h3>
               <p className="text-elkpd-1/70 leading-relaxed">
-                Fitur yang menyajikan suatu permasalahan nyata di sekitar kita untuk peserta didik 
-                agar bisa merumuskan suatu Rumusan Masalah dalam praktikum yang akan mereka lakukan.
+                Bio Task merupakan fitur yang menyajikan Artikel untuk peserta didik mengenai transpor membran dan peserta didik dapat memberikan contoh yang ada di kehidupan sehari-hari tetapi tidak sama. <span className="text-elkpd-2 font-medium">(Bermakna & Flexibility)</span>
               </p>
             </div>
 
@@ -773,8 +769,7 @@ export default function Page() {
                 Bio Experiment
               </h3>
               <p className="text-elkpd-1/70 leading-relaxed">
-                Fitur yang berupa aktivitas atau rancangan percobaan mengenai topik Transpor Aktif 
-                dan Transpor Pasif untuk mendapatkan suatu data hasil percobaan.
+                Bio Experiment merupakan fitur yang berupa aktivitas atau rancangan percobaan mengenai topik yang mereka dapatkan yaitu Transpor Pasif antara Difusi dan Osmosis untuk mendapatkan suatu data. <span className="text-elkpd-2 font-medium">(Menggembirakan, Elaboration & Fluency)</span>
               </p>
             </div>
 
@@ -791,9 +786,7 @@ export default function Page() {
                 Bio Communication
               </h3>
               <p className="text-elkpd-1/70 leading-relaxed">
-                Fitur yang menampung hasil/data yang sudah diperoleh peserta didik dalam Bio Experiment 
-                berupa Poster dan akan dipresentasikan oleh semua kelompok. Juga akan merefleksikan 
-                pembelajaran yang telah dilaksanakan.
+                Bio Communication merupakan fitur yang menampung hasil/data yang sudah diperoleh peserta didik dalam Bio Experiment yang berupa Poster dan nantinya akan dipresentasikan oleh semua kelompok. Juga akan merefleksikan pembelajaran yang telah dilaksanakan untuk melihat umpan balik peserta didik selama pembelajaran berlangsung. <span className="text-elkpd-2 font-medium">(Berkesadaran & Menggembirakan, Originality)</span>
               </p>
             </div>
 
@@ -810,8 +803,7 @@ export default function Page() {
                 Bio Quiz
               </h3>
               <p className="text-elkpd-1/70 leading-relaxed">
-                Fitur yang berupa soal-soal yang akan dikerjakan oleh peserta didik untuk mengecek 
-                tingkat pemahaman sementara peserta didik mengenai Transpor Membran.
+                Bio Quiz merupakan fitur yang berupa soal-soal yang akan dikerjakan oleh peserta didik untuk mengecek tingkat kefahaman sementara peserta didik mengenai Transpor Membran. <span className="text-elkpd-2 font-medium">(Bermakna, Flexibility & Elaboration)</span>
               </p>
             </div>
           </div>
