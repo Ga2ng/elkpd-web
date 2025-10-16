@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { PDFDownloadLink, Document, Page, Text, View, StyleSheet, Image } from "@react-pdf/renderer";
-import PhETEmbed from "../components/PhETEmbed";
+import YouTubeEmbed from "../components/YouTubeEmbed";
 import TextEditor from "../components/TextEditor";
 import ImageUpload from "../components/ImageUpload";
 
@@ -23,51 +23,33 @@ type StudentData = {
 const QUESTIONS: Question[] = [
   { 
     id: 1, 
-    text: "Apa yang dimaksud dengan transpor aktif? Jelaskan secara singkat!", 
+    text: "Pompa Na+/K+ membuang 3 Na+ dan memasukkan 2 K+. Jika kalian bisa mengubahnya, rasio pemompaan baru seperti apa yang akan kalian rancang untuk sebuah sel otot yang bekerja sangat keras (butuh energi cepat)? Jelaskan mengapa rasio baru kalian akan lebih efisien dalam tugas khusus ini!", 
     type: "essay", 
-    correctAnswer: "Transpor aktif adalah perpindahan zat dari konsentrasi rendah ke konsentrasi tinggi yang memerlukan energi dalam bentuk ATP." 
+    correctAnswer: "Rasio yang lebih efisien untuk sel otot yang bekerja keras bisa dirancang dengan pemompaan yang lebih cepat atau rasio yang disesuaikan dengan kebutuhan energi tinggi, misalnya meningkatkan jumlah K+ yang masuk untuk mempercepat pemulihan potensial membran dan kontraksi otot yang lebih cepat." 
   },
   { 
     id: 2, 
-    text: "Sebutkan 3 contoh transpor aktif yang terjadi di dalam sel!", 
+    text: "Sel mendadak kehilangan semua cadangan ATP-nya (sumber energi pompa). Prediksikan dan jelaskan apa yang akan terjadi pada volume air di dalam sel setelah beberapa waktu, mengingat Pompa Na+/K+ tidak lagi berfungsi. Apa hubungan antara kegagalan pompa ion ini dengan pergerakan air (Osmosis)?", 
     type: "essay", 
-    correctAnswer: "Pompa natrium-kalium, pompa proton, dan transpor glukosa melawan gradien konsentrasi." 
+    correctAnswer: "Tanpa ATP, Pompa Na+/K+ berhenti bekerja, menyebabkan akumulasi Na+ di dalam sel. Konsentrasi ion yang tinggi di dalam sel menarik air masuk melalui osmosis, menyebabkan sel membengkak dan berpotensi lisis (pecah). Kegagalan pompa ion mengganggu keseimbangan osmotik sel." 
   },
   { 
     id: 3, 
-    text: "Mengapa transpor aktif memerlukan energi? Jelaskan alasannya!", 
+    text: "Bayangkan kalian adalah seorang insinyur genetika. Kalian diminta membuat pompa ion baru yang lebih hemat energi daripada Pompa Na+/K+ klasik. Rancanglah modifikasi yang masuk akal (misalnya, mengubah jumlah ion yang dipompa atau jenis energi yang digunakan). Jelaskan bagaimana modifikasi kalian akan menghemat energi tanpa mengorbankan fungsi sel!", 
     type: "essay", 
-    correctAnswer: "Transpor aktif memerlukan energi karena zat dipindahkan melawan gradien konsentrasi (dari konsentrasi rendah ke tinggi), yang berlawanan dengan proses alami difusi." 
+    correctAnswer: "Modifikasi yang mungkin adalah merancang pompa yang menggunakan gradien elektrokimia yang sudah ada (transpor sekunder) alih-alih langsung menggunakan ATP, atau mengoptimalkan rasio pemompaan menjadi 2 Na+ : 2 K+ untuk mengurangi penggunaan energi sambil tetap mempertahankan keseimbangan ion dasar." 
   },
   { 
     id: 4, 
-    text: "Apa fungsi pompa natrium-kalium dalam sel?", 
+    text: "Pompa Na+/K+ bekerja seperti \"pompa air\" di rumah, tetapi ia memompa dua jenis molekul berlawanan. Rancang dan buatlah analogi sederhana (misalnya, sistem di pabrik atau sekolah) yang paling baik menggambarkan cara kerja pompa ion ini (membutuhkan energi untuk memindahkan dua zat berlawanan arah). Jelaskan elemen apa yang mewakili ATP dan ion!", 
     type: "essay", 
-    correctAnswer: "Pompa natrium-kalium berfungsi untuk mempertahankan potensial membran sel, mengatur volume sel, dan memungkinkan transpor zat lain secara sekunder." 
+    correctAnswer: "Analogi: Seperti sistem pintu putar di stasiun kereta yang menggunakan listrik (ATP) untuk membiarkan penumpang masuk (K+) di satu sisi sambil mengeluarkan penumpang (Na+) di sisi lain secara bersamaan. Listrik adalah ATP, penumpang yang masuk adalah K+, dan penumpang yang keluar adalah Na+. Sistem ini membutuhkan energi untuk bekerja melawan arah alami." 
   },
   { 
     id: 5, 
-    text: "Bagaimana cara kerja pompa proton dalam kloroplas?", 
+    text: "Jika Kalian ingin menciptakan obat baru untuk melemahkan (bukan menghentikan) kerja Pompa Na+/K+ di ginjal, rancang dan usulkan bagaimana obat itu harus bekerja. Apakah obat itu harus mengganggu tempat ikatan Na+ atau tempat ikatan ATP? Berikan alasan yang kuat untuk pilihan Kalian!", 
     type: "essay", 
-    correctAnswer: "Pompa proton di kloroplas memompa proton dari stroma ke lumen tilakoid, menciptakan gradien proton yang digunakan untuk menghasilkan ATP dalam proses fotosintesis." 
-  },
-  { 
-    id: 6, 
-    text: "Apa perbedaan utama antara transpor aktif dan difusi?", 
-    type: "essay", 
-    correctAnswer: "Perbedaan utama: transpor aktif memerlukan energi dan memindahkan zat melawan gradien konsentrasi, sedangkan difusi tidak memerlukan energi dan mengikuti gradien konsentrasi." 
-  },
-  { 
-    id: 7, 
-    text: "Sebutkan 2 jenis transpor aktif berdasarkan sumber energinya!", 
-    type: "essay", 
-    correctAnswer: "Transpor aktif primer (menggunakan ATP langsung) dan transpor aktif sekunder (menggunakan energi dari gradien ion yang dibuat oleh transpor primer)." 
-  },
-  { 
-    id: 8, 
-    text: "Mengapa sel memerlukan transpor aktif? Berikan contohnya!", 
-    type: "essay", 
-    correctAnswer: "Sel memerlukan transpor aktif untuk mempertahankan homeostasis, menyerap nutrisi penting, dan mengeluarkan limbah. Contoh: penyerapan glukosa di usus dan pengeluaran natrium di ginjal." 
+    correctAnswer: "Obat sebaiknya mengganggu tempat ikatan ATP secara parsial. Alasan: Mengganggu ATP lebih aman karena dapat dikontrol dosisnya untuk hanya melemahkan (bukan menghentikan total) aktivitas pompa, berguna untuk kondisi seperti hipertensi di mana kita ingin mengurangi reabsorpsi Na+ di ginjal. Mengganggu ikatan Na+ bisa terlalu spesifik dan berisiko mengganggu fungsi vital sel." 
   }
 ];
 
@@ -323,7 +305,7 @@ export default function TransporAktifPage() {
             
             <h1 className="text-3xl font-bold text-elkpd-1 mb-4">Praktikum Transpor Aktif</h1>
             <p className="text-lg text-elkpd-1/70 mb-8 leading-relaxed">
-              Praktikkan pemahaman Anda tentang transpor aktif dengan 8 soal isian. Jawab semua pertanyaan dengan lengkap dan jelas.
+              Praktikkan pemahaman Anda tentang transpor aktif dan Pompa Na+/K+ dengan 5 soal isian. Jawab semua pertanyaan dengan lengkap dan jelas.
             </p>
             
             <div className="bg-elkpd-5 rounded-2xl p-6 mb-8">
@@ -408,7 +390,7 @@ export default function TransporAktifPage() {
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-elkpd-2 rounded-full"></span>
-                  <span className="text-elkpd-1/70">8 Soal</span>
+                  <span className="text-elkpd-1/70">5 Soal</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-elkpd-2 rounded-full"></span>
@@ -648,27 +630,30 @@ export default function TransporAktifPage() {
         </div>
       </section>
 
-      {/* PhET Simulation Section */}
+      {/* Video Pembelajaran Section */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-elkpd-1 mb-4">
-              Simulasi Interaktif PhET
+              Video Pembelajaran Transpor Aktif
             </h2>
             <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
-              Eksplorasi konsep transpor membran melalui simulasi interaktif dari PhET Colorado. 
-              Gunakan simulasi ini untuk memahami mekanisme transpor aktif sebelum mengerjakan praktikum.
+              Tonton video pembelajaran berikut untuk memahami konsep transpor aktif dan pompa Na+/K+ 
+              sebelum mengerjakan soal-soal praktikum di bawah.
             </p>
           </div>
           
-          <div className="bg-white rounded-2xl shadow-2xl border border-elkpd-3/20 overflow-hidden">
-            <PhETEmbed />
+          <div className="max-w-5xl mx-auto">
+            <YouTubeEmbed 
+              videoId="7NY6XdPBhxo" 
+              title="Video Pembelajaran Transpor Aktif - Pompa Na+/K+"
+            />
           </div>
           
           <div className="mt-6 text-center">
             <p className="text-sm text-elkpd-1/60">
-              💡 <strong>Tips:</strong> Interaksi dengan simulasi di atas untuk memahami konsep transpor membran, 
-              kemudian lanjutkan ke praktikum di bawah untuk menguji pemahaman Anda.
+              💡 <strong>Tips:</strong> Tonton video di atas untuk memahami konsep pompa Na+/K+ dan transpor aktif, 
+              kemudian lanjutkan ke soal-soal praktikum di bawah untuk menguji pemahaman Anda.
             </p>
           </div>
         </div>
