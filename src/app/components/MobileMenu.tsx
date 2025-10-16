@@ -1,10 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function MobileMenu() {
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+
+  const isActive = (href: string) => {
+    if (href === "/" && pathname === "/") return true;
+    if (href !== "/" && pathname.startsWith(href)) return true;
+    return false;
+  };
 
   const toggleMobileMenu = () => {
     if (isAnimating) return;
@@ -88,7 +96,11 @@ export default function MobileMenu() {
             <nav className="flex flex-col space-y-2">
               <a 
                 href="/materi" 
-                className="px-4 py-3 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-all duration-200 font-medium border border-transparent hover:border-elkpd-3/50 flex items-center gap-3 group"
+                className={`px-4 py-3 rounded-lg transition-all duration-200 font-medium border flex items-center gap-3 group ${
+                  isActive("/materi")
+                    ? "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white border-transparent shadow-md"
+                    : "text-elkpd-1 hover:bg-elkpd-4/50 border-transparent hover:border-elkpd-3/50"
+                }`}
                 onClick={closeMobileMenu}
               >
                 <span className="text-lg group-hover:scale-110 transition-transform duration-200">📚</span>
@@ -96,31 +108,23 @@ export default function MobileMenu() {
               </a>
               <a 
                 href="/bio-mapping" 
-                className="px-4 py-3 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-all duration-200 font-medium border border-transparent hover:border-elkpd-3/50 flex items-center gap-3 group"
+                className={`px-4 py-3 rounded-lg transition-all duration-200 font-medium border flex items-center gap-3 group ${
+                  isActive("/bio-mapping")
+                    ? "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white border-transparent shadow-md"
+                    : "text-elkpd-1 hover:bg-elkpd-4/50 border-transparent hover:border-elkpd-3/50"
+                }`}
                 onClick={closeMobileMenu}
               >
                 <span className="text-lg group-hover:scale-110 transition-transform duration-200">🗺️</span>
                 <span>Bio Mapping</span>
               </a>
-              <a 
-                href="/pretest" 
-                className="px-4 py-3 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-all duration-200 font-medium border border-transparent hover:border-elkpd-3/50 flex items-center gap-3 group"
-                onClick={closeMobileMenu}
-              >
-                <span className="text-lg group-hover:scale-110 transition-transform duration-200">🎯</span>
-                <span>Pretest</span>
-              </a>
-              <a
-                href="/post-test"
-                className="px-4 py-3 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-all duration-200 font-medium border border-transparent hover:border-elkpd-3/50 flex items-center gap-3 group"
-                onClick={closeMobileMenu}
-              >
-                <span className="text-lg group-hover:scale-110 transition-transform duration-200">✍️</span>
-                <span>Post Test</span>
-              </a>
               <a
                 href="/bio-task"
-                className="px-4 py-3 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-all duration-200 font-medium border border-transparent hover:border-elkpd-3/50 flex items-center gap-3 group"
+                className={`px-4 py-3 rounded-lg transition-all duration-200 font-medium border flex items-center gap-3 group ${
+                  isActive("/bio-task")
+                    ? "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white border-transparent shadow-md"
+                    : "text-elkpd-1 hover:bg-elkpd-4/50 border-transparent hover:border-elkpd-3/50"
+                }`}
                 onClick={closeMobileMenu}
               >
                 <span className="text-lg group-hover:scale-110 transition-transform duration-200">📝</span>
@@ -128,11 +132,51 @@ export default function MobileMenu() {
               </a>
               <a
                 href="/bio-communication"
-                className="px-4 py-3 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-all duration-200 font-medium border border-transparent hover:border-elkpd-3/50 flex items-center gap-3 group"
+                className={`px-4 py-3 rounded-lg transition-all duration-200 font-medium border flex items-center gap-3 group ${
+                  isActive("/bio-communication")
+                    ? "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white border-transparent shadow-md"
+                    : "text-elkpd-1 hover:bg-elkpd-4/50 border-transparent hover:border-elkpd-3/50"
+                }`}
                 onClick={closeMobileMenu}
               >
                 <span className="text-lg group-hover:scale-110 transition-transform duration-200">💬</span>
                 <span>Bio Communication</span>
+              </a>
+              <a
+                href="/bio-quiz"
+                className={`px-4 py-3 rounded-lg transition-all duration-200 font-medium border flex items-center gap-3 group ${
+                  isActive("/bio-quiz")
+                    ? "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white border-transparent shadow-md"
+                    : "text-elkpd-1 hover:bg-elkpd-4/50 border-transparent hover:border-elkpd-3/50"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                <span className="text-lg group-hover:scale-110 transition-transform duration-200">✅</span>
+                <span>Bio Quiz</span>
+              </a>
+              <a 
+                href="/pretest" 
+                className={`px-4 py-3 rounded-lg transition-all duration-200 font-medium border flex items-center gap-3 group ${
+                  isActive("/pretest")
+                    ? "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white border-transparent shadow-md"
+                    : "text-elkpd-1 hover:bg-elkpd-4/50 border-transparent hover:border-elkpd-3/50"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                <span className="text-lg group-hover:scale-110 transition-transform duration-200">🎯</span>
+                <span>Pretest</span>
+              </a>
+              <a
+                href="/post-test"
+                className={`px-4 py-3 rounded-lg transition-all duration-200 font-medium border flex items-center gap-3 group ${
+                  isActive("/post-test")
+                    ? "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white border-transparent shadow-md"
+                    : "text-elkpd-1 hover:bg-elkpd-4/50 border-transparent hover:border-elkpd-3/50"
+                }`}
+                onClick={closeMobileMenu}
+              >
+                <span className="text-lg group-hover:scale-110 transition-transform duration-200">✍️</span>
+                <span>Post Test</span>
               </a>
               {/* <a
                 href="/#tujuan-pembelajaran"

@@ -694,7 +694,7 @@ export default function Page() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <Link href="/materi" className="block bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
                 <img 
                   src="/images/Bio Info.png" 
@@ -709,9 +709,9 @@ export default function Page() {
               <p className="text-elkpd-1/70 leading-relaxed">
                 Bio Info merupakan fitur yang menyajikan materi transpor membran secara umum untuk mendorong peserta didik agar bisa mereview dan mengingat kembali mengenai materi transpor membran sebelum mereka mengerjakan kegiatan selanjutnya. <span className="text-elkpd-2 font-medium">(Berkesadaran & Fluency)</span>
               </p>
-            </div>
+            </Link>
 
-            <div className="bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <Link href="/bio-mapping" className="block bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
                 <img 
                   src="/images/Bio Mapping.png" 
@@ -726,9 +726,9 @@ export default function Page() {
               <p className="text-elkpd-1/70 leading-relaxed">
                 Bio Mapping merupakan fitur yang menampung hasil pemahaman peserta didik mengenai konsep transpor membran yang disajikan dalam bentuk Mind Mapping agar menyelaraskan konsep. <span className="text-elkpd-2 font-medium">(Bermakna & Fluency)</span>
               </p>
-            </div>
+            </Link>
 
-            <div className="bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <Link href="/bio-task" className="block bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
                 <img 
                   src="/images/Bio Task.png" 
@@ -743,10 +743,10 @@ export default function Page() {
               <p className="text-elkpd-1/70 leading-relaxed">
                 Bio Task merupakan fitur yang menyajikan Artikel untuk peserta didik mengenai transpor membran dan peserta didik dapat memberikan contoh yang ada di kehidupan sehari-hari tetapi tidak sama. <span className="text-elkpd-2 font-medium">(Bermakna & Flexibility)</span>
               </p>
-            </div>
+            </Link>
 
-            <div className="bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
-              <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
+            <button type="button" onClick={() => setShowExperimentModal(true)} className="block w-full bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group text-left">
+              <div className="mt-[-125px] mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
                 <img 
                   src="/images/Bio Experiment.png" 
                   alt="Bio Experiment" 
@@ -760,9 +760,9 @@ export default function Page() {
               <p className="text-elkpd-1/70 leading-relaxed">
                 Bio Experiment merupakan fitur yang berupa aktivitas atau rancangan percobaan mengenai topik yang mereka dapatkan yaitu Transpor Pasif antara Difusi dan Osmosis untuk mendapatkan suatu data. <span className="text-elkpd-2 font-medium">(Menggembirakan, Elaboration & Fluency)</span>
               </p>
-            </div>
+            </button>
 
-            <div className="bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <Link href="/bio-communication" className="block bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
                 <img 
                   src="/images/Bio Communication.png" 
@@ -777,9 +777,9 @@ export default function Page() {
               <p className="text-elkpd-1/70 leading-relaxed">
                 Bio Communication merupakan fitur yang menampung hasil/data yang sudah diperoleh peserta didik dalam Bio Experiment yang berupa Poster dan nantinya akan dipresentasikan oleh semua kelompok. Juga akan merefleksikan pembelajaran yang telah dilaksanakan untuk melihat umpan balik peserta didik selama pembelajaran berlangsung. <span className="text-elkpd-2 font-medium">(Berkesadaran & Menggembirakan, Originality)</span>
               </p>
-            </div>
+            </Link>
 
-            <div className="bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <Link href="/bio-quiz" className="block bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
                 <img 
                   src="/images/Bio Quiz.png" 
@@ -794,7 +794,7 @@ export default function Page() {
               <p className="text-elkpd-1/70 leading-relaxed">
                 Bio Quiz merupakan fitur yang berupa soal-soal yang akan dikerjakan oleh peserta didik untuk mengecek tingkat kefahaman sementara peserta didik mengenai Transpor Membran. <span className="text-elkpd-2 font-medium">(Bermakna, Flexibility & Elaboration)</span>
               </p>
-            </div>
+            </Link>
           </div>
 
           <div className="mt-16 text-center">
