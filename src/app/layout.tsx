@@ -52,6 +52,9 @@ export default function RootLayout({
                 <a href="/post-test" className="px-4 py-2 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-colors duration-200 font-medium">
                   Post Test
                 </a>
+                <a href="/bio-task" className="px-4 py-2 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-colors duration-200 font-medium">
+                  Bio Task
+                </a>
                 <a href="/#tujuan-pembelajaran" className="px-4 py-2 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-colors duration-200 font-medium">
                   Tujuan
                 </a>

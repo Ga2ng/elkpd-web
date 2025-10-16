@@ -119,6 +119,14 @@ export default function MobileMenu() {
                 <span>Post Test</span>
               </a>
               <a
+                href="/bio-task"
+                className="px-4 py-3 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-all duration-200 font-medium border border-transparent hover:border-elkpd-3/50 flex items-center gap-3 group"
+                onClick={closeMobileMenu}
+              >
+                <span className="text-lg group-hover:scale-110 transition-transform duration-200">📝</span>
+                <span>Bio Task</span>
+              </a>
+              <a
                 href="/#tujuan-pembelajaran"
                 className="px-4 py-3 rounded-lg text-elkpd-1 hover:bg-elkpd-4/50 transition-all duration-200 font-medium border border-transparent hover:border-elkpd-3/50 flex items-center gap-3 group"
                 onClick={closeMobileMenu}
