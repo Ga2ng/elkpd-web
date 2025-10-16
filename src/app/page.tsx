@@ -1,8 +1,11 @@
 'use client'
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Page() {
+  const [showExperimentModal, setShowExperimentModal] = useState(false);
+
   return (
     <>
       {/* Modern Document Cover Style Header */}
@@ -131,36 +134,22 @@ export default function Page() {
                   </h2>
                 </div>
 
-                {/* Action Buttons - Modern Style */}
+                {/* Action Button - Bio Experiment */}
                 <div className="space-y-4">
-                  <Link 
-                    href="/transpor-aktif" 
+                  <button
+                    onClick={() => setShowExperimentModal(true)}
                     className="group block w-full lg:w-auto"
                   >
                     <div className="relative px-8 py-4 bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white font-semibold rounded-2xl shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1">
                       <div className="absolute inset-0 bg-white/20 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                       <div className="relative flex items-center justify-center gap-3">
-                        <span className="text-lg">Transpor Aktif</span>
+                        <span className="text-lg">🔬 Bio Experiment</span>
                         <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>
                       </div>
                     </div>
-                  </Link>
-                  
-                  <Link 
-                    href="/transpor-pasif" 
-                    className="group block w-full lg:w-auto"
-                  >
-                    <div className="px-8 py-4 bg-white/80 backdrop-blur-sm text-elkpd-1 font-semibold rounded-2xl border-2 border-elkpd-3/30 hover:border-elkpd-3 hover:bg-white transition-all duration-300 group-hover:shadow-lg">
-                      <div className="flex items-center justify-center gap-3">
-                        <span className="text-lg">Transpor Pasif</span>
-                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
@@ -825,6 +814,121 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* Bio Experiment Modal */}
+      {showExperimentModal && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300"
+            onClick={() => setShowExperimentModal(false)}
+          ></div>
+          
+          {/* Modal */}
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <div 
+              className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden transform transition-all duration-300 scale-100"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white p-8 relative">
+                <button
+                  onClick={() => setShowExperimentModal(false)}
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors duration-200"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-bold">Bio Experiment</h2>
+                    <p className="text-white/90 text-lg">Pilih topik praktikum yang ingin Anda pelajari</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Modal Body */}
+              <div className="p-8">
+                <p className="text-center text-elkpd-1/70 mb-8 text-lg">
+                  Pilih salah satu topik transpor membran untuk memulai praktikum virtual
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Transpor Aktif */}
+                  <Link 
+                    href="/transpor-aktif"
+                    onClick={() => setShowExperimentModal(false)}
+                    className="group"
+                  >
+                    <div className="relative h-full p-6 bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-2xl hover:border-blue-400 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                      <div className="flex flex-col items-center text-center">
+                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                        </div>
+                        <h3 className="text-2xl font-bold text-elkpd-1 mb-2">Transpor Aktif</h3>
+                        <p className="text-sm text-elkpd-1/70 mb-4">
+                          Pelajari mekanisme pompa Na+/K+ dan transpor yang memerlukan energi ATP
+                        </p>
+                        <div className="flex items-center gap-2 text-blue-600 font-medium group-hover:gap-3 transition-all duration-300">
+                          <span>Mulai Praktikum</span>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+
+                  {/* Transpor Pasif */}
+                  <Link 
+                    href="/transpor-pasif"
+                    onClick={() => setShowExperimentModal(false)}
+                    className="group"
+                  >
+                    <div className="relative h-full p-6 bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl hover:border-green-400 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                      <div className="flex flex-col items-center text-center">
+                        <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                          </svg>
+                        </div>
+                        <h3 className="text-2xl font-bold text-elkpd-1 mb-2">Transpor Pasif</h3>
+                        <p className="text-sm text-elkpd-1/70 mb-4">
+                          Pelajari difusi dan osmosis tanpa menggunakan energi sel
+                        </p>
+                        <div className="flex items-center gap-2 text-green-600 font-medium group-hover:gap-3 transition-all duration-300">
+                          <span>Mulai Praktikum</span>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+
+                <div className="mt-6 text-center">
+                  <button
+                    onClick={() => setShowExperimentModal(false)}
+                    className="text-elkpd-1/60 hover:text-elkpd-1 text-sm font-medium transition-colors duration-200"
+                  >
+                    Tutup
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }
