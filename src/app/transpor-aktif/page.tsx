@@ -2,16 +2,14 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { PDFDownloadLink, Document, Page, Text, View, StyleSheet, Image } from "@react-pdf/renderer";
+import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 import YouTubeEmbed from "../components/YouTubeEmbed";
 import TextEditor from "../components/TextEditor";
-import ImageUpload from "../components/ImageUpload";
 
 type Question = {
   id: number;
   text: string;
   type: "essay";
-  correctAnswer: string;
 };
 
 type StudentData = {
@@ -24,32 +22,27 @@ const QUESTIONS: Question[] = [
   { 
     id: 1, 
     text: "Pompa Na+/K+ membuang 3 Na+ dan memasukkan 2 K+. Jika kalian bisa mengubahnya, rasio pemompaan baru seperti apa yang akan kalian rancang untuk sebuah sel otot yang bekerja sangat keras (butuh energi cepat)? Jelaskan mengapa rasio baru kalian akan lebih efisien dalam tugas khusus ini!", 
-    type: "essay", 
-    correctAnswer: "Rasio yang lebih efisien untuk sel otot yang bekerja keras bisa dirancang dengan pemompaan yang lebih cepat atau rasio yang disesuaikan dengan kebutuhan energi tinggi, misalnya meningkatkan jumlah K+ yang masuk untuk mempercepat pemulihan potensial membran dan kontraksi otot yang lebih cepat." 
+    type: "essay"
   },
   { 
     id: 2, 
-    text: "Sel mendadak kehilangan semua cadangan ATP-nya (sumber energi pompa). Prediksikan dan jelaskan apa yang akan terjadi pada volume air di dalam sel setelah beberapa waktu, mengingat Pompa Na+/K+ tidak lagi berfungsi. Apa hubungan antara kegagalan pompa ion ini dengan pergerakan air (Osmosis)?", 
-    type: "essay", 
-    correctAnswer: "Tanpa ATP, Pompa Na+/K+ berhenti bekerja, menyebabkan akumulasi Na+ di dalam sel. Konsentrasi ion yang tinggi di dalam sel menarik air masuk melalui osmosis, menyebabkan sel membengkak dan berpotensi lisis (pecah). Kegagalan pompa ion mengganggu keseimbangan osmotik sel." 
+    text: "Sel mendadak kehilangan semua cadangan ATP-nya (sumber energi pompa). Prediksikan dan jelaskan apa yang akan terjadi pada volume air di dalam sel setelum beberapa waktu, mengingat Pompa Na+/K+ tidak lagi berfungsi. Apa hubungan antara kegagalan pompa ion ini dengan pergerakan air (Osmosis)?", 
+    type: "essay"
   },
   { 
     id: 3, 
     text: "Bayangkan kalian adalah seorang insinyur genetika. Kalian diminta membuat pompa ion baru yang lebih hemat energi daripada Pompa Na+/K+ klasik. Rancanglah modifikasi yang masuk akal (misalnya, mengubah jumlah ion yang dipompa atau jenis energi yang digunakan). Jelaskan bagaimana modifikasi kalian akan menghemat energi tanpa mengorbankan fungsi sel!", 
-    type: "essay", 
-    correctAnswer: "Modifikasi yang mungkin adalah merancang pompa yang menggunakan gradien elektrokimia yang sudah ada (transpor sekunder) alih-alih langsung menggunakan ATP, atau mengoptimalkan rasio pemompaan menjadi 2 Na+ : 2 K+ untuk mengurangi penggunaan energi sambil tetap mempertahankan keseimbangan ion dasar." 
+    type: "essay"
   },
   { 
     id: 4, 
     text: "Pompa Na+/K+ bekerja seperti \"pompa air\" di rumah, tetapi ia memompa dua jenis molekul berlawanan. Rancang dan buatlah analogi sederhana (misalnya, sistem di pabrik atau sekolah) yang paling baik menggambarkan cara kerja pompa ion ini (membutuhkan energi untuk memindahkan dua zat berlawanan arah). Jelaskan elemen apa yang mewakili ATP dan ion!", 
-    type: "essay", 
-    correctAnswer: "Analogi: Seperti sistem pintu putar di stasiun kereta yang menggunakan listrik (ATP) untuk membiarkan penumpang masuk (K+) di satu sisi sambil mengeluarkan penumpang (Na+) di sisi lain secara bersamaan. Listrik adalah ATP, penumpang yang masuk adalah K+, dan penumpang yang keluar adalah Na+. Sistem ini membutuhkan energi untuk bekerja melawan arah alami." 
+    type: "essay"
   },
   { 
     id: 5, 
     text: "Jika Kalian ingin menciptakan obat baru untuk melemahkan (bukan menghentikan) kerja Pompa Na+/K+ di ginjal, rancang dan usulkan bagaimana obat itu harus bekerja. Apakah obat itu harus mengganggu tempat ikatan Na+ atau tempat ikatan ATP? Berikan alasan yang kuat untuk pilihan Kalian!", 
-    type: "essay", 
-    correctAnswer: "Obat sebaiknya mengganggu tempat ikatan ATP secara parsial. Alasan: Mengganggu ATP lebih aman karena dapat dikontrol dosisnya untuk hanya melemahkan (bukan menghentikan total) aktivitas pompa, berguna untuk kondisi seperti hipertensi di mana kita ingin mengurangi reabsorpsi Na+ di ginjal. Mengganggu ikatan Na+ bisa terlalu spesifik dan berisiko mengganggu fungsi vital sel." 
+    type: "essay"
   }
 ];
 
@@ -134,11 +127,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const TestPDF = ({ studentData, selectedAnswers, questions, uploadedImages }: {
+const TestPDF = ({ studentData, selectedAnswers, questions }: {
   studentData: StudentData;
   selectedAnswers: string[];
   questions: Question[];
-  uploadedImages: {[questionIdx: number]: {[key: string]: {preview: string, base64: string, originalName: string}}};
 }) => (
   <Document>
     <Page size="A4" style={styles.page}>
@@ -176,34 +168,8 @@ const TestPDF = ({ studentData, selectedAnswers, questions, uploadedImages }: {
           return (
             <View key={idx} style={styles.questionItem}>
               <Text style={styles.questionText}>{q.id}. {q.text}</Text>
-              <Text style={styles.answerText}>Jawaban Teks: {answer || "Tidak dijawab"}</Text>
-              
-              {/* Display uploaded images for this question in PDF */}
-              {uploadedImages[idx] && Object.keys(uploadedImages[idx]).length > 0 && (
-                <View style={{ marginVertical: 8 }}>
-                  <Text style={{ fontSize: 10, fontWeight: 'bold', marginBottom: 4 }}>Gambar yang Di-upload:</Text>
-                  {Object.entries(uploadedImages[idx]).map(([filename, imageData], imgIdx) => (
-                    <View key={imgIdx} style={{ marginVertical: 4, alignItems: 'center' }}>
-                      <Image 
-                        src={imageData.base64} 
-                        style={{ 
-                          width: 200, 
-                          height: 150, 
-                          objectFit: 'contain',
-                          border: '1px solid #e2e8f0',
-                          borderRadius: 4
-                        }} 
-                      />
-                      <Text style={{ fontSize: 10, color: '#666', marginTop: 4 }}>
-                        {imageData.originalName}
-                      </Text>
-                    </View>
-                  ))}
-                </View>
-              )}
-              
-              <Text style={styles.answerText}>Jawaban Benar: {q.correctAnswer}</Text>
-              <Text style={styles.essayAnswer}>*Soal isian memerlukan penilaian manual oleh guru</Text>
+              <Text style={styles.answerText}>Jawaban: {answer || "Tidak dijawab"}</Text>
+              <Text style={styles.essayAnswer}>*Soal essay memerlukan penilaian manual oleh guru</Text>
             </View>
           );
         })}
@@ -221,7 +187,6 @@ export default function TransporAktifPage() {
   const [submitted, setSubmitted] = useState(false);
   const [showFinalResult, setShowFinalResult] = useState(false);
   const [showStartModal, setShowStartModal] = useState(true);
-  const [uploadedImages, setUploadedImages] = useState<{[questionIdx: number]: {[key: string]: {preview: string, base64: string, originalName: string}}}>({});
   const [studentData, setStudentData] = useState<StudentData>({
     namaKelompok: "",
     kelas: "",
@@ -496,35 +461,13 @@ export default function TransporAktifPage() {
                       {q.id}. {q.text.substring(0, 50)}...
                     </div>
                     <div className="space-y-1 text-xs">
-            <div className="mb-2">
-              <span className="font-medium">Jawaban Teks:</span>
-              <div className="mt-1 p-2 bg-white rounded border text-xs">
-                {answer || "Tidak dijawab"}
-              </div>
-            </div>
-            
-            {/* Display uploaded images for this question */}
-            {uploadedImages[idx] && Object.keys(uploadedImages[idx]).length > 0 && (
-              <div className="mb-2">
-                <span className="font-medium">Gambar yang Di-upload:</span>
-                <div className="mt-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                  {Object.entries(uploadedImages[idx]).map(([filename, imageData]) => (
-                    <div key={filename} className="relative">
-                      <img
-                        src={imageData.preview}
-                        alt={imageData.originalName}
-                        className="w-full h-20 object-cover rounded border border-gray-300"
-                      />
-                      <div className="text-xs text-gray-500 mt-1 truncate" title={imageData.originalName}>
-                        {imageData.originalName}
+                      <div>
+                        <span className="font-medium">Jawaban:</span>
+                        <div className="mt-1 p-2 bg-white rounded border text-xs">
+                          {answer || "Tidak dijawab"}
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-                      <div>Jawaban Benar: <span className="font-medium text-blue-600">{q.correctAnswer}</span></div>
-                      <div className="text-blue-600 font-bold">📝 Soal Isian dengan Rich Text</div>
+                      <div className="text-blue-600 font-bold">📝 Soal Essay - Penilaian Manual</div>
                     </div>
                   </div>
                 );
@@ -539,7 +482,6 @@ export default function TransporAktifPage() {
                   studentData={studentData}
                   selectedAnswers={selectedAnswers}
                   questions={QUESTIONS}
-                  uploadedImages={uploadedImages}
                 />
               }
               fileName={`PraktikumTransporAktif_${studentData.namaKelompok.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.pdf`}
@@ -677,10 +619,10 @@ export default function TransporAktifPage() {
                   </div>
                 </div>
                 
-                <div className="ml-12 space-y-4">
+                <div className="ml-12">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Jawaban Teks:
+                      Jawaban:
                     </label>
                     <TextEditor
                       value={selectedAnswers[qi] || ""}
@@ -691,29 +633,11 @@ export default function TransporAktifPage() {
                     />
                   </div>
                   
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Upload Gambar (Opsional):
-                    </label>
-                    <ImageUpload
-                      questionIdx={qi}
-                      onImagesChange={(questionIdx, images) => {
-                        setUploadedImages(prev => ({
-                          ...prev,
-                          [questionIdx]: images
-                        }));
-                      }}
-                      disabled={submitted}
-                    />
-                  </div>
-                  
                   {submitted && (
                     <div className="mt-3 p-3 bg-white rounded-lg border border-blue-200">
                       <div className="text-sm text-blue-800">
-                        <div className="font-medium mb-1">Jawaban Benar:</div>
-                        <div className="italic">{q.correctAnswer}</div>
-                        <div className="text-xs text-blue-600 mt-2">
-                          *Soal isian memerlukan penilaian manual oleh guru
+                        <div className="text-xs text-blue-600">
+                          ✓ Jawaban telah tersimpan. Soal essay akan dinilai manual oleh guru.
                         </div>
                       </div>
                     </div>
