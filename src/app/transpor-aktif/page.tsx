@@ -21,27 +21,22 @@ type StudentData = {
 const QUESTIONS: Question[] = [
   { 
     id: 1, 
-    text: "Pompa Na+/K+ membuang 3 Na+ dan memasukkan 2 K+. Jika kalian bisa mengubahnya, rasio pemompaan baru seperti apa yang akan kalian rancang untuk sebuah sel otot yang bekerja sangat keras (butuh energi cepat)? Jelaskan mengapa rasio baru kalian akan lebih efisien dalam tugas khusus ini!", 
+    text: "Setelah menonton video tentang Pompa Na⁺/K⁺, kamu tahu bahwa pompa ini mengeluarkan 3 Na⁺ dan memasukkan 2 K⁺. Bayangkan kamu bisa mengubah cara kerja pompa itu untuk sel otot yang bekerja sangat keras. Rasio baru seperti apa yang kamu pilih agar sel otot bisa mendapat energi lebih cepat? Jelaskan alasannya!", 
     type: "essay"
   },
   { 
     id: 2, 
-    text: "Sel mendadak kehilangan semua cadangan ATP-nya (sumber energi pompa). Prediksikan dan jelaskan apa yang akan terjadi pada volume air di dalam sel setelum beberapa waktu, mengingat Pompa Na+/K+ tidak lagi berfungsi. Apa hubungan antara kegagalan pompa ion ini dengan pergerakan air (Osmosis)?", 
+    text: "Jika semua ATP dalam sel habis, Pompa Na⁺/K⁺ akan berhenti bekerja. Menurutmu, apa yang akan terjadi pada volume air di dalam sel setelah beberapa waktu? Jelaskan hubungan antara pompa ion dan osmosis air di sel!", 
     type: "essay"
   },
   { 
     id: 3, 
-    text: "Bayangkan kalian adalah seorang insinyur genetika. Kalian diminta membuat pompa ion baru yang lebih hemat energi daripada Pompa Na+/K+ klasik. Rancanglah modifikasi yang masuk akal (misalnya, mengubah jumlah ion yang dipompa atau jenis energi yang digunakan). Jelaskan bagaimana modifikasi kalian akan menghemat energi tanpa mengorbankan fungsi sel!", 
+    text: "Pompa Na⁺/K⁺ bekerja seperti \"mesin\" yang butuh energi untuk memindahkan dua jenis zat berlawanan arah. Cobalah buat analogi sederhana (misalnya di rumah, pabrik, atau sekolah) yang mirip dengan kerja pompa ini. Jelaskan apa yang menggambarkan ATP, ion Na⁺, dan ion K⁺ dalam analogimu!", 
     type: "essay"
   },
   { 
     id: 4, 
-    text: "Pompa Na+/K+ bekerja seperti \"pompa air\" di rumah, tetapi ia memompa dua jenis molekul berlawanan. Rancang dan buatlah analogi sederhana (misalnya, sistem di pabrik atau sekolah) yang paling baik menggambarkan cara kerja pompa ion ini (membutuhkan energi untuk memindahkan dua zat berlawanan arah). Jelaskan elemen apa yang mewakili ATP dan ion!", 
-    type: "essay"
-  },
-  { 
-    id: 5, 
-    text: "Jika Kalian ingin menciptakan obat baru untuk melemahkan (bukan menghentikan) kerja Pompa Na+/K+ di ginjal, rancang dan usulkan bagaimana obat itu harus bekerja. Apakah obat itu harus mengganggu tempat ikatan Na+ atau tempat ikatan ATP? Berikan alasan yang kuat untuk pilihan Kalian!", 
+    text: "Bayangkan kamu seorang ilmuwan yang ingin membuat obat untuk memperlambat kerja Pompa Na⁺/K⁺ di ginjal (bukan menghentikannya). Menurutmu, bagian mana yang sebaiknya diganggu oleh obatmu — tempat ikatan Na⁺ atau tempat ikatan ATP? Jelaskan alasanmu!", 
     type: "essay"
   }
 ];
@@ -270,7 +265,7 @@ export default function TransporAktifPage() {
             
             <h1 className="text-3xl font-bold text-elkpd-1 mb-4">Praktikum Transpor Aktif</h1>
             <p className="text-lg text-elkpd-1/70 mb-8 leading-relaxed">
-              Praktikkan pemahaman Anda tentang transpor aktif dan Pompa Na+/K+ dengan 5 soal isian. Jawab semua pertanyaan dengan lengkap dan jelas.
+              Praktikkan pemahaman Anda tentang transpor aktif dan Pompa Na+/K+ dengan 4 soal isian. Jawab semua pertanyaan dengan lengkap dan jelas.
             </p>
             
             <div className="bg-elkpd-5 rounded-2xl p-6 mb-8">
@@ -355,7 +350,7 @@ export default function TransporAktifPage() {
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-elkpd-2 rounded-full"></span>
-                  <span className="text-elkpd-1/70">5 Soal</span>
+                  <span className="text-elkpd-1/70">4 Soal</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-elkpd-2 rounded-full"></span>
