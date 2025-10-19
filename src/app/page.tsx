@@ -263,7 +263,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat menganalisis perbedaan mekanisme <span className="font-semibold text-elkpd-2">Transpor Aktif</span> dan <span className="font-semibold text-elkpd-2">Transpor Pasif</span>.
+                    Peserta didik dapat menyusun penjelasan kreatif atau analogi ilmiah untuk menggambarkan mekanisme <span className="font-semibold text-elkpd-2">transpor aktif</span> dalam kehidupan sehari-hari. <span className="text-elkpd-2 font-medium">(Fluency)</span>
                   </p>
                 </div>
               </div>
@@ -277,7 +277,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat mengevaluasi faktor-faktor yang memengaruhi transpor membran dalam berbagai kondisi (misal: <span className="font-semibold text-elkpd-2">suhu, konsentrasi, tekanan</span>).
+                    Peserta didik dapat menyusun penjelasan kreatif atau analogi ilmiah untuk menggambarkan mekanisme <span className="font-semibold text-elkpd-2">transpor pasif</span> dalam kehidupan sehari-hari. <span className="text-elkpd-2 font-medium">(Fluency)</span>
                   </p>
                 </div>
               </div>
@@ -291,7 +291,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat menciptakan representasi visual (<span className="font-semibold text-elkpd-2">mind map/poster/model</span>) yang menjelaskan konsep transpor membran secara inovatif.
+                    Peserta didik dapat menciptakan representasi visual seperti <span className="font-semibold text-elkpd-2">mind mapping</span> yang menjelaskan konsep transpor membran secara inovatif. <span className="text-elkpd-2 font-medium">(Flexibility)</span>
                   </p>
                 </div>
               </div>
@@ -305,7 +305,21 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat mengaitkan konsep transpor membran dengan fenomena nyata dari <span className="font-semibold text-elkpd-2">hasil percobaan yang telah dilakukan</span> dan menghasilkan solusi kreatif.
+                    Peserta didik dapat menciptakan representasi baru untuk menjelaskan <span className="font-semibold text-elkpd-2">faktor-faktor yang memengaruhi</span> proses transpor membran. <span className="text-elkpd-2 font-medium">(Elaboration)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Tujuan 5 */}
+            <div className="group relative bg-white rounded-2xl p-6 border-2 border-elkpd-3/30 hover:border-elkpd-2 transition-all duration-300 shadow-md hover:shadow-xl md:col-span-2">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-elkpd-3 to-elkpd-2 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  5
+                </div>
+                <div className="flex-1">
+                  <p className="text-elkpd-1/70 leading-relaxed">
+                    Peserta didik dapat mengaitkan konsep transpor membran dengan fenomena nyata dari <span className="font-semibold text-elkpd-2">hasil percobaan yang telah dilakukan</span> dan menghasilkan solusi kreatif. <span className="text-elkpd-2 font-medium">(Originality)</span>
                   </p>
                 </div>
               </div>

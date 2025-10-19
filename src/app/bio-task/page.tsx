@@ -20,27 +20,27 @@ type StudentData = {
 const QUESTIONS: Question[] = [
   { 
     id: 1, 
-    text: "Setelah membaca kedua artikel tersebut. Peristiwa mana yang menunjukkan yang terkait transpor membran pada kedua artikel tersebut?", 
+    text: "Setelah membaca kedua artikel tersebut. Peristiwa mana saja yang termasuk transpor membran pada kedua artikel tersebut?", 
     type: "essay"
   },
   { 
     id: 2, 
-    text: "Dari peristiwa yang sudah kamu pilih terkait pada kedua artikel termasuk transpor membran aktif atau transpor membran pasif? Jelaskan menggunakan bahasamu masing-masing mengapa peristiwa tesebut dapat terjadi!", 
+    text: "Setelah kamu menjawab nomor satu terkait pada kedua artikel peristiwa tersebut termasuk transpor membran aktif atau transpor membran pasif? Jelaskan menggunakan bahasamu masing-masing mengapa peristiwa tesebut dapat terjadi!", 
     type: "essay"
   },
   { 
     id: 3, 
-    text: "Setelah menentukan jenis peristiwa transpor membran pada artikel I dan artikel II, buatlah rancangan perbedaan proses mekanismenya menggunakan bahasamu masing-masing!", 
+    text: "Setelah menentukan jenis peristiwa transpor membran pada artikel I dan artikel II, buatlah perbedaan proses mekanismenya menggunakan bahasamu masing-masing!", 
     type: "essay"
   },
   { 
     id: 4, 
-    text: "Buatlah masing-masing dua pertanyaan mengenai artikel I dan artikel II yang terkait transpor membran?", 
+    text: "Setelah membandingkan kedua artikel tersebut. Cobalah untuk membuat contoh lain dalam kehidupan sehari-hari mengenai transpor membran terutama pada transpor membran pasif (Minimal masing-masing 2 contoh!)", 
     type: "essay"
   },
   { 
     id: 5, 
-    text: "Setelah membandingkan kedua artikel tersebut. Cobalah untuk merancang contoh lain dalam kehidupan sehari-hari mengenai transpor membran terutama pada transpor membran pasif (Minimal masing-masing 2 contoh!)", 
+    text: "Setelah menemukan contoh lain dari peristiwa transpor membran difusi dan osmosis. Cobalah untuk menjelaskan mekanisme peristiwa transpor membran dari contoh lain yang sudah kamu jawab di nomor empat menggunakan bahasamu masing-masing !", 
     type: "essay"
   }
 ];
