@@ -350,7 +350,7 @@ export default function BioQuizPage() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <PDFDownloadLink document={<TestPDF studentData={studentData} answers={answers} />}
               fileName={`BioQuiz_${studentData.nama.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.pdf`}
               className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg">
@@ -363,6 +363,54 @@ export default function BioQuizPage() {
             <Link href="/" className="px-8 py-4 bg-elkpd-1 text-white font-semibold rounded-xl hover:opacity-90 transition-opacity text-lg shadow-md hover:shadow-lg text-center">
               🏠 Kembali ke Beranda
             </Link>
+          </div>
+
+          {/* Info Pengumpulan */}
+          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl p-8 text-center text-white">
+            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+              </svg>
+            </div>
+            
+            <h3 className="text-2xl font-bold mb-3">Pengumpulan PDF Hasil Quiz</h3>
+            <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
+              Setelah men-download PDF hasil, jangan lupa untuk upload ke Google Drive yang telah disediakan.
+            </p>
+
+            <div className="bg-white/10 rounded-xl p-4 mb-6 max-w-lg mx-auto">
+              <h4 className="font-semibold mb-3">Instruksi Pengumpulan:</h4>
+              <div className="text-sm text-left space-y-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-white/60 rounded-full flex-shrink-0"></span>
+                  <span>Download PDF hasil quiz Anda terlebih dahulu</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-white/60 rounded-full flex-shrink-0"></span>
+                  <span>Upload file PDF ke folder Google Drive</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-white/60 rounded-full flex-shrink-0"></span>
+                  <span>Nama file: BioQuiz_[Nama]_[Tanggal].pdf</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-white/60 rounded-full flex-shrink-0"></span>
+                  <span>Dikerjakan secara individual</span>
+                </div>
+              </div>
+            </div>
+            
+            <a
+              href="https://drive.google.com/drive/folders/16EHEnOyze8PRp4hC5q_0pKENSvyQt4-e?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-orange-600 font-semibold rounded-xl hover:bg-yellow-50 transition-colors duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              📁 Upload PDF ke Google Drive
+            </a>
           </div>
         </div>
       </div>

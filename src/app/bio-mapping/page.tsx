@@ -7,9 +7,15 @@ export default function BioMappingPage() {
             <span className="text-4xl">🗺️</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Bio Mapping</h1>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
-            Visualisasikan pemahaman Anda tentang transpor membran dalam bentuk mind mapping yang kreatif dan terstruktur.
+          <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed mb-4">
+            Visualisasikan pemahaman kelompok Anda tentang transpor membran dalam bentuk mind mapping yang kreatif dan terstruktur.
           </p>
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span className="font-semibold">Tugas Kelompok</span>
+          </div>
         </div>
       </section>
 
@@ -19,11 +25,13 @@ export default function BioMappingPage() {
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-elkpd-2 to-elkpd-1 rounded-2xl mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
               <h2 className="text-3xl font-bold text-elkpd-1 mb-2">Tugas Mind Mapping</h2>
-              <p className="text-elkpd-1/70">Buat peta konsep yang menggambarkan mekanisme transpor membran</p>
+              <p className="text-elkpd-1/70 flex items-center justify-center gap-2">
+                <span className="px-4 py-1 bg-elkpd-2 text-white rounded-full text-sm font-semibold">👥 Tugas Kelompok</span>
+              </p>
             </div>
 
             <div className="bg-gradient-to-br from-elkpd-5/50 to-elkpd-4/30 rounded-2xl p-8 mb-8 border border-elkpd-3/30">
@@ -33,37 +41,45 @@ export default function BioMappingPage() {
               </h3>
               <div className="prose prose-lg max-w-none">
                 <p className="text-elkpd-1/80 leading-relaxed text-justify">
-                  Setelah kamu membaca dan mempelajari <strong>Bio Info</strong> (materi tentang transpor membran), 
-                  buatlah <strong>mind mapping</strong> yang menggambarkan bagaimana mekanisme perpindahan zat melalui membran plasma.
+                  Setelah kamu membaca dan mempelajari <strong>Bio Info</strong> (materi tentang transpor membran).
                 </p>
                 <p className="text-elkpd-1/80 leading-relaxed text-justify mt-4">
-                  Tuliskan konsep utama <strong className="text-elkpd-2">'Transpor Membran'</strong> di tengah, 
-                  kemudian kembangkan cabangnya menjadi dua bagian besar, yaitu <strong>Transpor Pasif</strong> dan <strong>Transpor Aktif</strong> berdasarkan penggunaan energi.
+                  Buatlah <strong>mind mapping</strong> dengan judul utama <strong className="text-elkpd-2">"Transpor Membran"</strong> di tengah, 
+                  lalu kembangkan menjadi dua cabang besar yaitu <strong>Transpor Pasif</strong> dan <strong>Transpor Aktif</strong>.
                 </p>
-                <p className="text-elkpd-1/80 leading-relaxed text-justify mt-4">
-                  Pada bagian <strong>transpor pasif</strong>, uraikan lebih lanjut jenis-jenisnya seperti:
-                </p>
-                <ul className="list-disc list-inside text-elkpd-1/80 ml-4 mt-2 space-y-1">
-                  <li>Difusi sederhana</li>
-                  <li>Difusi terfasilitasi</li>
-                  <li>Osmosis</li>
-                  <li>Berikan contoh zat yang dapat melewati membran melalui proses tersebut</li>
-                </ul>
-                <p className="text-elkpd-1/80 leading-relaxed text-justify mt-4">
-                  Sementara itu, pada bagian <strong>transpor aktif</strong>, jelaskan contoh mekanismenya seperti <strong>pompa ion Na⁺/K⁺</strong>, 
-                  dan jelaskan bagaimana energi <strong>ATP</strong> berperan dalam proses ini.
-                </p>
-                <p className="text-elkpd-1/80 leading-relaxed text-justify mt-4">
-                  Hubungkan pula dengan fungsi utama transpor membran bagi sel, seperti:
-                </p>
-                <ul className="list-disc list-inside text-elkpd-1/80 ml-4 mt-2 space-y-1">
-                  <li>Menjaga keseimbangan ion</li>
-                  <li>Memasukkan nutrisi</li>
-                  <li>Membuang sisa metabolisme</li>
-                </ul>
-                <p className="text-elkpd-1/80 leading-relaxed text-justify mt-4">
-                  <strong>Gunakan warna, simbol, atau gambar</strong> untuk menunjukkan perbedaan antara jenis-jenis transpor 
-                  agar peta konsepmu lebih menarik dan mudah dipahami.
+                
+                <div className="mt-6 space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-elkpd-2 rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
+                    <div className="flex-1">
+                      <p className="text-elkpd-1/80 leading-relaxed"><strong>Jelaskan jenis-jenisnya</strong> dari setiap transpor (Transpor Pasif: difusi, osmosis, dll. Transpor Aktif: pompa ion, dll.)</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-elkpd-2 rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
+                    <div className="flex-1">
+                      <p className="text-elkpd-1/80 leading-relaxed"><strong>Sertakan contoh zat</strong> yang melewati membran pada setiap jenis transpor</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-elkpd-2 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    <div className="flex-1">
+                      <p className="text-elkpd-1/80 leading-relaxed"><strong>Faktor-faktor yang memengaruhi</strong> proses transpor membran (suhu, konsentrasi, tekanan, dll.)</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-elkpd-2 rounded-full flex items-center justify-center text-white text-xs font-bold">4</div>
+                    <div className="flex-1">
+                      <p className="text-elkpd-1/80 leading-relaxed">Tambahkan juga <strong>fungsi utama transpor</strong> membran bagi sel</p>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-elkpd-1/80 leading-relaxed text-justify mt-6">
+                  <strong className="text-elkpd-2">Gunakan warna, simbol, atau gambar</strong> agar peta konsepmu lebih menarik dan <strong>kreasikan semenarik mungkin agar mudah dipahami</strong>.
                 </p>
               </div>
             </div>
@@ -98,7 +114,7 @@ export default function BioMappingPage() {
                 <ul className="text-sm text-elkpd-1/70 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 bg-elkpd-2 rounded-full mt-2 flex-shrink-0"></span>
-                    <span>Konsep utama: Transpor Membran</span>
+                    <span>Judul utama: "Transpor Membran"</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 bg-elkpd-2 rounded-full mt-2 flex-shrink-0"></span>
@@ -106,11 +122,15 @@ export default function BioMappingPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 bg-elkpd-2 rounded-full mt-2 flex-shrink-0"></span>
-                    <span>Jenis-jenis transpor dan contohnya</span>
+                    <span>Jenis-jenis & contoh zat</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 bg-elkpd-2 rounded-full mt-2 flex-shrink-0"></span>
-                    <span>Fungsi transpor membran bagi sel</span>
+                    <span>Faktor-faktor yang memengaruhi</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 bg-elkpd-2 rounded-full mt-2 flex-shrink-0"></span>
+                    <span>Fungsi utama transpor membran</span>
                   </li>
                 </ul>
               </div>
@@ -125,7 +145,7 @@ export default function BioMappingPage() {
               
               <h3 className="text-2xl font-bold mb-3">Pengumpulan Mind Mapping</h3>
               <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
-                Setelah selesai membuat mind mapping, upload hasil karya Anda ke Google Drive yang telah disediakan.
+                Setelah selesai membuat mind mapping <strong>secara berkelompok</strong>, upload hasil karya kelompok Anda ke Google Drive yang telah disediakan.
               </p>
 
               <div className="bg-white/10 rounded-xl p-4 mb-6 max-w-lg mx-auto">
@@ -141,11 +161,15 @@ export default function BioMappingPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-white/60 rounded-full flex-shrink-0"></span>
-                    <span>Nama file: MindMapping_[Nama]_[Kelas]</span>
+                    <span>Nama file: MindMapping_Kelompok[X]_[Kelas]</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-white/60 rounded-full flex-shrink-0"></span>
-                    <span>Buat dengan aplikasi favorit Anda</span>
+                    <span>Dikerjakan secara berkelompok</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-white/60 rounded-full flex-shrink-0"></span>
+                    <span>Kreasikan semenarik mungkin</span>
                   </div>
                 </div>
               </div>
