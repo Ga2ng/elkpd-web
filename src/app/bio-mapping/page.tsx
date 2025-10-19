@@ -189,7 +189,7 @@ export default function BioMappingPage() {
           </div>
         </div>
       </section>
-
+{/* 
       <section className="py-16 bg-gradient-to-br from-elkpd-5/30 via-white to-elkpd-4/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -243,9 +243,9 @@ export default function BioMappingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-elkpd-4 to-elkpd-3 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-elkpd-1 mb-3">Rekomendasi Tools</h3>
@@ -272,7 +272,7 @@ export default function BioMappingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
