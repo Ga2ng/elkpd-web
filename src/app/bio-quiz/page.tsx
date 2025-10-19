@@ -2,18 +2,14 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { PDFDownloadLink, Document, Page, Text, View, StyleSheet, Image } from "@react-pdf/renderer";
-import TextEditor from "../components/TextEditor";
-import ImageUpload from "../components/ImageUpload";
-
-type QuestionType = "multiple" | "essay" | "image";
+import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 
 type Question = {
   id: number;
   text: string;
-  type: QuestionType;
-  options?: string[];
-  correctAnswer?: string;
+  type: "multiple";
+  options: string[];
+  correctAnswer: string;
 };
 
 type StudentData = {
@@ -31,68 +27,62 @@ const QUESTIONS: Question[] = [
       "Perpindahan zat melalui membran sel",
       "Perpindahan sel dari satu tempat ke tempat lain",
       "Proses pembentukan membran sel",
-      "Proses pembelahan sel"
+      "Proses pembelahan Sel",
+      "Perpindahan zat"
     ],
     correctAnswer: "Perpindahan zat melalui membran sel"
   },
   { 
     id: 2, 
-    text: "Jelaskan perbedaan antara transpor aktif dan transpor pasif!", 
-    type: "essay"
-  },
-  { 
-    id: 3, 
-    text: "Upload gambar/diagram yang menunjukkan proses osmosis!", 
-    type: "image"
-  },
-  { 
-    id: 4, 
     text: "Manakah yang merupakan contoh transpor pasif?", 
     type: "multiple",
     options: [
       "Pompa natrium-kalium",
       "Endositosis",
       "Difusi oksigen",
-      "Eksositosis"
+      "Eksositosis",
+      "Perpindahan Molekul"
     ],
     correctAnswer: "Difusi oksigen"
   },
   { 
-    id: 5, 
-    text: "Jelaskan bagaimana proses difusi terjadi pada sel tumbuhan!", 
-    type: "essay"
-  },
-  { 
-    id: 6, 
-    text: "Upload gambar hasil percobaan difusi atau osmosis yang pernah Anda lakukan!", 
-    type: "image"
-  },
-  { 
-    id: 7, 
-    text: "Apa yang terjadi pada sel hewan jika dimasukkan ke dalam larutan hipotonik?", 
+    id: 3, 
+    text: "Difusi terfasilitasi berbeda dengan difusi sederhana karena?", 
     type: "multiple",
     options: [
-      "Sel mengkerut",
-      "Sel mengembang/lisis",
-      "Sel tidak berubah",
-      "Sel membelah"
+      "Menggunakan energi ATP",
+      "Melibatkan protein pembawa atau kanal",
+      "Terjadi pada semua jenis zat",
+      "Melawan gradien konsentrasi",
+      "Hanya terjadi pada gas"
     ],
-    correctAnswer: "Sel mengembang/lisis"
+    correctAnswer: "Melibatkan protein pembawa atau kanal"
   },
   { 
-    id: 8, 
-    text: "Jelaskan mengapa transpor aktif memerlukan energi ATP!", 
-    type: "essay"
+    id: 4, 
+    text: "Ciri khas dari transpor aktif adalah?", 
+    type: "multiple",
+    options: [
+      "Tidak memerlukan energi",
+      "Mengikuti gradien konsentrasi",
+      "Menggunakan energi dari ATP",
+      "Hanya terjadi pada molekul air",
+      "Tidak melibatkan protein pembawa"
+    ],
+    correctAnswer: "Menggunakan energi dari ATP"
   },
   { 
-    id: 9, 
-    text: "Upload gambar/skema pompa Na+/K+ dan beri keterangan!", 
-    type: "image"
-  },
-  { 
-    id: 10, 
-    text: "Berikan 3 contoh peristiwa transpor membran dalam kehidupan sehari-hari!", 
-    type: "essay"
+    id: 5, 
+    text: "Proses perpindahan molekul dari daerah konsentrasi tinggi ke daerah konsentrasi rendah tanpa menggunakan energi disebut?", 
+    type: "multiple",
+    options: [
+      "Transpor aktif",
+      "Endositosis",
+      "Osmosis",
+      "Difusi",
+      "Eksositosis"
+    ],
+    correctAnswer: "Difusi"
   }
 ];
 
@@ -113,54 +103,49 @@ const styles = StyleSheet.create({
   footer: { position: 'absolute', bottom: 30, left: 30, right: 30, textAlign: 'center', fontSize: 10, color: '#666' },
 });
 
-const TestPDF = ({ studentData, answers, uploadedImages }: {
+const TestPDF = ({ studentData, answers }: {
   studentData: StudentData;
   answers: {[key: number]: string};
-  uploadedImages: {[key: number]: {[key: string]: {preview: string, base64: string, originalName: string}}};
-}) => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <Text style={styles.header}>BIO QUIZ - HASIL EVALUASI</Text>
-      <View style={styles.studentInfo}>
-        <Text style={styles.infoItem}>Nama: {studentData.nama}</Text>
-        <Text style={styles.infoItem}>No. Siswa: {studentData.noSiswa}</Text>
-        <Text style={styles.infoItem}>Kelas: {studentData.kelas}</Text>
-        <Text style={styles.infoItem}>Tanggal: {new Date().toLocaleDateString('id-ID')}</Text>
-      </View>
-      <View style={styles.scoreSection}>
-        <Text style={styles.scoreText}>Quiz: Transpor Membran (Individual)</Text>
-        <Text style={styles.scoreText}>Total Soal: {QUESTIONS.length}</Text>
-        <Text style={styles.scoreText}>Status: Menunggu Penilaian Guru</Text>
-      </View>
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Detail Jawaban:</Text>
-        {QUESTIONS.map((q, idx) => (
-          <View key={idx} style={styles.questionItem}>
-            <Text style={styles.questionText}>{q.id}. [{q.type === 'multiple' ? 'Pilihan Ganda' : q.type === 'essay' ? 'Essay' : 'Upload Gambar'}] {q.text}</Text>
-            {q.type === 'image' && uploadedImages[idx] && Object.keys(uploadedImages[idx]).length > 0 ? (
-              <View style={{ marginVertical: 8 }}>
-                <Text style={{ fontSize: 10, fontWeight: 'bold', marginBottom: 4 }}>Gambar:</Text>
-                {Object.entries(uploadedImages[idx]).map(([filename, imageData], imgIdx) => (
-                  <View key={imgIdx} style={{ marginVertical: 4, alignItems: 'center' }}>
-                    <Image src={imageData.base64} style={{ width: 200, height: 150, objectFit: 'contain', border: '1px solid #e2e8f0', borderRadius: 4 }} />
-                    <Text style={{ fontSize: 10, color: '#666', marginTop: 4 }}>{imageData.originalName}</Text>
-                  </View>
-                ))}
-              </View>
-            ) : (
-              <Text style={styles.answerText}>Jawaban: {answers[idx] || "Tidak dijawab"}</Text>
-            )}
-          </View>
-        ))}
-      </View>
-      <Text style={styles.footer}>Dokumen ini digenerate otomatis oleh sistem ELKPD pada {new Date().toLocaleString('id-ID')}</Text>
-    </Page>
-  </Document>
-);
+}) => {
+  const correctCount = QUESTIONS.filter((q, idx) => answers[idx] === q.correctAnswer).length;
+  const score = Math.round((correctCount / QUESTIONS.length) * 100);
+
+  return (
+    <Document>
+      <Page size="A4" style={styles.page}>
+        <Text style={styles.header}>BIO QUIZ - HASIL EVALUASI</Text>
+        <View style={styles.studentInfo}>
+          <Text style={styles.infoItem}>Nama: {studentData.nama}</Text>
+          <Text style={styles.infoItem}>No. Siswa: {studentData.noSiswa}</Text>
+          <Text style={styles.infoItem}>Kelas: {studentData.kelas}</Text>
+          <Text style={styles.infoItem}>Tanggal: {new Date().toLocaleDateString('id-ID')}</Text>
+        </View>
+        <View style={styles.scoreSection}>
+          <Text style={styles.scoreText}>Quiz: Transpor Membran (Individual)</Text>
+          <Text style={styles.scoreText}>Total Soal: {QUESTIONS.length} (Pilihan Ganda)</Text>
+          <Text style={styles.scoreText}>Jawaban Benar: {correctCount}/{QUESTIONS.length}</Text>
+          <Text style={styles.scoreText}>Skor: {score}%</Text>
+        </View>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Detail Jawaban:</Text>
+          {QUESTIONS.map((q, idx) => (
+            <View key={idx} style={styles.questionItem}>
+              <Text style={styles.questionText}>{q.id}. {q.text}</Text>
+              <Text style={styles.answerText}>Jawaban Anda: {answers[idx] || "Tidak dijawab"}</Text>
+              <Text style={{ fontSize: 11, marginTop: 4, color: answers[idx] === q.correctAnswer ? '#16a34a' : '#dc2626', fontWeight: 'bold' }}>
+                {answers[idx] === q.correctAnswer ? '✓ Benar' : `✗ Salah (Jawaban benar: ${q.correctAnswer})`}
+              </Text>
+            </View>
+          ))}
+        </View>
+        <Text style={styles.footer}>Dokumen ini digenerate otomatis oleh sistem ELKPD pada {new Date().toLocaleString('id-ID')}</Text>
+      </Page>
+    </Document>
+  );
+};
 
 export default function BioQuizPage() {
   const [answers, setAnswers] = useState<{[key: number]: string}>({});
-  const [uploadedImages, setUploadedImages] = useState<{[key: number]: {[key: string]: {preview: string, base64: string, originalName: string}}}>({});
   const [submitted, setSubmitted] = useState(false);
   const [showFinalResult, setShowFinalResult] = useState(false);
   const [showStartModal, setShowStartModal] = useState(true);
@@ -171,14 +156,10 @@ export default function BioQuizPage() {
   const answeredCount = useMemo(() => {
     let count = 0;
     QUESTIONS.forEach((q, idx) => {
-      if (q.type === 'image') {
-        if (uploadedImages[idx] && Object.keys(uploadedImages[idx]).length > 0) count++;
-      } else {
-        if (answers[idx]?.trim()) count++;
-      }
+      if (answers[idx]?.trim()) count++;
     });
     return count;
-  }, [answers, uploadedImages]);
+  }, [answers]);
 
   useEffect(() => {
     if (timerActive && timeLeft > 0 && !submitted) {
@@ -208,7 +189,6 @@ export default function BioQuizPage() {
 
   function handleReset() {
     setAnswers({});
-    setUploadedImages({});
     setSubmitted(false);
     setShowFinalResult(false);
     setShowStartModal(true);
@@ -279,11 +259,11 @@ export default function BioQuizPage() {
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                  <span className="text-elkpd-1/70">10 Soal</span>
+                  <span className="text-elkpd-1/70">5 Soal</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                  <span className="text-elkpd-1/70">Mix: PG + Essay</span>
+                  <span className="text-elkpd-1/70">Pilihan Ganda</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
@@ -344,8 +324,8 @@ export default function BioQuizPage() {
               <div className="text-center">
                 <div className="text-5xl font-bold mb-2">{answeredCount}/{QUESTIONS.length}</div>
                 <div className="text-xl mb-2">Soal Terjawab</div>
-                <div className="text-2xl font-bold mb-2">PG: {correctCount}/{multipleChoiceCount} Benar</div>
-                <div className="px-4 py-2 rounded-full text-sm font-medium bg-white/20 inline-block">Menunggu Penilaian Essay</div>
+                <div className="text-3xl font-bold mb-2">Benar: {correctCount}/{QUESTIONS.length}</div>
+                <div className="text-2xl font-bold">Skor: {Math.round((correctCount / QUESTIONS.length) * 100)}%</div>
               </div>
             </div>
           </div>
@@ -354,32 +334,24 @@ export default function BioQuizPage() {
             <div className="space-y-3">
               {QUESTIONS.map((q, idx) => (
                 <div key={idx} className={`p-3 rounded-lg border ${
-                  q.type === 'multiple' 
-                    ? answers[idx] === q.correctAnswer ? 'border-green-300 bg-green-50' : 'border-red-300 bg-red-50'
-                    : 'border-gray-200 bg-gray-50'
+                  answers[idx] === q.correctAnswer ? 'border-green-300 bg-green-50' : 'border-red-300 bg-red-50'
                 }`}>
                   <div className="text-sm font-medium text-elkpd-1 mb-1">
-                    {q.id}. [{q.type === 'multiple' ? 'PG' : q.type === 'essay' ? 'Essay' : 'Gambar'}] {q.text.substring(0, 60)}...
+                    {q.id}. [PG] {q.text.substring(0, 60)}...
                   </div>
-                  {q.type === 'image' && uploadedImages[idx] && Object.keys(uploadedImages[idx]).length > 0 ? (
-                    <div className="text-xs text-gray-600">✓ {Object.keys(uploadedImages[idx]).length} gambar di-upload</div>
-                  ) : (
-                    <div className="text-xs text-gray-600 truncate">Jawaban: {answers[idx] || "Tidak dijawab"}</div>
-                  )}
-                  {q.type === 'multiple' && (
-                    <div className="text-xs mt-1">
-                      {answers[idx] === q.correctAnswer ? 
-                        <span className="text-green-600 font-bold">✓ Benar</span> : 
-                        <span className="text-red-600">✗ Salah (Benar: {q.correctAnswer})</span>
-                      }
-                    </div>
-                  )}
+                  <div className="text-xs text-gray-600 truncate">Jawaban: {answers[idx] || "Tidak dijawab"}</div>
+                  <div className="text-xs mt-1">
+                    {answers[idx] === q.correctAnswer ? 
+                      <span className="text-green-600 font-bold">✓ Benar</span> : 
+                      <span className="text-red-600">✗ Salah (Benar: {q.correctAnswer})</span>
+                    }
+                  </div>
                 </div>
               ))}
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <PDFDownloadLink document={<TestPDF studentData={studentData} answers={answers} uploadedImages={uploadedImages} />}
+            <PDFDownloadLink document={<TestPDF studentData={studentData} answers={answers} />}
               fileName={`BioQuiz_${studentData.nama.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.pdf`}
               className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg">
               {({ loading }) => loading ? 'Generating PDF...' : '📥 Download PDF Hasil'}
@@ -436,28 +408,15 @@ export default function BioQuizPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6">
             {QUESTIONS.map((q, qi) => (
-              <div key={q.id} 
-                className={`rounded-2xl border-2 p-6 shadow-md hover:shadow-lg transition-all duration-300 ${
-                  q.type === 'multiple' ? 'border-blue-300 bg-blue-50' : 
-                  q.type === 'essay' ? 'border-purple-300 bg-purple-50' : 
-                  'border-pink-300 bg-pink-50'
-                }`}>
+              <div key={q.id} className="rounded-2xl border-2 p-6 shadow-md hover:shadow-lg transition-all duration-300 border-blue-300 bg-blue-50">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className={`w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-bold flex-shrink-0 ${
-                    q.type === 'multiple' ? 'bg-blue-500' : 
-                    q.type === 'essay' ? 'bg-purple-500' : 
-                    'bg-pink-500'
-                  }`}>
+                  <div className="w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-bold flex-shrink-0 bg-blue-500">
                     {q.id}
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                        q.type === 'multiple' ? 'bg-blue-200 text-blue-800' :
-                        q.type === 'essay' ? 'bg-purple-200 text-purple-800' :
-                        'bg-pink-200 text-pink-800'
-                      }`}>
-                        {q.type === 'multiple' ? '📊 Pilihan Ganda' : q.type === 'essay' ? '📝 Essay' : '📷 Upload Gambar'}
+                      <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-200 text-blue-800">
+                        📊 Pilihan Ganda
                       </span>
                     </div>
                     <h3 className="text-lg font-semibold text-elkpd-1 leading-relaxed">{q.text}</h3>
@@ -465,37 +424,20 @@ export default function BioQuizPage() {
                 </div>
                 
                 <div className="ml-12">
-                  {q.type === 'multiple' && q.options ? (
-                    <div className="space-y-2">
-                      {q.options.map((option, optIdx) => (
-                        <label key={optIdx} className="flex items-center gap-3 p-3 rounded-lg border-2 border-blue-200 hover:border-blue-400 hover:bg-blue-100 transition-all cursor-pointer">
-                          <input type="radio" name={`question-${qi}`} value={option}
-                            checked={answers[qi] === option}
-                            onChange={(e) => setAnswer(qi, e.target.value)}
-                            disabled={submitted}
-                            className="w-5 h-5 text-blue-600" />
-                          <span className="text-gray-700">{option}</span>
-                        </label>
-                      ))}
-                    </div>
-                  ) : q.type === 'essay' ? (
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Jawaban:</label>
-                      <TextEditor value={answers[qi] || ""} onChange={(content) => setAnswer(qi, content)}
-                        placeholder="Tulis jawaban Anda..." height={120} disabled={submitted} />
-                    </div>
-                  ) : (
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Upload Gambar:</label>
-                      <ImageUpload questionIdx={qi}
-                        onImagesChange={(questionIdx, images) => {
-                          setUploadedImages(prev => ({ ...prev, [questionIdx]: images }));
-                        }}
-                        disabled={submitted} />
-                    </div>
-                  )}
+                  <div className="space-y-2">
+                    {q.options.map((option, optIdx) => (
+                      <label key={optIdx} className="flex items-center gap-3 p-3 rounded-lg border-2 border-blue-200 hover:border-blue-400 hover:bg-blue-100 transition-all cursor-pointer">
+                        <input type="radio" name={`question-${qi}`} value={option}
+                          checked={answers[qi] === option}
+                          onChange={(e) => setAnswer(qi, e.target.value)}
+                          disabled={submitted}
+                          className="w-5 h-5 text-blue-600" />
+                        <span className="text-gray-700">{option}</span>
+                      </label>
+                    ))}
+                  </div>
                   
-                  {submitted && q.type === 'multiple' && (
+                  {submitted && (
                     <div className={`mt-3 p-3 rounded-lg border ${
                       answers[qi] === q.correctAnswer ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
                     }`}>
