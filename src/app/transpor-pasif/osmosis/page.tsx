@@ -94,26 +94,26 @@ const TestPDF = ({ studentData, answers, uploadedImages }: {
         <Text style={styles.scoreText}>Status: Menunggu Penilaian Guru</Text>
       </View>
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>B. Rumusan Masalah</Text>
+        <Text style={styles.sectionTitle}>A. Rumusan Masalah</Text>
         <Text style={styles.answerText}>{answers.rumusanMasalah || "Tidak dijawab"}</Text>
       </View>
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>C. Hipotesis</Text>
+        <Text style={styles.sectionTitle}>B. Hipotesis</Text>
         <Text style={styles.answerText}>{answers.hipotesis || "Tidak dijawab"}</Text>
       </View>
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>D. Variabel</Text>
+        <Text style={styles.sectionTitle}>C. Variabel</Text>
         <Text style={styles.answerText}>Kontrol: {answers.variabelKontrol || "Tidak dijawab"}</Text>
         <Text style={styles.answerText}>Bebas: {answers.variabelBebas || "Tidak dijawab"}</Text>
         <Text style={styles.answerText}>Respon: {answers.variabelRespon || "Tidak dijawab"}</Text>
       </View>
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>E. Alat dan Bahan</Text>
+        <Text style={styles.sectionTitle}>D. Alat dan Bahan</Text>
         <Text style={styles.answerText}>Alat: {answers.alatBahan[0] || "Tidak dijawab"}</Text>
         <Text style={styles.answerText}>Bahan: {answers.alatBahan[1] || "Tidak dijawab"}</Text>
       </View>
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>H. Analisis Data dan Pembahasan</Text>
+        <Text style={styles.sectionTitle}>E. Analisis Data dan Pembahasan</Text>
         {ANALISIS_QUESTIONS.map((q, idx) => (
           <View key={idx} style={styles.questionItem}>
             <Text style={styles.questionText}>{idx + 1}. {q}</Text>
@@ -137,7 +137,7 @@ const TestPDF = ({ studentData, answers, uploadedImages }: {
         ))}
       </View>
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>I. Diskusi</Text>
+        <Text style={styles.sectionTitle}>F. Diskusi</Text>
         {DISKUSI_QUESTIONS.map((q, idx) => (
           <View key={idx} style={styles.questionItem}>
             <Text style={styles.questionText}>{idx + 1}. {q}</Text>
@@ -146,11 +146,11 @@ const TestPDF = ({ studentData, answers, uploadedImages }: {
         ))}
       </View>
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>J. Kesimpulan</Text>
+        <Text style={styles.sectionTitle}>G. Kesimpulan</Text>
         <Text style={styles.answerText}>{answers.kesimpulan || "Tidak dijawab"}</Text>
       </View>
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>K. Poster</Text>
+        <Text style={styles.sectionTitle}>H. Poster</Text>
         <Text style={styles.answerText}>{answers.posterUploaded ? "✓ Sudah upload ke Google Drive" : "Belum upload"}</Text>
       </View>
       <Text style={styles.footer}>Dokumen digenerate otomatis oleh ELKPD pada {new Date().toLocaleString('id-ID')}</Text>
@@ -453,9 +453,9 @@ export default function OsmosisPage() {
             </div>
 
             <div className="p-8 space-y-8">
-              {/* B. Merumuskan Masalah */}
+              {/* A. Merumuskan Masalah */}
               <div className="bg-blue-50 rounded-2xl p-6 border-2 border-blue-200">
-                <h3 className="text-xl font-bold text-elkpd-1 mb-4">B. Merumuskan Masalah</h3>
+                <h3 className="text-xl font-bold text-elkpd-1 mb-4">A. Merumuskan Masalah</h3>
                 <div className="bg-white rounded-lg p-4 mb-4 text-sm text-gray-700">
                   <p className="font-semibold mb-2">Karakteristik:</p>
                   <ul className="space-y-1 ml-4">
@@ -469,9 +469,9 @@ export default function OsmosisPage() {
                   placeholder="Tulis rumusan masalah Anda..." height={100} disabled={submitted} />
               </div>
 
-              {/* C. Merumuskan Uji Hipotesis */}
+              {/* B. Merumuskan Uji Hipotesis */}
               <div className="bg-cyan-50 rounded-2xl p-6 border-2 border-cyan-200">
-                <h3 className="text-xl font-bold text-elkpd-1 mb-4">C. Merumuskan Uji Hipotesis</h3>
+                <h3 className="text-xl font-bold text-elkpd-1 mb-4">B. Merumuskan Uji Hipotesis</h3>
                 <div className="bg-white rounded-lg p-4 mb-4 text-sm text-gray-700">
                   <p className="font-semibold mb-2">Karakteristik:</p>
                   <ul className="space-y-1 ml-4">
@@ -485,9 +485,9 @@ export default function OsmosisPage() {
                   placeholder="Tulis hipotesis Anda..." height={100} disabled={submitted} />
               </div>
 
-              {/* D. Merumuskan Variabel */}
+              {/* C. Merumuskan Variabel */}
               <div className="bg-indigo-50 rounded-2xl p-6 border-2 border-indigo-200">
-                <h3 className="text-xl font-bold text-elkpd-1 mb-4">D. Merumuskan Variabel</h3>
+                <h3 className="text-xl font-bold text-elkpd-1 mb-4">C. Merumuskan Variabel</h3>
                 <div className="bg-white rounded-lg p-4 mb-4 text-sm text-gray-700">
                   <p className="font-semibold mb-2">Karakteristik:</p>
                   <p className="mb-2">Segala sesuatu yang akan menjadi objek yang diamati dalam percobaan:</p>
@@ -517,9 +517,9 @@ export default function OsmosisPage() {
                 </div>
               </div>
 
-              {/* E. Mengidentifikasi Daftar Alat dan Bahan */}
+              {/* D. Mengidentifikasi Daftar Alat dan Bahan */}
               <div className="bg-teal-50 rounded-2xl p-6 border-2 border-teal-200">
-                <h3 className="text-xl font-bold text-elkpd-1 mb-4">E. Mengidentifikasi Daftar Alat dan Bahan</h3>
+                <h3 className="text-xl font-bold text-elkpd-1 mb-4">D. Mengidentifikasi Daftar Alat dan Bahan</h3>
                 <p className="text-sm text-gray-700 mb-4">Bacalah prosedur percobaan di bawah, lalu identifikasi daftar alat dan bahan yang diperlukan.</p>
                 <div className="space-y-4">
                   <div>
@@ -535,9 +535,9 @@ export default function OsmosisPage() {
                 </div>
               </div>
 
-              {/* F. Prosedur */}
+              {/* E. Prosedur */}
               <div className="bg-elkpd-5/50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-elkpd-1 mb-4">F. Prosedur Percobaan</h3>
+                <h3 className="text-xl font-bold text-elkpd-1 mb-4">E. Prosedur Percobaan</h3>
                 <ol className="space-y-2">
                   {PROSEDUR.map((step, idx) => (
                     <li key={idx} className="text-elkpd-1/80 flex gap-3">
@@ -547,9 +547,9 @@ export default function OsmosisPage() {
                 </ol>
               </div>
 
-              {/* G. Data Hasil Percobaan */}
+              {/* F. Data Hasil Percobaan */}
               <div className="bg-blue-50 rounded-2xl p-6 border-2 border-blue-200">
-                <h3 className="text-xl font-bold text-elkpd-1 mb-4">G. Data Hasil Percobaan</h3>
+                <h3 className="text-xl font-bold text-elkpd-1 mb-4">F. Data Hasil Percobaan</h3>
                 <p className="text-sm text-elkpd-1/70 mb-4">Download template Excel dan isi data hasil percobaan Anda. Data akan digunakan untuk membuat grafik di bagian Analisis.</p>
                 <button onClick={downloadExcelTemplate}
                   className="px-6 py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-colors shadow-md inline-flex items-center gap-2">
@@ -560,9 +560,9 @@ export default function OsmosisPage() {
                 </button>
               </div>
 
-              {/* H. Analisis Data dan Pembahasan */}
+              {/* G. Analisis Data dan Pembahasan */}
               <div className="bg-purple-50 rounded-2xl p-6 border-2 border-purple-200">
-                <h3 className="text-xl font-bold text-elkpd-1 mb-4">H. Analisis Data dan Pembahasan</h3>
+                <h3 className="text-xl font-bold text-elkpd-1 mb-4">G. Analisis Data dan Pembahasan</h3>
                 <div className="space-y-6">
                   {ANALISIS_QUESTIONS.map((question, idx) => (
                     <div key={idx} className="bg-white rounded-xl p-4 border border-purple-200">
@@ -592,9 +592,9 @@ export default function OsmosisPage() {
                 </div>
               </div>
 
-              {/* I. Diskusi */}
+              {/* H. Diskusi */}
               <div className="bg-orange-50 rounded-2xl p-6 border-2 border-orange-200">
-                <h3 className="text-xl font-bold text-elkpd-1 mb-4">I. Diskusi</h3>
+                <h3 className="text-xl font-bold text-elkpd-1 mb-4">H. Diskusi</h3>
                 <div className="space-y-6">
                   {DISKUSI_QUESTIONS.map((question, idx) => (
                     <div key={idx} className="bg-white rounded-xl p-4 border border-orange-200">
@@ -606,17 +606,17 @@ export default function OsmosisPage() {
                 </div>
               </div>
 
-              {/* J. Kesimpulan */}
+              {/* I. Kesimpulan */}
               <div className="bg-green-50 rounded-2xl p-6 border-2 border-green-200">
-                <h3 className="text-xl font-bold text-elkpd-1 mb-4">J. Kesimpulan</h3>
+                <h3 className="text-xl font-bold text-elkpd-1 mb-4">I. Kesimpulan</h3>
                 <p className="text-sm text-gray-600 italic mb-3">*Karakteristik: kalimat singkat, tidak menjelaskan data, menjawab rumusan masalah.</p>
                 <TextEditor value={answers.kesimpulan} onChange={(content) => setAnswer('kesimpulan', content)}
                   placeholder="Tulis kesimpulan..." height={120} disabled={submitted} />
               </div>
 
-              {/* K. Buat Poster */}
+              {/* J. Buat Poster */}
               <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-6 border-2 border-cyan-200">
-                <h3 className="text-xl font-bold text-elkpd-1 mb-4">K. Buat dalam bentuk Poster!</h3>
+                <h3 className="text-xl font-bold text-elkpd-1 mb-4">J. Buat dalam bentuk Poster!</h3>
                 <p className="text-sm text-gray-700 mb-4">
                   Buat poster yang mencakup hasil percobaan, grafik/tabel, analisis, dan kesimpulan. 
                   Upload poster Anda ke Google Drive yang telah disediakan.

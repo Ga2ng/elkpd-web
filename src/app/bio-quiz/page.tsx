@@ -21,68 +21,68 @@ type StudentData = {
 const QUESTIONS: Question[] = [
   { 
     id: 1, 
-    text: "Apa yang dimaksud dengan transpor membran?", 
+    text: "Ketika tanaman layu karena kekurangan air, hal ini menunjukkan bahwa proses...", 
     type: "multiple",
     options: [
-      "Perpindahan zat melalui membran sel",
-      "Perpindahan sel dari satu tempat ke tempat lain",
-      "Proses pembentukan membran sel",
-      "Proses pembelahan Sel",
-      "Perpindahan zat"
+      "Transpor aktif air meningkat",
+      "Osmosis air keluar dari sel",
+      "Difusi air ke dalam sel",
+      "Transpor pasif berhenti",
+      "Air masuk secara aktif ke sel"
     ],
-    correctAnswer: "Perpindahan zat melalui membran sel"
+    correctAnswer: "Osmosis air keluar dari sel"
   },
   { 
     id: 2, 
-    text: "Manakah yang merupakan contoh transpor pasif?", 
+    text: "Jika suhu lingkungan meningkat, bagaimana pengaruhnya terhadap laju difusi gas oksigen dalam sel?", 
     type: "multiple",
     options: [
-      "Pompa natrium-kalium",
-      "Endositosis",
-      "Difusi oksigen",
-      "Eksositosis",
-      "Perpindahan Molekul"
+      "Difusi berhenti total",
+      "Difusi melambat",
+      "Difusi meningkat karena partikel bergerak lebih cepat",
+      "Difusi tidak terpengaruh",
+      "Energi ATP meningkat"
     ],
-    correctAnswer: "Difusi oksigen"
+    correctAnswer: "Difusi meningkat karena partikel bergerak lebih cepat"
   },
   { 
     id: 3, 
-    text: "Difusi terfasilitasi berbeda dengan difusi sederhana karena?", 
+    text: "Mengapa transpor aktif tetap berjalan meskipun gradien konsentrasi sudah seimbang?", 
     type: "multiple",
     options: [
-      "Menggunakan energi ATP",
-      "Melibatkan protein pembawa atau kanal",
-      "Terjadi pada semua jenis zat",
-      "Melawan gradien konsentrasi",
-      "Hanya terjadi pada gas"
+      "Karena masih ada energi cadangan",
+      "Karena selalu mengikuti arus",
+      "Karena membutuhkan protein kanal",
+      "Karena bekerja melawan gradien untuk menjaga keseimbangan ion",
+      "Karena molekul air terus bergerak"
     ],
-    correctAnswer: "Melibatkan protein pembawa atau kanal"
+    correctAnswer: "Karena bekerja melawan gradien untuk menjaga keseimbangan ion"
   },
   { 
     id: 4, 
-    text: "Ciri khas dari transpor aktif adalah?", 
+    text: "Manakah analogi yang paling tepat untuk menggambarkan perbedaan antara difusi dan transpor aktif?", 
     type: "multiple",
     options: [
-      "Tidak memerlukan energi",
-      "Mengikuti gradien konsentrasi",
-      "Menggunakan energi dari ATP",
-      "Hanya terjadi pada molekul air",
-      "Tidak melibatkan protein pembawa"
+      "Air mengalir di sungai vs air dipompa ke atas menara",
+      "Bola menggelinding di tanah vs bola diam",
+      "Menyapu lantai vs mengepel",
+      "Menyiram tanaman vs menyemprot parfum",
+      "Hujan turun vs air mendidih"
     ],
-    correctAnswer: "Menggunakan energi dari ATP"
+    correctAnswer: "Air mengalir di sungai vs air dipompa ke atas menara"
   },
   { 
     id: 5, 
-    text: "Proses perpindahan molekul dari daerah konsentrasi tinggi ke daerah konsentrasi rendah tanpa menggunakan energi disebut?", 
+    text: "Jika mekanisme transpor aktif pada sel terganggu, apa dampak paling mungkin terjadi?", 
     type: "multiple",
     options: [
-      "Transpor aktif",
-      "Endositosis",
-      "Osmosis",
-      "Difusi",
-      "Eksositosis"
+      "Sel tetap normal",
+      "Sel kehilangan kemampuan menjaga keseimbangan ion",
+      "Sel menyerap lebih banyak air",
+      "Sel menjadi lebih cepat membelah",
+      "Tidak terjadi perubahan signifikan"
     ],
-    correctAnswer: "Difusi"
+    correctAnswer: "Sel kehilangan kemampuan menjaga keseimbangan ion"
   }
 ];
 
