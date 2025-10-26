@@ -207,7 +207,7 @@ export default function HeaderSection({ onExperimentClick }: HeaderSectionProps)
                 Anin Dita Yuhan Prabandari
               </p>
               <p className="text-base text-white/80 drop-shadow">
-                Prof. Dr. Yuni Sri Rahayu
+                Prof. Dr. Yuni Sri Rahayu, M.Si.
               </p>
             </div>
             
