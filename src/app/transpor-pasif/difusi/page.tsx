@@ -22,7 +22,6 @@ type Answers = {
   analisisPembahasan: string[];
   diskusi: string[];
   kesimpulan: string;
-  posterUploaded: boolean;
 };
 
 const PROSEDUR = [
@@ -146,10 +145,6 @@ const TestPDF = ({ studentData, answers, uploadedImages }: {
         <Text style={styles.sectionTitle}>I. Kesimpulan</Text>
         <Text style={styles.answerText}>{answers.kesimpulan || "Tidak dijawab"}</Text>
       </View>
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>J. Poster</Text>
-        <Text style={styles.answerText}>{answers.posterUploaded ? "✓ Sudah upload ke Google Drive" : "Belum upload"}</Text>
-      </View>
       <Text style={styles.footer}>Dokumen digenerate otomatis oleh ELKPD pada {new Date().toLocaleString('id-ID')}</Text>
     </Page>
   </Document>
@@ -159,7 +154,7 @@ export default function DifusiPage() {
   const [answers, setAnswers] = useState<Answers>({
     rumusanMasalah: "", hipotesis: "", variabelKontrol: "", variabelBebas: "", variabelRespon: "",
     alatBahan: ["", ""], analisisPembahasan: Array(5).fill(""),
-    diskusi: ["", ""], kesimpulan: "", posterUploaded: false
+    diskusi: ["", ""], kesimpulan: ""
   });
   const [uploadedImages, setUploadedImages] = useState<{[key: string]: {preview: string, base64: string, originalName: string}}>({});
   const [submitted, setSubmitted] = useState(false);
@@ -169,7 +164,7 @@ export default function DifusiPage() {
     namaKelompok: "", kelas: "", anggota: [{ nama: "", noSiswa: "" }]
   });
 
-  const totalQuestions = 1 + 1 + 3 + 2 + 5 + 2 + 1 + 1; // rumusan + hipotesis + var(3) + alat(2) + analisis(5) + diskusi(2) + kesimpulan + poster
+  const totalQuestions = 1 + 1 + 3 + 2 + 5 + 2 + 1; // rumusan + hipotesis + var(3) + alat(2) + analisis(5) + diskusi(2) + kesimpulan
   const answeredCount = useMemo(() => {
     let count = 0;
     if (answers.rumusanMasalah.trim()) count++;
@@ -186,7 +181,6 @@ export default function DifusiPage() {
     }
     answers.diskusi.forEach(a => { if (a.trim()) count++; });
     if (answers.kesimpulan.trim()) count++;
-    if (answers.posterUploaded) count++;
     return count;
   }, [answers, uploadedImages]);
 
@@ -215,7 +209,7 @@ export default function DifusiPage() {
     setAnswers({
       rumusanMasalah: "", hipotesis: "", variabelKontrol: "", variabelBebas: "", variabelRespon: "",
       alatBahan: ["", ""], analisisPembahasan: Array(5).fill(""),
-      diskusi: ["", ""], kesimpulan: "", posterUploaded: false
+      diskusi: ["", ""], kesimpulan: ""
     });
     setUploadedImages({});
     setSubmitted(false);
@@ -547,7 +541,12 @@ export default function DifusiPage() {
               {/* F. Data Hasil Percobaan */}
               <div className="bg-blue-50 rounded-2xl p-6 border-2 border-blue-200">
                 <h3 className="text-xl font-bold text-elkpd-1 mb-4">F. Data Hasil Percobaan</h3>
-                <p className="text-sm text-elkpd-1/70 mb-4">Download template Excel dan isi data hasil percobaan Anda. Data akan digunakan untuk membuat diagram di bagian Analisis.</p>
+                <p className="text-sm text-elkpd-1/70 mb-4">
+                  Isilah tabel pada lembar Hand Out yang sudah dibagikan berdasarkan hasil percobaan yang kalian lakukan!
+                </p>
+                <p className="text-sm text-elkpd-1/70 mb-4">
+                  Download template Excel dan isi data hasil percobaan Anda. Data akan digunakan untuk membuat diagram di bagian Analisis.
+                </p>
                 <button onClick={downloadExcelTemplate}
                   className="px-6 py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-colors shadow-md inline-flex items-center gap-2">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -612,38 +611,12 @@ export default function DifusiPage() {
               </div>
 
               {/* J. Buat Poster */}
-              <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6 border-2 border-pink-200">
-                <h3 className="text-xl font-bold text-elkpd-1 mb-4">J. Buat dalam bentuk Poster!</h3>
-                <p className="text-sm text-gray-700 mb-4">
-                  Buat poster yang mencakup hasil percobaan, grafik/diagram, analisis, dan kesimpulan. 
-                  Upload poster Anda ke Google Drive yang telah disediakan.
-                </p>
-                <div className="space-y-4">
-                  <a 
-                    href="https://drive.google.com/drive/folders/13Xi7hvh7H0Zea_tKtXC3Scm0UbdawAv4?usp=drive_link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
-                    </svg>
-                    Buka Google Drive untuk Upload Poster
-                  </a>
-                  
-                  <div className="bg-white border-2 border-pink-300 rounded-lg p-4">
-                    <label className="flex items-center gap-3 cursor-pointer group">
-                      <input
-                        type="checkbox"
-                        checked={answers.posterUploaded}
-                        onChange={(e) => setAnswer('posterUploaded', e.target.checked)}
-                        disabled={submitted}
-                        className="w-5 h-5 text-pink-600 border-2 border-gray-300 rounded focus:ring-2 focus:ring-pink-500"
-                      />
-                      <span className="text-sm font-medium text-elkpd-1 group-hover:text-pink-600 transition-colors">
-                        ✓ Saya telah mengumpulkan poster di Google Drive
-                      </span>
-                    </label>
-                  </div>
+              <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-6 border-2 border-cyan-200">
+                <h3 className="text-xl font-bold text-elkpd-1 mb-4">J. Buat dalam Bentuk Poster!</h3>
+                <div className="space-y-3">
+                  <p className="text-sm text-gray-800 leading-relaxed">
+                    Buat poster yang mencakup <span className="font-semibold text-cyan-600">hasil percobaan</span>, <span className="font-semibold text-cyan-600">grafik/diagram</span>, <span className="font-semibold text-cyan-600">analisis</span>, dan <span className="font-semibold text-cyan-600">kesimpulan</span>. Upload poster Anda ke <span className="font-bold text-blue-600">Bio Communication</span>.
+                  </p>
                 </div>
               </div>
             </div>

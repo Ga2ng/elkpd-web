@@ -344,7 +344,7 @@ export default function MateriPage() {
                       🔄
                     </div>
                     <div>
-                      <h4 className="text-2xl font-bold text-elkpd-1">Pompa Na⁺ K⁺</h4>
+                      <h4 className="text-2xl font-bold text-elkpd-1">Pompa Na⁺/K⁺</h4>
                       <p className="text-sm text-elkpd-1/70">Protein Carrier Khusus</p>
                     </div>
                   </div>
@@ -435,7 +435,7 @@ export default function MateriPage() {
                 </div>
                 <div className="flex items-center gap-3 bg-white/20 rounded-xl p-3 backdrop-blur-sm">
                   <span className="text-2xl">🔄</span>
-                  <span>Pompa Na⁺ K⁺, Endositosis, Eksositosis</span>
+                  <span>Pompa Na⁺/K⁺, Endositosis, Eksositosis</span>
                 </div>
               </div>
             </div>

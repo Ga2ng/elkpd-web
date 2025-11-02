@@ -719,7 +719,7 @@ export default function Page() {
                         </div>
                         <h3 className="text-2xl font-bold text-elkpd-1 mb-2">Transpor Aktif</h3>
                         <p className="text-sm text-elkpd-1/70 mb-4">
-                          Pelajari mekanisme pompa Na+/K+ dan transpor yang memerlukan energi ATP
+                          Pelajari mekanisme pompa Na⁺/K⁺ dan transpor yang memerlukan energi ATP
                         </p>
                         <div className="flex items-center gap-2 text-blue-600 font-medium group-hover:gap-3 transition-all duration-300">
                           <span>Mulai Praktikum</span>

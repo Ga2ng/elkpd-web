@@ -265,7 +265,7 @@ export default function TransporAktifPage() {
             
             <h1 className="text-3xl font-bold text-elkpd-1 mb-4">Praktikum Transpor Aktif</h1>
             <p className="text-lg text-elkpd-1/70 mb-8 leading-relaxed">
-              Praktikkan pemahaman Anda tentang transpor aktif dan Pompa Na+/K+ dengan 4 soal isian. Jawab semua pertanyaan dengan lengkap dan jelas.
+              Praktikkan pemahaman Anda tentang transpor aktif dan Pompa Na⁺/K⁺ dengan 4 soal isian. Jawab semua pertanyaan dengan lengkap dan jelas.
             </p>
             
             <div className="bg-elkpd-5 rounded-2xl p-6 mb-8">
@@ -575,7 +575,7 @@ export default function TransporAktifPage() {
               Video Pembelajaran Transpor Aktif
             </h2>
             <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
-              Tonton video pembelajaran berikut untuk memahami konsep transpor aktif dan pompa Na+/K+ 
+              Tonton video pembelajaran berikut untuk memahami konsep transpor aktif dan pompa Na⁺/K⁺ 
               sebelum mengerjakan soal-soal praktikum di bawah.
             </p>
           </div>
@@ -583,13 +583,13 @@ export default function TransporAktifPage() {
           <div className="max-w-5xl mx-auto">
             <YouTubeEmbed 
               videoId="7NY6XdPBhxo" 
-              title="Video Pembelajaran Transpor Aktif - Pompa Na+/K+"
+              title="Video Pembelajaran Transpor Aktif - Pompa Na⁺/K⁺"
             />
           </div>
           
           <div className="mt-6 text-center">
             <p className="text-sm text-elkpd-1/60">
-              💡 <strong>Tips:</strong> Tonton video di atas untuk memahami konsep pompa Na+/K+ dan transpor aktif, 
+              💡 <strong>Tips:</strong> Tonton video di atas untuk memahami konsep pompa Na⁺/K⁺ dan transpor aktif, 
               kemudian lanjutkan ke soal-soal praktikum di bawah untuk menguji pemahaman Anda.
             </p>
           </div>
