@@ -460,7 +460,7 @@ export default function OsmosisPage() {
                 </div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Buatlah rumusan masalah berdasarkan percobaan yang ingin kalian rancang!</label>
                 <TextEditor value={answers.rumusanMasalah} onChange={(content) => setAnswer('rumusanMasalah', content)}
-                  placeholder="Tulis rumusan masalah Anda..." height={100} disabled={submitted} />
+                  placeholder="Tulis rumusan masalah anda..." height={100} disabled={submitted} />
               </div>
 
               {/* B. Merumuskan Uji Hipotesis */}
@@ -476,7 +476,7 @@ export default function OsmosisPage() {
                 </div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Buatlah rumusan hipotesis yang selaras dengan rumusan masalah yang telah dibuat!</label>
                 <TextEditor value={answers.hipotesis} onChange={(content) => setAnswer('hipotesis', content)}
-                  placeholder="Tulis hipotesis Anda..." height={100} disabled={submitted} />
+                  placeholder="Tulis hipotesis anda..." height={100} disabled={submitted} />
               </div>
 
               {/* C. Merumuskan Variabel */}
@@ -548,7 +548,7 @@ export default function OsmosisPage() {
                   Isilah tabel pada lembar Hand Out yang sudah dibagikan berdasarkan hasil percobaan yang kalian lakukan!
                 </p>
                 <p className="text-sm text-elkpd-1/70 mb-4">
-                  Download template Excel dan isi data hasil percobaan Anda. Data akan digunakan untuk membuat grafik di bagian Analisis.
+                  Download template Excel dan isi data hasil percobaan anda. Data akan digunakan untuk membuat grafik di bagian Analisis.
                 </p>
                 <button onClick={downloadExcelTemplate}
                   className="px-6 py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition-colors shadow-md inline-flex items-center gap-2">
@@ -584,7 +584,7 @@ export default function OsmosisPage() {
                         </div>
                       ) : (
                         <TextEditor value={answers.analisisPembahasan[idx]} onChange={(content) => setAnswer('analisisPembahasan', content, idx)}
-                          placeholder="Tulis jawaban Anda..." height={120} disabled={submitted} />
+                          placeholder="Tulis jawaban anda..." height={120} disabled={submitted} />
                       )}
                     </div>
                   ))}
@@ -599,7 +599,7 @@ export default function OsmosisPage() {
                     <div key={idx} className="bg-white rounded-xl p-4 border border-orange-200">
                       <p className="font-medium text-elkpd-1 mb-3">{idx + 1}. {question}</p>
                       <TextEditor value={answers.diskusi[idx]} onChange={(content) => setAnswer('diskusi', content, idx)}
-                        placeholder="Tulis jawaban Anda..." height={120} disabled={submitted} />
+                        placeholder="Tulis jawaban anda..." height={120} disabled={submitted} />
                     </div>
                   ))}
                 </div>
@@ -618,7 +618,7 @@ export default function OsmosisPage() {
                 <h3 className="text-xl font-bold text-elkpd-1 mb-4">J. Buat dalam Bentuk Poster!</h3>
                 <div className="space-y-3">
                   <p className="text-sm text-gray-800 leading-relaxed">
-                    Buat poster yang mencakup <span className="font-semibold text-cyan-600">hasil percobaan</span>, <span className="font-semibold text-cyan-600">grafik/tabel</span>, <span className="font-semibold text-cyan-600">analisis</span>, dan <span className="font-semibold text-cyan-600">kesimpulan</span>. Upload poster Anda ke <span className="font-bold text-blue-600">Bio Communication</span>.
+                    Buat poster yang mencakup <span className="font-semibold text-cyan-600">hasil percobaan</span>, <span className="font-semibold text-cyan-600">grafik/tabel</span>, <span className="font-semibold text-cyan-600">analisis</span>, dan <span className="font-semibold text-cyan-600">kesimpulan</span>. Upload poster anda ke <span className="font-bold text-blue-600">Bio Communication</span>.
                   </p>
                 </div>
               </div>

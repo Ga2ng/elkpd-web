@@ -250,7 +250,7 @@ export default function Page() {
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-elkpd-1 mb-4">Tujuan Pembelajaran</h2>
             <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
-              Capaian pembelajaran yang akan Anda kuasai melalui E-LKPD Transpor Membran
+              Capaian pembelajaran yang akan anda kuasai melalui E-LKPD Transpor Membran
             </p>
           </div>
 
@@ -347,7 +347,7 @@ export default function Page() {
               Petunjuk Penggunaan
             </h2>
             <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
-              Ikuti langkah-langkah berikut untuk memaksimalkan pengalaman belajar Anda dengan
+              Ikuti langkah-langkah berikut untuk memaksimalkan pengalaman belajar anda dengan
             </p>
             <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
               E-LKPD
@@ -707,7 +707,7 @@ export default function Page() {
                   </div>
                   <div>
                     <h2 className="text-3xl font-bold">Bio Experiment</h2>
-                    <p className="text-white/90 text-lg">Pilih topik praktikum yang ingin Anda pelajari</p>
+                    <p className="text-white/90 text-lg">Pilih topik praktikum yang ingin anda pelajari</p>
                   </div>
                 </div>
               </div>

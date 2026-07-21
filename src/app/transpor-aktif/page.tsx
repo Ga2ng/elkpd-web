@@ -19,24 +19,24 @@ type StudentData = {
 };
 
 const QUESTIONS: Question[] = [
-  { 
-    id: 1, 
-    text: "Setelah menonton video tentang Pompa Na⁺/K⁺, kamu tahu bahwa pompa ini mengeluarkan 3 Na⁺ dan memasukkan 2 K⁺. Bayangkan kamu bisa mengubah cara kerja pompa itu untuk sel otot yang bekerja sangat keras. Rasio baru seperti apa yang kamu pilih agar sel otot bisa mendapat energi lebih cepat? Jelaskan alasannya!", 
+  {
+    id: 1,
+    text: "Setelah menonton video tentang Pompa Na⁺/K⁺, anda tahu bahwa pompa ini mengeluarkan 3 Na⁺ dan memasukkan 2 K⁺. Bayangkan anda bisa mengubah cara kerja pompa itu untuk sel otot yang bekerja sangat keras. Rasio baru seperti apa yang anda pilih agar sel otot bisa mendapat energi lebih cepat? Jelaskan alasannya!",
     type: "essay"
   },
-  { 
-    id: 2, 
-    text: "Jika semua ATP dalam sel habis, Pompa Na⁺/K⁺ akan berhenti bekerja. Menurutmu, apa yang akan terjadi pada volume air di dalam sel setelah beberapa waktu? Jelaskan hubungan antara pompa ion dan osmosis air di sel!", 
+  {
+    id: 2,
+    text: "Jika semua ATP dalam sel habis, Pompa Na⁺/K⁺ akan berhenti bekerja. Menurut anda, apa yang akan terjadi pada volume air di dalam sel setelah beberapa waktu? Jelaskan hubungan antara pompa ion dan osmosis air di sel!",
     type: "essay"
   },
-  { 
-    id: 3, 
-    text: "Pompa Na⁺/K⁺ bekerja seperti \"mesin\" yang butuh energi untuk memindahkan dua jenis zat berlawanan arah. Cobalah buat analogi sederhana (misalnya di rumah, pabrik, atau sekolah) yang mirip dengan kerja pompa ini. Jelaskan apa yang menggambarkan ATP, ion Na⁺, dan ion K⁺ dalam analogimu!", 
+  {
+    id: 3,
+    text: "Pompa Na⁺/K⁺ bekerja seperti \"mesin\" yang butuh energi untuk memindahkan dua jenis zat berlawanan arah. Cobalah buat analogi sederhana (misalnya di rumah, pabrik, atau sekolah) yang mirip dengan kerja pompa ini. Jelaskan apa yang menggambarkan ATP, ion Na⁺, dan ion K⁺ dalam analogi anda!",
     type: "essay"
   },
-  { 
-    id: 4, 
-    text: "Bayangkan kamu seorang ilmuwan yang ingin membuat obat untuk memperlambat kerja Pompa Na⁺/K⁺ di ginjal (bukan menghentikannya). Menurutmu, bagian mana yang sebaiknya diganggu oleh obatmu — tempat ikatan Na⁺ atau tempat ikatan ATP? Jelaskan alasanmu!", 
+  {
+    id: 4,
+    text: "Bayangkan anda seorang ilmuwan yang ingin membuat obat untuk memperlambat kerja Pompa Na⁺/K⁺ di ginjal (bukan menghentikannya). Menurut anda, bagian mana yang sebaiknya diganggu oleh obat anda — tempat ikatan Na⁺ atau tempat ikatan ATP? Jelaskan alasan anda!",
     type: "essay"
   }
 ];
@@ -130,7 +130,7 @@ const TestPDF = ({ studentData, selectedAnswers, questions }: {
   <Document>
     <Page size="A4" style={styles.page}>
       <Text style={styles.header}>PRAKTIKUM TRANSPOR AKTIF - HASIL EVALUASI</Text>
-      
+
       <View style={styles.studentInfo}>
         <View>
           <Text style={styles.infoItem}>Kelompok: {studentData.namaKelompok}</Text>
@@ -159,7 +159,7 @@ const TestPDF = ({ studentData, selectedAnswers, questions }: {
         <Text style={styles.sectionTitle}>Detail Jawaban:</Text>
         {questions.map((q, idx) => {
           const answer = selectedAnswers[idx] || "Tidak dijawab";
-          
+
           return (
             <View key={idx} style={styles.questionItem}>
               <Text style={styles.questionText}>{q.id}. {q.text}</Text>
@@ -204,7 +204,7 @@ export default function TransporAktifPage() {
       alert(`Mohon lengkapi semua soal terlebih dahulu! Masih ada ${QUESTIONS.length - answeredCount} soal yang belum dijawab.`);
       return;
     }
-    
+
     setSubmitted(true);
     setTimeout(() => {
       setShowFinalResult(true);
@@ -246,7 +246,7 @@ export default function TransporAktifPage() {
   function updateAnggota(index: number, field: 'nama' | 'noSiswa', value: string) {
     setStudentData(prev => ({
       ...prev,
-      anggota: prev.anggota.map((anggota, i) => 
+      anggota: prev.anggota.map((anggota, i) =>
         i === index ? { ...anggota, [field]: value } : anggota
       )
     }));
@@ -262,12 +262,12 @@ export default function TransporAktifPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            
+
             <h1 className="text-3xl font-bold text-elkpd-1 mb-4">Praktikum Transpor Aktif</h1>
             <p className="text-lg text-elkpd-1/70 mb-8 leading-relaxed">
-              Praktikkan pemahaman Anda tentang transpor aktif dan Pompa Na⁺/K⁺ dengan 4 soal isian. Jawab semua pertanyaan dengan lengkap dan jelas.
+              Praktikkan pemahaman anda tentang transpor aktif dan Pompa Na⁺/K⁺ dengan 4 soal isian. Jawab semua pertanyaan dengan lengkap dan jelas.
             </p>
-            
+
             <div className="bg-elkpd-5 rounded-2xl p-6 mb-8">
               <h3 className="font-semibold text-elkpd-1 mb-4">Data Kelompok:</h3>
               <div className="space-y-4">
@@ -293,7 +293,7 @@ export default function TransporAktifPage() {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <label className="text-sm font-medium text-elkpd-1">Anggota Kelompok</label>
@@ -305,7 +305,7 @@ export default function TransporAktifPage() {
                       + Tambah Anggota
                     </button>
                   </div>
-                  
+
                   <div className="space-y-3">
                     {studentData.anggota.map((anggota, index) => (
                       <div key={index} className="flex gap-3 items-end">
@@ -344,7 +344,7 @@ export default function TransporAktifPage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-elkpd-4/60 rounded-2xl p-6 mb-8">
               <h3 className="font-semibold text-elkpd-1 mb-4">Informasi Praktikum:</h3>
               <div className="grid grid-cols-2 gap-4 text-sm">
@@ -366,15 +366,14 @@ export default function TransporAktifPage() {
                 </div>
               </div>
             </div>
-            
+
             <button
               onClick={startQuiz}
               disabled={!studentData.namaKelompok || !studentData.kelas || studentData.anggota.some(a => !a.nama || !a.noSiswa)}
-              className={`w-full px-8 py-4 font-semibold rounded-xl shadow-lg transition-all duration-300 text-lg ${
-                !studentData.namaKelompok || !studentData.kelas || studentData.anggota.some(a => !a.nama || !a.noSiswa)
-                  ? "bg-elkpd-3 text-elkpd-1/60 cursor-not-allowed"
-                  : "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white hover:shadow-xl transform hover:-translate-y-1"
-              }`}
+              className={`w-full px-8 py-4 font-semibold rounded-xl shadow-lg transition-all duration-300 text-lg ${!studentData.namaKelompok || !studentData.kelas || studentData.anggota.some(a => !a.nama || !a.noSiswa)
+                ? "bg-elkpd-3 text-elkpd-1/60 cursor-not-allowed"
+                : "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white hover:shadow-xl transform hover:-translate-y-1"
+                }`}
             >
               Mulai Praktikum
             </button>
@@ -394,7 +393,7 @@ export default function TransporAktifPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            
+
             <h1 className="text-4xl font-bold text-elkpd-1 mb-4">Hasil Praktikum Transpor Aktif</h1>
             <p className="text-lg text-elkpd-1/70 mb-6">
               Selamat! Anda telah menyelesaikan Praktikum Transpor Aktif
@@ -431,7 +430,7 @@ export default function TransporAktifPage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-gradient-to-br from-elkpd-2 to-elkpd-1 rounded-2xl p-6 text-white">
               <h3 className="font-semibold mb-4 text-center">Hasil Praktikum</h3>
               <div className="text-center">
@@ -513,7 +512,7 @@ export default function TransporAktifPage() {
                 className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                 </svg>
                 Buka Google Drive
               </a>
@@ -537,13 +536,13 @@ export default function TransporAktifPage() {
                 <span className="text-lg font-bold text-elkpd-2">{answeredCount}/{QUESTIONS.length}</span>
               </div>
               <div className="w-32 bg-elkpd-4 rounded-full h-2">
-                <div 
+                <div
                   className="bg-gradient-to-r from-elkpd-2 to-elkpd-1 h-2 rounded-full transition-all duration-300"
                   style={{ width: `${(answeredCount / QUESTIONS.length) * 100}%` }}
                 ></div>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-4">
               <div className="text-center">
                 <div className="text-sm text-elkpd-1/70">Praktikum Transpor Aktif</div>
@@ -575,22 +574,22 @@ export default function TransporAktifPage() {
               Video Pembelajaran Transpor Aktif
             </h2>
             <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
-              Tonton video pembelajaran berikut untuk memahami konsep transpor aktif dan pompa Na⁺/K⁺ 
+              Tonton video pembelajaran berikut untuk memahami konsep transpor aktif dan pompa Na⁺/K⁺
               sebelum mengerjakan soal-soal praktikum di bawah.
             </p>
           </div>
-          
+
           <div className="max-w-5xl mx-auto">
-            <YouTubeEmbed 
-              videoId="7NY6XdPBhxo" 
+            <YouTubeEmbed
+              videoId="7NY6XdPBhxo"
               title="Video Pembelajaran Transpor Aktif - Pompa Na⁺/K⁺"
             />
           </div>
-          
+
           <div className="mt-6 text-center">
             <p className="text-sm text-elkpd-1/60">
-              💡 <strong>Tips:</strong> Tonton video di atas untuk memahami konsep pompa Na⁺/K⁺ dan transpor aktif, 
-              kemudian lanjutkan ke soal-soal praktikum di bawah untuk menguji pemahaman Anda.
+              💡 <strong>Tips:</strong> Tonton video di atas untuk memahami konsep pompa Na⁺/K⁺ dan transpor aktif,
+              kemudian lanjutkan ke soal-soal praktikum di bawah untuk menguji pemahaman anda.
             </p>
           </div>
         </div>
@@ -600,8 +599,8 @@ export default function TransporAktifPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6">
             {QUESTIONS.map((q, qi) => (
-              <div 
-                key={q.id} 
+              <div
+                key={q.id}
                 className="rounded-2xl border-2 border-blue-300 bg-blue-50 p-6 shadow-md hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-start gap-4 mb-4">
@@ -610,10 +609,10 @@ export default function TransporAktifPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-elkpd-1 leading-relaxed mb-2">{q.text}</h3>
-                    <p className="text-sm text-blue-600 mb-3">📝 Soal Isian - Tulis jawaban Anda di bawah ini</p>
+                    <p className="text-sm text-blue-600 mb-3">📝 Soal Isian - Tulis jawaban anda di bawah ini</p>
                   </div>
                 </div>
-                
+
                 <div className="ml-12">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -622,12 +621,12 @@ export default function TransporAktifPage() {
                     <TextEditor
                       value={selectedAnswers[qi] || ""}
                       onChange={(content) => setAnswer(qi, content)}
-                      placeholder="Tulis jawaban Anda di sini..."
+                      placeholder="Tulis jawaban anda di sini..."
                       height={120}
                       disabled={submitted}
                     />
                   </div>
-                  
+
                   {submitted && (
                     <div className="mt-3 p-3 bg-white rounded-lg border border-blue-200">
                       <div className="text-sm text-blue-800">
@@ -650,22 +649,21 @@ export default function TransporAktifPage() {
                   <div className="text-lg text-elkpd-1/70">
                     Anda telah menjawab <span className="font-bold text-elkpd-2">{answeredCount}</span> dari <span className="font-bold text-elkpd-2">{QUESTIONS.length}</span> soal
                   </div>
-                  
+
                   <button
                     onClick={handleSubmit}
                     disabled={answeredCount < QUESTIONS.length}
-                    className={`px-12 py-4 rounded-xl font-semibold transition-all duration-300 text-lg ${
-                      answeredCount < QUESTIONS.length 
-                        ? "bg-elkpd-3 text-elkpd-1/60 cursor-not-allowed" 
-                        : "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white hover:shadow-xl transform hover:-translate-y-1"
-                    }`}
+                    className={`px-12 py-4 rounded-xl font-semibold transition-all duration-300 text-lg ${answeredCount < QUESTIONS.length
+                      ? "bg-elkpd-3 text-elkpd-1/60 cursor-not-allowed"
+                      : "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white hover:shadow-xl transform hover:-translate-y-1"
+                      }`}
                   >
-                    {answeredCount < QUESTIONS.length 
-                      ? `Jawab ${QUESTIONS.length - answeredCount} soal lagi` 
+                    {answeredCount < QUESTIONS.length
+                      ? `Jawab ${QUESTIONS.length - answeredCount} soal lagi`
                       : "📝 Selesai & Lihat Hasil Praktikum"
                     }
                   </button>
-                  
+
                   <div className="text-sm text-elkpd-1/50">
                     Pastikan semua soal telah dijawab sebelum menyelesaikan praktikum
                   </div>

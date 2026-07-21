@@ -17,7 +17,7 @@ export default function TransporPasifPage() {
           <h1 className="text-4xl font-bold text-elkpd-1 mb-4">Bio Experiment</h1>
           <h2 className="text-2xl font-semibold text-elkpd-2 mb-3">Transpor Pasif</h2>
           <p className="text-lg text-elkpd-1/70 leading-relaxed max-w-2xl mx-auto">
-            Pilih salah satu topik percobaan transpor pasif yang ingin Anda pelajari
+            Pilih salah satu topik percobaan transpor pasif yang ingin anda pelajari
           </p>
         </div>
 

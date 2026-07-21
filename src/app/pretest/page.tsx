@@ -30,7 +30,7 @@ export default function PretestPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Pretest</h1>
           <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
-            Uji pengetahuan awal Anda sebelum mempelajari materi untuk mendapatkan pembelajaran yang lebih efektif.
+            Uji pengetahuan awal anda sebelum mempelajari materi untuk mendapatkan pembelajaran yang lebih efektif.
           </p>
         </div>
       </section>
@@ -111,7 +111,7 @@ export default function PretestPage() {
           <div className="bg-gradient-to-r from-elkpd-4 to-elkpd-3 rounded-3xl p-12 text-center">
             <h2 className="text-3xl font-bold text-elkpd-1 mb-6">Siap untuk Memulai?</h2>
             <p className="text-lg text-elkpd-1/80 mb-8 max-w-2xl mx-auto">
-              Pretest akan tersedia segera. Sementara itu, Anda dapat mempelajari materi terlebih dahulu 
+              Pretest akan tersedia segera. Sementara itu, anda dapat mempelajari materi terlebih dahulu 
               atau langsung mencoba post test untuk menguji pemahaman.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

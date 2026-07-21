@@ -575,7 +575,7 @@ export default function BioTaskPage() {
                     <TextEditor
                       value={selectedAnswers[qi] || ""}
                       onChange={(content) => setAnswer(qi, content)}
-                      placeholder="Tulis jawaban Anda di sini..."
+                      placeholder="Tulis jawaban anda di sini..."
                       height={150}
                       disabled={submitted}
                     />

@@ -8,7 +8,7 @@ export default function BioMappingPage() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Bio Mapping</h1>
           <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed mb-4">
-            Visualisasikan pemahaman kelompok Anda tentang transpor membran dalam bentuk mind mapping yang kreatif dan terstruktur.
+            Visualisasikan pemahaman kelompok anda tentang transpor membran dalam bentuk mind mapping yang kreatif dan terstruktur.
           </p>
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,7 +145,7 @@ export default function BioMappingPage() {
 
               <h3 className="text-2xl font-bold mb-3">Pengumpulan Mind Mapping</h3>
               <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
-                Setelah selesai membuat mind mapping <strong>secara berkelompok</strong>, upload hasil karya kelompok Anda ke Google Drive yang telah disediakan.
+                Setelah selesai membuat mind mapping <strong>secara berkelompok</strong>, upload hasil karya kelompok anda ke Google Drive yang telah disediakan.
               </p>
 
               <div className="bg-white/10 rounded-xl p-4 mb-6 max-w-lg mx-auto">
@@ -195,7 +195,7 @@ export default function BioMappingPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-elkpd-1 mb-4">Contoh Visualisasi</h2>
             <p className="text-lg text-elkpd-1/70 max-w-2xl mx-auto">
-              Berikut adalah beberapa inspirasi tampilan mind mapping yang dapat Anda gunakan sebagai referensi
+              Berikut adalah beberapa inspirasi tampilan mind mapping yang dapat anda gunakan sebagai referensi
             </p>
           </div>
 

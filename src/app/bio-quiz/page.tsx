@@ -131,7 +131,7 @@ const TestPDF = ({ studentData, answers }: {
           {QUESTIONS.map((q, idx) => (
             <View key={idx} style={styles.questionItem}>
               <Text style={styles.questionText}>{q.id}. {q.text}</Text>
-              <Text style={styles.answerText}>Jawaban Anda: {answers[idx] || "Tidak dijawab"}</Text>
+              <Text style={styles.answerText}>Jawaban anda: {answers[idx] || "Tidak dijawab"}</Text>
               <Text style={{ fontSize: 11, marginTop: 4, color: answers[idx] === q.correctAnswer ? '#16a34a' : '#dc2626', fontWeight: 'bold' }}>
                 {answers[idx] === q.correctAnswer ? '✓ Benar' : `✗ Salah (Jawaban benar: ${q.correctAnswer})`}
               </Text>
@@ -383,7 +383,7 @@ export default function BioQuizPage() {
               <div className="text-sm text-left space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-white/60 rounded-full flex-shrink-0"></span>
-                  <span>Download PDF hasil quiz Anda terlebih dahulu</span>
+                  <span>Download PDF hasil quiz anda terlebih dahulu</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-white/60 rounded-full flex-shrink-0"></span>
@@ -491,7 +491,7 @@ export default function BioQuizPage() {
                     }`}>
                       <div className="text-sm">
                         {answers[qi] === q.correctAnswer ? (
-                          <div className="text-green-700 font-bold">✓ Jawaban Anda Benar!</div>
+                          <div className="text-green-700 font-bold">✓ Jawaban anda Benar!</div>
                         ) : (
                           <div>
                             <div className="text-red-700 font-bold">✗ Jawaban Kurang Tepat</div>

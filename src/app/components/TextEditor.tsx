@@ -11,7 +11,7 @@ interface TextEditorProps {
 export default function TextEditor({ 
   value, 
   onChange, 
-  placeholder = "Tulis jawaban Anda di sini...",
+  placeholder = "Tulis jawaban anda di sini...",
   height = 200,
   disabled = false
 }: TextEditorProps) {

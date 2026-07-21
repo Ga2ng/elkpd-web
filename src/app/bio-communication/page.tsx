@@ -19,10 +19,10 @@ export default function BioCommunicationPage() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Bio Communication</h1>
             <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
-              Presentasikan hasil praktikum kelompok Anda dan berikan refleksi pembelajaran yang telah dilaksanakan
+              Presentasikan hasil praktikum kelompok anda dan berikan refleksi pembelajaran yang telah dilaksanakan
             </p>
             <p className="text-base opacity-80 mt-2">
-              Komunikasikan pemahaman dan pengalaman belajar Anda
+              Komunikasikan pemahaman dan pengalaman belajar anda
             </p>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function BioCommunicationPage() {
                   <div className="flex-1">
                     <h2 className="text-3xl font-bold text-elkpd-1 mb-3">Presentation</h2>
                     <p className="text-lg text-elkpd-1/70 leading-relaxed">
-                      Upload hasil poster dan presentasi kelompok Anda tentang praktikum transpor membran yang telah dilakukan
+                      Upload hasil poster dan presentasi kelompok anda tentang praktikum transpor membran yang telah dilakukan
                     </p>
                   </div>
                 </div>
@@ -89,7 +89,7 @@ export default function BioCommunicationPage() {
                     <div className="space-y-3 text-elkpd-1/70">
                       <div className="flex items-start gap-3">
                         <span className="text-elkpd-2 font-bold flex-shrink-0">1.</span>
-                        <p>Buat poster digital atau dokumen presentasi yang berisi hasil praktikum Bio Experiment kelompok Anda</p>
+                        <p>Buat poster digital atau dokumen presentasi yang berisi hasil praktikum Bio Experiment kelompok anda</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <span className="text-elkpd-2 font-bold flex-shrink-0">2.</span>
@@ -105,7 +105,7 @@ export default function BioCommunicationPage() {
                       </div>
                       <div className="flex items-start gap-3">
                         <span className="text-elkpd-2 font-bold flex-shrink-0">5.</span>
-                        <p>Upload file Anda ke Google Drive yang telah disediakan</p>
+                        <p>Upload file anda ke Google Drive yang telah disediakan</p>
                       </div>
                     </div>
                   </div>
@@ -121,7 +121,7 @@ export default function BioCommunicationPage() {
                       
                       <h3 className="text-2xl font-bold text-gray-800 mb-3">Upload Poster Kelompok</h3>
                       <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-                        Klik tombol di bawah untuk membuka Google Drive dan upload poster presentasi kelompok Anda
+                        Klik tombol di bawah untuk membuka Google Drive dan upload poster presentasi kelompok anda
                       </p>
                       
                       <a
@@ -137,7 +137,7 @@ export default function BioCommunicationPage() {
                       </a>
                       
                       <p className="text-xs text-gray-500 mt-4">
-                        Pastikan Anda sudah login dengan akun Google Anda
+                        Pastikan anda sudah login dengan akun Google anda
                       </p>
                     </div>
                   </div>
@@ -178,7 +178,7 @@ export default function BioCommunicationPage() {
                   <div className="flex-1">
                     <h2 className="text-3xl font-bold text-elkpd-1 mb-3">Reflection</h2>
                     <p className="text-lg text-elkpd-1/70 leading-relaxed">
-                      Berikan umpan balik dan refleksi Anda tentang pengalaman pembelajaran yang telah dilakukan
+                      Berikan umpan balik dan refleksi anda tentang pengalaman pembelajaran yang telah dilakukan
                     </p>
                   </div>
                 </div>
@@ -193,7 +193,7 @@ export default function BioCommunicationPage() {
                       Panduan Reflection
                     </h3>
                     <div className="space-y-3 text-elkpd-1/70">
-                      <p className="mb-4">Refleksi pembelajaran membantu Anda untuk:</p>
+                      <p className="mb-4">Refleksi pembelajaran membantu anda untuk:</p>
                       <div className="flex items-start gap-3">
                         <span className="text-purple-600 font-bold flex-shrink-0">•</span>
                         <p>Mengevaluasi apa yang telah dipelajari selama praktikum</p>
@@ -224,7 +224,7 @@ export default function BioCommunicationPage() {
                       
                       <h3 className="text-2xl font-bold text-gray-800 mb-3">Isi Refleksi Pembelajaran</h3>
                       <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-                        Berikan refleksi dan umpan balik Anda melalui Mentimeter. Jawab pertanyaan yang disediakan dengan jujur dan thoughtful.
+                        Berikan refleksi dan umpan balik anda melalui Mentimeter. Jawab pertanyaan yang disediakan dengan jujur dan thoughtful.
                       </p>
                       
                       <a
@@ -255,7 +255,7 @@ export default function BioCommunicationPage() {
                       </div>
                       <h4 className="font-bold text-elkpd-1 mb-2">Pemahaman Konsep</h4>
                       <p className="text-sm text-elkpd-1/70">
-                        Konsep apa yang paling mudah dan sulit dipahami? Apa yang membuat Anda lebih memahami materi?
+                        Konsep apa yang paling mudah dan sulit dipahami? Apa yang membuat anda lebih memahami materi?
                       </p>
                     </div>
 
@@ -267,7 +267,7 @@ export default function BioCommunicationPage() {
                       </div>
                       <h4 className="font-bold text-elkpd-1 mb-2">Pengalaman Belajar</h4>
                       <p className="text-sm text-elkpd-1/70">
-                        Bagaimana pengalaman Anda menggunakan E-LKPD? Apa yang paling berkesan dari pembelajaran ini?
+                        Bagaimana pengalaman anda menggunakan E-LKPD? Apa yang paling berkesan dari pembelajaran ini?
                       </p>
                     </div>
 
@@ -279,7 +279,7 @@ export default function BioCommunicationPage() {
                       </div>
                       <h4 className="font-bold text-elkpd-1 mb-2">Kerja Kelompok</h4>
                       <p className="text-sm text-elkpd-1/70">
-                        Bagaimana dinamika kerja kelompok Anda? Apa yang bisa diperbaiki untuk kolaborasi yang lebih baik?
+                        Bagaimana dinamika kerja kelompok anda? Apa yang bisa diperbaiki untuk kolaborasi yang lebih baik?
                       </p>
                     </div>
 
@@ -291,7 +291,7 @@ export default function BioCommunicationPage() {
                       </div>
                       <h4 className="font-bold text-elkpd-1 mb-2">Saran & Masukan</h4>
                       <p className="text-sm text-elkpd-1/70">
-                        Apa saran Anda untuk memperbaiki pembelajaran E-LKPD di masa mendatang?
+                        Apa saran anda untuk memperbaiki pembelajaran E-LKPD di masa mendatang?
                       </p>
                     </div>
                   </div>

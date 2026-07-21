@@ -30,7 +30,7 @@ export default function PostTestPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Post Test</h1>
           <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
-            Uji pemahaman akhir Anda setelah mempelajari materi untuk mengukur peningkatan pengetahuan.
+            Uji pemahaman akhir anda setelah mempelajari materi untuk mengukur peningkatan pengetahuan.
           </p>
         </div>
       </section>
@@ -42,7 +42,7 @@ export default function PostTestPage() {
               <h2 className="text-3xl font-bold text-elkpd-1 mb-6">Mengapa Perlu Post Test?</h2>
               <p className="text-lg text-elkpd-1/70 leading-relaxed mb-6">
                 Post test membantu mengukur seberapa besar peningkatan pemahaman setelah mempelajari materi. 
-                Dengan membandingkan hasil pretest dan post test, Anda dapat mengetahui efektivitas pembelajaran.
+                Dengan membandingkan hasil pretest dan post test, anda dapat mengetahui efektivitas pembelajaran.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -111,8 +111,8 @@ export default function PostTestPage() {
           <div className="bg-gradient-to-r from-elkpd-4 to-elkpd-3 rounded-3xl p-12 text-center">
             <h2 className="text-3xl font-bold text-elkpd-1 mb-6">Siap untuk Memulai?</h2>
             <p className="text-lg text-elkpd-1/80 mb-8 max-w-2xl mx-auto">
-              Pastikan Anda sudah mempelajari semua materi sebelum mengerjakan post test. 
-              Hasil post test akan menunjukkan seberapa besar peningkatan pemahaman Anda.
+              Pastikan anda sudah mempelajari semua materi sebelum mengerjakan post test. 
+              Hasil post test akan menunjukkan seberapa besar peningkatan pemahaman anda.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
