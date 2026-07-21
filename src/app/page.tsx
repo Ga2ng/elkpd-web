@@ -126,7 +126,7 @@ export default function Page() {
               <div className="mt-12 pt-8 border-t border-gray-100">
                 <div className="flex justify-between items-end">
                   <div>
-                    <p className="text-gray-600">Surabaya, 2025</p>
+                    <p className="text-gray-600">Surabaya, 2026</p>
                   </div>
                   <div className="text-right">
                     <p className="text-lg font-medium text-elkpd-1 mb-8">Penyusun,</p>

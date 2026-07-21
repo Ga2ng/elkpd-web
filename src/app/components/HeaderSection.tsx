@@ -216,7 +216,7 @@ export default function HeaderSection({ onExperimentClick }: HeaderSectionProps)
                 Tahun Penyusunan
               </span>
               <p className="text-2xl font-bold text-green-400 drop-shadow-lg">
-                2025/2026
+                2026/2027
               </p>
             </div>
           </div>
