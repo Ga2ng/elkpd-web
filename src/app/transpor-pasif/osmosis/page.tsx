@@ -31,7 +31,7 @@ const PROSEDUR = [
   "Masukkan 3 potong buah pada masing-masing gelas",
   "Diamkan selama 30 menit.",
   "Tiriskan buah, lalu ukur masing-masing buah pada tiap-tiap gelas kimia (panjang, lebar, dan tinggi).",
-  "Catat perubahan panjang dan tekstur akhir pada potongan buah tersebut dan lakukan pengulangan tiga kali."
+  "Catatlah perubahan panjang dan tekstur akhir pada potongan buah tersebut dan lakukan pengulangan tiga kali."
 ];
 
 const ANALISIS_QUESTIONS = [
@@ -64,10 +64,10 @@ const styles = StyleSheet.create({
   footer: { position: 'absolute', bottom: 30, left: 30, right: 30, textAlign: 'center', fontSize: 10, color: '#666' },
 });
 
-const TestPDF = ({ studentData, answers, uploadedImages }: { 
-  studentData: StudentData; 
+const TestPDF = ({ studentData, answers, uploadedImages }: {
+  studentData: StudentData;
   answers: Answers;
-  uploadedImages: {[key: string]: {preview: string, base64: string, originalName: string}};
+  uploadedImages: { [key: string]: { preview: string, base64: string, originalName: string } };
 }) => (
   <Document>
     <Page size="A4" style={styles.page}>
@@ -121,9 +121,9 @@ const TestPDF = ({ studentData, answers, uploadedImages }: {
                 <Text style={{ fontSize: 10, fontWeight: 'bold', marginBottom: 4 }}>Grafik:</Text>
                 {Object.entries(uploadedImages).map(([filename, imageData], imgIdx) => (
                   <View key={imgIdx} style={{ marginVertical: 4, alignItems: 'center' }}>
-                    <Image 
-                      src={imageData.base64} 
-                      style={{ width: 250, height: 200, objectFit: 'contain', border: '1px solid #e2e8f0', borderRadius: 4 }} 
+                    <Image
+                      src={imageData.base64}
+                      style={{ width: 250, height: 200, objectFit: 'contain', border: '1px solid #e2e8f0', borderRadius: 4 }}
                     />
                     <Text style={{ fontSize: 10, color: '#666', marginTop: 4 }}>{imageData.originalName}</Text>
                   </View>
@@ -159,7 +159,7 @@ export default function OsmosisPage() {
     alatBahan: ["", ""], analisisPembahasan: Array(6).fill(""),
     diskusi: ["", "", ""], kesimpulan: ""
   });
-  const [uploadedImages, setUploadedImages] = useState<{[key: string]: {preview: string, base64: string, originalName: string}}>({});
+  const [uploadedImages, setUploadedImages] = useState<{ [key: string]: { preview: string, base64: string, originalName: string } }>({});
   const [submitted, setSubmitted] = useState(false);
   const [showFinalResult, setShowFinalResult] = useState(false);
   const [showStartModal, setShowStartModal] = useState(true);
@@ -325,11 +325,10 @@ export default function OsmosisPage() {
             </div>
             <button onClick={startQuiz}
               disabled={!studentData.namaKelompok || !studentData.kelas || studentData.anggota.some(a => !a.nama || !a.noSiswa)}
-              className={`w-full px-8 py-4 font-semibold rounded-xl shadow-lg transition-all duration-300 text-lg ${
-                !studentData.namaKelompok || !studentData.kelas || studentData.anggota.some(a => !a.nama || !a.noSiswa)
-                  ? "bg-elkpd-3 text-elkpd-1/60 cursor-not-allowed"
-                  : "bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:shadow-xl transform hover:-translate-y-1"
-              }`}>
+              className={`w-full px-8 py-4 font-semibold rounded-xl shadow-lg transition-all duration-300 text-lg ${!studentData.namaKelompok || !studentData.kelas || studentData.anggota.some(a => !a.nama || !a.noSiswa)
+                ? "bg-elkpd-3 text-elkpd-1/60 cursor-not-allowed"
+                : "bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:shadow-xl transform hover:-translate-y-1"
+                }`}>
               Mulai Praktikum
             </button>
           </div>
@@ -398,7 +397,7 @@ export default function OsmosisPage() {
               target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
               </svg>
               Buka Google Drive
             </a>
@@ -633,11 +632,10 @@ export default function OsmosisPage() {
                     Anda telah menjawab <span className="font-bold text-blue-600">{answeredCount}</span> dari <span className="font-bold text-blue-600">{totalQuestions}</span> pertanyaan
                   </div>
                   <button onClick={handleSubmit} disabled={answeredCount < totalQuestions}
-                    className={`px-12 py-4 rounded-xl font-semibold transition-all duration-300 text-lg ${
-                      answeredCount < totalQuestions 
-                        ? "bg-elkpd-3 text-elkpd-1/60 cursor-not-allowed" 
-                        : "bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:shadow-xl transform hover:-translate-y-1"
-                    }`}>
+                    className={`px-12 py-4 rounded-xl font-semibold transition-all duration-300 text-lg ${answeredCount < totalQuestions
+                      ? "bg-elkpd-3 text-elkpd-1/60 cursor-not-allowed"
+                      : "bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:shadow-xl transform hover:-translate-y-1"
+                      }`}>
                     {answeredCount < totalQuestions ? `Jawab ${totalQuestions - answeredCount} pertanyaan lagi` : "📝 Selesai & Lihat Hasil"}
                   </button>
                   <div className="text-sm text-elkpd-1/50">Pastikan semua pertanyaan telah dijawab</div>

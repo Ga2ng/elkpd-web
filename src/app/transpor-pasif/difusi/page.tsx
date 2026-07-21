@@ -28,9 +28,9 @@ const PROSEDUR = [
   "Siapkan 2 buah gelas, gelas A, gelas B, dan stopwatch.",
   "Tuangkan air biasa sebanyak 100 ml pada gelas A dan gelas B",
   "Masukkan tinta pada gelas A sebanyak dua tetes menggunakan pipet dan masukkan pewarna bubuk tekstil pada gelas B sebanyak satu sendok makan pada saat yang bersamaan (jangan diaduk).",
-  "Memulai menghitung waktu menggunakan stopwatch bersamaan dengan saat meneteskan ketiga larutan pada gelas masing masing dan melakukan pengulangan tiga kali.",
-  "Mengamati penyebaran warna masing masing larutan tanpa pengadukan.",
-  "Mencatat berapa lama waktu yang diperlukan saat mengalami perubahan warna secara merata."
+  "Mulailah menghitung waktu menggunakan stopwatch bersamaan dengan saat meneteskan ketiga larutan pada gelas masing masing dan melakukan pengulangan tiga kali.",
+  "Amatilah penyebaran warna masing masing larutan tanpa pengadukan.",
+  "Catatlah berapa lama waktu yang diperlukan saat mengalami perubahan warna secara merata."
 ];
 
 const ANALISIS_QUESTIONS = [
@@ -61,10 +61,10 @@ const styles = StyleSheet.create({
   footer: { position: 'absolute', bottom: 30, left: 30, right: 30, textAlign: 'center', fontSize: 10, color: '#666' },
 });
 
-const TestPDF = ({ studentData, answers, uploadedImages }: { 
-  studentData: StudentData; 
+const TestPDF = ({ studentData, answers, uploadedImages }: {
+  studentData: StudentData;
   answers: Answers;
-  uploadedImages: {[key: string]: {preview: string, base64: string, originalName: string}};
+  uploadedImages: { [key: string]: { preview: string, base64: string, originalName: string } };
 }) => (
   <Document>
     <Page size="A4" style={styles.page}>
@@ -118,9 +118,9 @@ const TestPDF = ({ studentData, answers, uploadedImages }: {
                 <Text style={{ fontSize: 10, fontWeight: 'bold', marginBottom: 4 }}>Diagram/Grafik:</Text>
                 {Object.entries(uploadedImages).map(([filename, imageData], imgIdx) => (
                   <View key={imgIdx} style={{ marginVertical: 4, alignItems: 'center' }}>
-                    <Image 
-                      src={imageData.base64} 
-                      style={{ width: 250, height: 200, objectFit: 'contain', border: '1px solid #e2e8f0', borderRadius: 4 }} 
+                    <Image
+                      src={imageData.base64}
+                      style={{ width: 250, height: 200, objectFit: 'contain', border: '1px solid #e2e8f0', borderRadius: 4 }}
                     />
                     <Text style={{ fontSize: 10, color: '#666', marginTop: 4 }}>{imageData.originalName}</Text>
                   </View>
@@ -156,7 +156,7 @@ export default function DifusiPage() {
     alatBahan: ["", ""], analisisPembahasan: Array(5).fill(""),
     diskusi: ["", ""], kesimpulan: ""
   });
-  const [uploadedImages, setUploadedImages] = useState<{[key: string]: {preview: string, base64: string, originalName: string}}>({});
+  const [uploadedImages, setUploadedImages] = useState<{ [key: string]: { preview: string, base64: string, originalName: string } }>({});
   const [submitted, setSubmitted] = useState(false);
   const [showFinalResult, setShowFinalResult] = useState(false);
   const [showStartModal, setShowStartModal] = useState(true);
@@ -322,11 +322,10 @@ export default function DifusiPage() {
             </div>
             <button onClick={startQuiz}
               disabled={!studentData.namaKelompok || !studentData.kelas || studentData.anggota.some(a => !a.nama || !a.noSiswa)}
-              className={`w-full px-8 py-4 font-semibold rounded-xl shadow-lg transition-all duration-300 text-lg ${
-                !studentData.namaKelompok || !studentData.kelas || studentData.anggota.some(a => !a.nama || !a.noSiswa)
+              className={`w-full px-8 py-4 font-semibold rounded-xl shadow-lg transition-all duration-300 text-lg ${!studentData.namaKelompok || !studentData.kelas || studentData.anggota.some(a => !a.nama || !a.noSiswa)
                   ? "bg-elkpd-3 text-elkpd-1/60 cursor-not-allowed"
                   : "bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-xl transform hover:-translate-y-1"
-              }`}>
+                }`}>
               Mulai Praktikum
             </button>
           </div>
@@ -395,7 +394,7 @@ export default function DifusiPage() {
               target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
               </svg>
               Buka Google Drive
             </a>
@@ -630,11 +629,10 @@ export default function DifusiPage() {
                     Anda telah menjawab <span className="font-bold text-purple-600">{answeredCount}</span> dari <span className="font-bold text-purple-600">{totalQuestions}</span> pertanyaan
                   </div>
                   <button onClick={handleSubmit} disabled={answeredCount < totalQuestions}
-                    className={`px-12 py-4 rounded-xl font-semibold transition-all duration-300 text-lg ${
-                      answeredCount < totalQuestions 
-                        ? "bg-elkpd-3 text-elkpd-1/60 cursor-not-allowed" 
+                    className={`px-12 py-4 rounded-xl font-semibold transition-all duration-300 text-lg ${answeredCount < totalQuestions
+                        ? "bg-elkpd-3 text-elkpd-1/60 cursor-not-allowed"
                         : "bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-xl transform hover:-translate-y-1"
-                    }`}>
+                      }`}>
                     {answeredCount < totalQuestions ? `Jawab ${totalQuestions - answeredCount} pertanyaan lagi` : "📝 Selesai & Lihat Hasil"}
                   </button>
                   <div className="text-sm text-elkpd-1/50">Pastikan semua pertanyaan telah dijawab</div>
