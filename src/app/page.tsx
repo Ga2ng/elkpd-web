@@ -263,7 +263,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat menyusun penjelasan kreatif atau analogi ilmiah untuk menggambarkan mekanisme <span className="font-semibold text-elkpd-2">transpor aktif</span> dalam kehidupan sehari-hari. <span className="text-elkpd-2 font-medium">(Fluency)</span>
+                    Peserta didik dapat menjelaskan mekanisme <span className="font-semibold text-elkpd-2">transportasi aktif</span> dalam kehidupan sehari-hari secara logistik.
                   </p>
                 </div>
               </div>
@@ -277,7 +277,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat menyusun penjelasan kreatif atau analogi ilmiah untuk menggambarkan mekanisme <span className="font-semibold text-elkpd-2">transpor pasif</span> dalam kehidupan sehari-hari. <span className="text-elkpd-2 font-medium">(Fluency)</span>
+                    Peserta didik dapat menjelaskan mekanisme <span className="font-semibold text-elkpd-2">transportasi pasif</span> dalam kehidupan sehari-hari secara logistik.
                   </p>
                 </div>
               </div>
@@ -291,7 +291,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat menciptakan representasi visual seperti <span className="font-semibold text-elkpd-2">mind mapping</span> yang menjelaskan konsep transpor membran secara inovatif. <span className="text-elkpd-2 font-medium">(Flexibility)</span>
+                    Peserta didik dapat menyusun <span className="font-semibold text-elkpd-2">mind map</span> yang menjelaskan konsep transpor membran secara sistematis.
                   </p>
                 </div>
               </div>
@@ -305,7 +305,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat menciptakan representasi baru untuk menjelaskan <span className="font-semibold text-elkpd-2">faktor-faktor yang memengaruhi</span> proses transpor membran. <span className="text-elkpd-2 font-medium">(Elaboration)</span>
+                    Peserta didik dapat mengidentifikasi dan menjelaskan <span className="font-semibold text-elkpd-2">faktor-faktor yang mempengaruhi</span> proses transportasi membran secara logistik.
                   </p>
                 </div>
               </div>
@@ -319,7 +319,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat mengaitkan konsep transpor membran dengan fenomena nyata dari <span className="font-semibold text-elkpd-2">hasil percobaan yang telah dilakukan</span> dan menghasilkan solusi kreatif. <span className="text-elkpd-2 font-medium">(Originality)</span>
+                    Peserta didik dapat membentuk konsep transpor membran dengan <span className="font-semibold text-elkpd-2">hasil percobaan</span> serta kesimpulan menarik secara logistik.
                   </p>
                 </div>
               </div>
@@ -347,7 +347,10 @@ export default function Page() {
               Petunjuk Penggunaan
             </h2>
             <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
-              Ikuti langkah-langkah berikut untuk memaksimalkan pengalaman belajar Anda dengan E-LKPD
+              Ikuti langkah-langkah berikut untuk memaksimalkan pengalaman belajar Anda dengan
+            </p>
+            <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
+              E-LKPD
             </p>
           </div>
 
