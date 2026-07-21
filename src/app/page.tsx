@@ -11,7 +11,7 @@ export default function Page() {
     <>
       {/* Modern Document Cover Style Header */}
       <HeaderSection onExperimentClick={() => setShowExperimentModal(true)} />
-{/* 
+      {/* 
       <section className="py-16 sm:py-20 bg-white/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
@@ -85,98 +85,98 @@ export default function Page() {
           </div>
         </div>
       </section> */}
-      
-    {/* Prakata Section - Simple & Elegant */}
-    <section className="py-20 bg-white relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-elkpd-1 mb-4">PRAKATA</h2>
-          <div className="w-16 h-0.5 bg-elkpd-2 mx-auto"></div>
-        </div>
 
-        {/* Content Card */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 lg:p-12">
-          
-          {/* First Paragraph - Always Visible */}
-          <div className="mb-8">
-            <p className="text-lg text-gray-800 leading-relaxed text-justify">
-              Puji syukur saya panjatkan ke hadirat Tuhan Yang Maha Esa, karena hanya dengan rahmat dan karunia-Nya penyusunan E-LKPD berbasis web interaktif dengan pendekatan Pembelajaran mendalam pada submateri Transport Membran kelas XI SMA ini dapat terselesaikan dengan baik. Kehadiran E-LKPD ini merupakan salah satu upaya untuk menghadirkan inovasi dalam pembelajaran Biologi.
-            </p>
+      {/* Prakata Section - Simple & Elegant */}
+      <section className="py-20 bg-white relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-elkpd-1 mb-4">PRAKATA</h2>
+            <div className="w-16 h-0.5 bg-elkpd-2 mx-auto"></div>
           </div>
 
-          {/* Expandable Content */}
-          <div id="expandable-content" className="hidden">
-            <div className="space-y-6 text-lg text-gray-800 leading-relaxed">
-              <p className="text-justify">
-                Penyusunan E-LKPD ini dilatarbelakangi oleh kebutuhan akan media pembelajaran yang lebih interaktif serta mampu mendorong peserta didik untuk berpikir kreatif. Submateri Transport Membran dipilih karena merupakan salah satu materi yang penting namun sering dianggap abstrak dan sulit dipahami. Dengan adanya E-LKPD berbasis web, peserta didik diharapkan dapat lebih mudah memahami konsep-konsep dasar Biologi melalui aktivitas belajar yang tidak hanya membaca dan mencatat, tetapi juga mengeksplorasi, menganalisis, serta berlatih memecahkan masalah. Pendekatan Pembelajaran mendalam yang digunakan bertujuan untuk menumbuhkan pengalaman belajar yang lebih mendalam, sehingga pembelajaran tidak berhenti pada hafalan, melainkan sampai pada kemampuan mengaitkan konsep dan menemukan solusi secara kreatif.
-              </p>
-              
-              <p className="text-justify">
-                Penyusun menyadari bahwa keberhasilan penyusunan E-LKPD ini tidak terlepas dari bantuan berbagai pihak. Oleh karena itu, dengan segala kerendahan hati, saya menyampaikan terima kasih yang sebesar-besarnya kepada dosen pembimbing, rekan-rekan mahasiswa, serta pihak sekolah yang telah memberikan masukan, dukungan, dan kesempatan dalam pengembangan E-LKPD ini. Semoga kerjasama dan dukungan yang telah diberikan menjadi amal baik dan mendapat balasan yang setimpal.
-              </p>
-              
-              <p className="text-justify">
-                Meskipun E-LKPD ini telah disusun dengan sebaik-baiknya, saya menyadari masih banyak keterbatasan dan kekurangan. Oleh karena itu, kritik dan saran yang membangun sangat diharapkan demi penyempurnaan karya ini pada masa mendatang. Besar harapan saya, E-LKPD ini dapat memberikan manfaat nyata, baik bagi pendidik sebagai sumber bahan ajar inovatif maupun bagi peserta didik sebagai sarana belajar yang menyenangkan dan bermakna. Akhir kata, semoga E-LKPD ini dapat menjadi salah satu kontribusi kecil dalam upaya peningkatan kualitas pembelajaran Biologi di sekolah, khususnya pada era digital yang terus berkembang.
+          {/* Content Card */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 lg:p-12">
+
+            {/* First Paragraph - Always Visible */}
+            <div className="mb-8">
+              <p className="text-lg text-gray-800 leading-relaxed text-justify">
+                Puji syukur saya panjatkan ke hadirat Tuhan Yang Maha Esa, karena hanya dengan rahmat dan karunia-Nya penyusunan E-LKPD berbasis web interaktif dengan pendekatan Pembelajaran mendalam pada submateri Transport Membran kelas XI SMA ini dapat terselesaikan dengan baik. Kehadiran E-LKPD ini merupakan salah satu upaya untuk menghadirkan inovasi dalam pembelajaran Biologi.
               </p>
             </div>
 
-            {/* Author Signature */}
-            <div className="mt-12 pt-8 border-t border-gray-100">
-              <div className="flex justify-between items-end">
-                <div>
-                  <p className="text-gray-600">Surabaya, 2025</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-lg font-medium text-elkpd-1 mb-8">Penyusun,</p>
-                  <p className="font-semibold text-elkpd-1">Anin Dita Yuhan Prabandari</p>
+            {/* Expandable Content */}
+            <div id="expandable-content" className="hidden">
+              <div className="space-y-6 text-lg text-gray-800 leading-relaxed">
+                <p className="text-justify">
+                  Penyusunan E-LKPD ini dilatarbelakangi oleh kebutuhan akan media pembelajaran yang lebih interaktif serta mampu mendorong peserta didik untuk berpikir kritis. Submateri Transport Membran dipilih karena merupakan salah satu materi yang penting namun sering dianggap abstrak dan sulit dipahami. Dengan adanya E-LKPD berbasis web, peserta didik diharapkan dapat lebih mudah memahami konsep-konsep dasar Biologi melalui aktivitas belajar yang tidak hanya membaca dan mencatat, tetapi juga mengeksplorasi, menganalisis, serta berlatih memecahkan masalah. Pendekatan Pembelajaran mendalam yang digunakan bertujuan untuk menumbuhkan pengalaman belajar yang lebih mendalam, sehingga pembelajaran tidak berhenti pada hafalan, melainkan sampai pada kemampuan mengaitkan konsep dan menemukan solusi secara kritis.
+                </p>
+
+                <p className="text-justify">
+                  Penyusun menyadari bahwa keberhasilan penyusunan E-LKPD ini tidak terlepas dari bantuan berbagai pihak. Oleh karena itu, dengan segala kerendahan hati, saya menyampaikan terima kasih yang sebesar-besarnya kepada dosen pembimbing, rekan-rekan mahasiswa, serta pihak sekolah yang telah memberikan masukan, dukungan, dan kesempatan dalam pengembangan E-LKPD ini. Semoga kerjasama dan dukungan yang telah diberikan menjadi amal baik dan mendapat balasan yang setimpal.
+                </p>
+
+                <p className="text-justify">
+                  Meskipun E-LKPD ini telah disusun dengan sebaik-baiknya, saya menyadari masih banyak keterbatasan dan kekurangan. Oleh karena itu, kritik dan saran yang membangun sangat diharapkan demi penyempurnaan karya ini pada masa mendatang. Besar harapan saya, E-LKPD ini dapat memberikan manfaat nyata, baik bagi pendidik sebagai sumber bahan ajar inovatif maupun bagi peserta didik sebagai sarana belajar yang menyenangkan dan bermakna. Semoga E-LKPD ini dapat menjadi salah satu kontribusi kecil dalam upaya peningkatan kualitas pembelajaran Biologi di sekolah, khususnya pada era digital yang terus berkembang.
+                </p>
+              </div>
+
+              {/* Author Signature */}
+              <div className="mt-12 pt-8 border-t border-gray-100">
+                <div className="flex justify-between items-end">
+                  <div>
+                    <p className="text-gray-600">Surabaya, 2025</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-lg font-medium text-elkpd-1 mb-8">Penyusun,</p>
+                    <p className="font-semibold text-elkpd-1">Anin Dita Yuhan Prabandari</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Toggle Button */}
-          <div className="text-center mt-8">
-            <button
-              onClick={() => {
-                const content = document.getElementById('expandable-content');
-                const button = document.getElementById('toggle-button');
-                const icon = document.getElementById('toggle-icon');
-                
-                if (content && button && icon) {
-                  const isHidden = content.classList.contains('hidden');
-                  
-                  if (isHidden) {
-                    content.classList.remove('hidden');
-                    content.style.animation = 'fadeIn 0.3s ease-in-out';
-                    button.textContent = 'Tutup';
-                    icon.style.transform = 'rotate(180deg)';
-                  } else {
-                    content.classList.add('hidden');
-                    button.textContent = 'Lihat Selengkapnya';
-                    icon.style.transform = 'rotate(0deg)';
+            {/* Toggle Button */}
+            <div className="text-center mt-8">
+              <button
+                onClick={() => {
+                  const content = document.getElementById('expandable-content');
+                  const button = document.getElementById('toggle-button');
+                  const icon = document.getElementById('toggle-icon');
+
+                  if (content && button && icon) {
+                    const isHidden = content.classList.contains('hidden');
+
+                    if (isHidden) {
+                      content.classList.remove('hidden');
+                      content.style.animation = 'fadeIn 0.3s ease-in-out';
+                      button.textContent = 'Tutup';
+                      icon.style.transform = 'rotate(180deg)';
+                    } else {
+                      content.classList.add('hidden');
+                      button.textContent = 'Lihat Selengkapnya';
+                      icon.style.transform = 'rotate(0deg)';
+                    }
                   }
-                }
-              }}
-              className="group inline-flex items-center gap-2 text-elkpd-2 hover:text-elkpd-1 font-medium transition-colors duration-200"
-            >
-              <span id="toggle-button">Lihat Selengkapnya</span>
-              <svg
-                id="toggle-icon"
-                className="w-4 h-4 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+                }}
+                className="group inline-flex items-center gap-2 text-elkpd-2 hover:text-elkpd-1 font-medium transition-colors duration-200"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
+                <span id="toggle-button">Lihat Selengkapnya</span>
+                <svg
+                  id="toggle-icon"
+                  className="w-4 h-4 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <style jsx>{`
+        <style jsx>{`
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -188,7 +188,7 @@ export default function Page() {
           }
         }
       `}</style>
-    </section>
+      </section>
 
       {/* <section className="py-16 sm:py-20 bg-white/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -328,181 +328,181 @@ export default function Page() {
         </div>
       </section>
 
-       {/* Petunjuk Penggunaan Section */}
-       <section id="petunjuk-penggunaan" className="py-20 bg-gradient-to-br from-elkpd-5/30 via-white to-elkpd-4/20 relative overflow-hidden">
-         {/* Background Elements */}
-         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(57,86,36,0.03),transparent_50%)] pointer-events-none"></div>
-         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(79,125,44,0.02),transparent_50%)] pointer-events-none"></div>
-         
-         <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
-           {/* Header */}
-           <div className="text-center mb-16">
-             {/* <div className="inline-block mb-6">
+      {/* Petunjuk Penggunaan Section */}
+      <section id="petunjuk-penggunaan" className="py-20 bg-gradient-to-br from-elkpd-5/30 via-white to-elkpd-4/20 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(57,86,36,0.03),transparent_50%)] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(79,125,44,0.02),transparent_50%)] pointer-events-none"></div>
+
+        <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-16">
+            {/* <div className="inline-block mb-6">
                <span className="text-sm font-medium text-elkpd-1/60 tracking-wider uppercase mb-3 block">
                  Panduan Lengkap
                </span>
                <div className="w-16 h-0.5 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full mx-auto"></div>
              </div> */}
-             <h2 className="text-4xl lg:text-5xl font-bold text-elkpd-1 mb-4">
-               Petunjuk Penggunaan
-             </h2>
-             <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
-               Ikuti langkah-langkah berikut untuk memaksimalkan pengalaman belajar Anda dengan E-LKPD
-             </p>
-           </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-elkpd-1 mb-4">
+              Petunjuk Penggunaan
+            </h2>
+            <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto">
+              Ikuti langkah-langkah berikut untuk memaksimalkan pengalaman belajar Anda dengan E-LKPD
+            </p>
+          </div>
 
-           {/* Content Card */}
-           <div className="max-w-4xl mx-auto bg-white backdrop-blur-sm rounded-3xl shadow-2xl border border-elkpd-3/20 overflow-hidden">
-             <div className="p-8 lg:p-12">
-               {/* Steps List - One Point Per Row */}
-               <div className="space-y-4">
-                 {/* Step 1 */}
-                 <div className="group">
-                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
-                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                       1
-                     </div>
-                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Pastikan perangkat terhubung internet, lalu buka alamat web E-LKPD.
-                     </p>
-                   </div>
-                 </div>
+          {/* Content Card */}
+          <div className="max-w-4xl mx-auto bg-white backdrop-blur-sm rounded-3xl shadow-2xl border border-elkpd-3/20 overflow-hidden">
+            <div className="p-8 lg:p-12">
+              {/* Steps List - One Point Per Row */}
+              <div className="space-y-4">
+                {/* Step 1 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      1
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      Pastikan perangkat terhubung internet, lalu buka alamat web E-LKPD.
+                    </p>
+                  </div>
+                </div>
 
-                 {/* Step 2 */}
-                 <div className="group">
-                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
-                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                       2
-                     </div>
-                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Sebelum memulai aktivitas pastikan sudah mengerjakan Pre-Test terlebih dahulu.
-                     </p>
-                   </div>
-                 </div>
+                {/* Step 2 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      2
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      Sebelum memulai aktivitas pastikan sudah mengerjakan Pre-Test terlebih dahulu.
+                    </p>
+                  </div>
+                </div>
 
-                 {/* Step 3 */}
-                 <div className="group">
-                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
-                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                       3
-                     </div>
-                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Bacalah petunjuk umum penggunaan website dan pahami tujuan pembelajaran.
-                     </p>
-                   </div>
-                 </div>
+                {/* Step 3 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      3
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      Bacalah petunjuk umum penggunaan website dan pahami tujuan pembelajaran.
+                    </p>
+                  </div>
+                </div>
 
-                 {/* Step 4 */}
-                 <div className="group">
-                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
-                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                       4
-                     </div>
-                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Bentuklah kelompok dengan 1 kelompok beranggotakan 4-5 orang.
-                     </p>
-                   </div>
-                 </div>
+                {/* Step 4 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      4
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      Bentuklah kelompok dengan 1 kelompok beranggotakan 4-5 orang.
+                    </p>
+                  </div>
+                </div>
 
-                 {/* Step 5 */}
-                 <div className="group">
-                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
-                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                       5
-                     </div>
-                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Untuk mengingat materi Transpor Membran yang sudah dipelajari, lihatlah pada Bio Info untuk mereview/mengingat kembali mengenai materi Transpor Membran lalu kerjakan tugas yang terdapat di Bio Info secara berkelompok.
-                     </p>
-                   </div>
-                 </div>
+                {/* Step 5 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      5
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      Untuk mengingat materi Transpor Membran yang sudah dipelajari, lihatlah pada Bio Info untuk mereview/mengingat kembali mengenai materi Transpor Membran lalu kerjakan tugas yang terdapat di Bio Info secara berkelompok.
+                    </p>
+                  </div>
+                </div>
 
-                 {/* Step 6 */}
-                 <div className="group">
-                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
-                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                       6
-                     </div>
-                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                       E-LKPD ini berbasis Web dengan pendekatan mendalam yang dirancang untuk melatihkan keterampilan berpikir kreatif Peserta Didik.
-                     </p>
-                   </div>
-                 </div>
+                {/* Step 6 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      6
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      E-LKPD ini berbasis Web dengan pendekatan mendalam yang dirancang untuk melatihkan keterampilan berpikir kreatif Peserta Didik.
+                    </p>
+                  </div>
+                </div>
 
-                 {/* Step 7 */}
-                 <div className="group">
-                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
-                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                       7
-                     </div>
-                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Konten yang terdapat dalam E-LKPD adalah berupa materi, video, gambar, PhET simulasi virtual lab, langkah-langkah kegiatan peserta didik, pertanyaan dan kesimpulan.
-                     </p>
-                   </div>
-                 </div>
+                {/* Step 7 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      7
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      Konten yang terdapat dalam E-LKPD adalah berupa materi, video, gambar, PhET simulasi virtual lab, langkah-langkah kegiatan peserta didik, pertanyaan dan kesimpulan.
+                    </p>
+                  </div>
+                </div>
 
-                 {/* Step 8 */}
-                 <div className="group">
-                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
-                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                       8
-                     </div>
-                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Bacalah terlebih dahulu mengenai permasalahan yang ada. Kemudian pahami Bio Info dengan membaca dengan seksama dan teliti.
-                     </p>
-                   </div>
-                 </div>
+                {/* Step 8 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      8
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      Bacalah terlebih dahulu mengenai permasalahan yang ada. Kemudian pahami Bio Info dengan membaca dengan seksama dan teliti.
+                    </p>
+                  </div>
+                </div>
 
-                 {/* Step 9 */}
-                 <div className="group">
-                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
-                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                       9
-                     </div>
-                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Kerjakan E-LKPD secara berkelompok sesuai dengan topik yang telah dipilih yaitu Transpor Aktif dan Transpor Pasif.
-                     </p>
-                   </div>
-                 </div>
+                {/* Step 9 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      9
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      Kerjakan E-LKPD secara berkelompok sesuai dengan topik yang telah dipilih yaitu Transpor Aktif dan Transpor Pasif.
+                    </p>
+                  </div>
+                </div>
 
-                 {/* Step 10 */}
-                 <div className="group">
-                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
-                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                       10
-                     </div>
-                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Diskusikanlah dengan anggota kelompok kalian untuk melakukan percobaan dan jawablah pertanyaan-pertanyaan yang ada dalam E-LKPD berbasis web.
-                     </p>
-                   </div>
-                 </div>
+                {/* Step 10 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      10
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      Diskusikanlah dengan anggota kelompok kalian untuk melakukan percobaan dan jawablah pertanyaan-pertanyaan yang ada dalam E-LKPD berbasis web.
+                    </p>
+                  </div>
+                </div>
 
-                 {/* Step 11 */}
-                 <div className="group">
-                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
-                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                       11
-                     </div>
-                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Tanyakan mintalah bimbingan guru jika mengalami kesulitan dalam mengerjakan E-LKPD.
-                     </p>
-                   </div>
-                 </div>
+                {/* Step 11 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      11
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      Tanyakan mintalah bimbingan guru jika mengalami kesulitan dalam mengerjakan E-LKPD.
+                    </p>
+                  </div>
+                </div>
 
-                 {/* Step 12 */}
-                 <div className="group">
-                   <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
-                     <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                       12
-                     </div>
-                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                       Gunakan buku ajar sebagai sumber informasi tambahan untuk menjawab pertanyaan.
-                     </p>
-                   </div>
-                 </div>
-               </div>
+                {/* Step 12 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      12
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      Gunakan buku ajar sebagai sumber informasi tambahan untuk menjawab pertanyaan.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-               {/* Call to Action */}
-               {/* <div className="mt-12 pt-8 border-t border-elkpd-3/20">
+              {/* Call to Action */}
+              {/* <div className="mt-12 pt-8 border-t border-elkpd-3/20">
                  <div className="text-center">
                    <h3 className="text-xl font-semibold text-elkpd-1 mb-4">Siap Memulai Perjalanan Belajar?</h3>
                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -521,17 +521,17 @@ export default function Page() {
                    </div>
                  </div>
                </div> */}
-             </div>
-           </div>
-         </div>
-       </section>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-elkpd-1 mb-4">Fitur-Fitur E-LKPD</h2>
             <p className="text-lg text-elkpd-1/70 max-w-3xl mx-auto leading-relaxed">
-              E-LKPD dilengkapi dengan berbagai fitur interaktif yang dirancang untuk meningkatkan pemahaman 
+              E-LKPD dilengkapi dengan berbagai fitur interaktif yang dirancang untuk meningkatkan pemahaman
               materi transpor membran melalui pendekatan pembelajaran yang sistematis dan menyenangkan.
             </p>
           </div>
@@ -539,9 +539,9 @@ export default function Page() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Link href="/materi" className="block bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
-                <img 
-                  src="/images/Bio Info.png" 
-                  alt="Bio Info" 
+                <img
+                  src="/images/Bio Info.png"
+                  alt="Bio Info"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -556,9 +556,9 @@ export default function Page() {
 
             <Link href="/bio-mapping" className="block bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
-                <img 
-                  src="/images/Bio Mapping.png" 
-                  alt="Bio Mapping" 
+                <img
+                  src="/images/Bio Mapping.png"
+                  alt="Bio Mapping"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -573,9 +573,9 @@ export default function Page() {
 
             <Link href="/bio-task" className="block bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
-                <img 
-                  src="/images/Bio Task.png" 
-                  alt="Bio Task" 
+                <img
+                  src="/images/Bio Task.png"
+                  alt="Bio Task"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -590,9 +590,9 @@ export default function Page() {
 
             <button type="button" onClick={() => setShowExperimentModal(true)} className="block w-full bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group text-left">
               <div className="mt-[-125px] mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
-                <img 
-                  src="/images/Bio Experiment.png" 
-                  alt="Bio Experiment" 
+                <img
+                  src="/images/Bio Experiment.png"
+                  alt="Bio Experiment"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -607,9 +607,9 @@ export default function Page() {
 
             <Link href="/bio-communication" className="block bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
-                <img 
-                  src="/images/Bio Communication.png" 
-                  alt="Bio Communication" 
+                <img
+                  src="/images/Bio Communication.png"
+                  alt="Bio Communication"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -624,9 +624,9 @@ export default function Page() {
 
             <Link href="/bio-quiz" className="block bg-white rounded-2xl p-6 border border-elkpd-3/50 shadow-lg hover:shadow-xl transition-all duration-300 group">
               <div className="mb-6 overflow-hidden rounded-xl bg-[#2a712c]">
-                <img 
-                  src="/images/Bio Quiz.png" 
-                  alt="Bio Quiz" 
+                <img
+                  src="/images/Bio Quiz.png"
+                  alt="Bio Quiz"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -644,11 +644,11 @@ export default function Page() {
             <div className="bg-gradient-to-r from-elkpd-4 to-elkpd-3 rounded-2xl p-8 max-w-3xl mx-auto">
               <h3 className="text-2xl font-bold text-elkpd-1 mb-3">Pembelajaran Interaktif & Terstruktur</h3>
               <p className="text-elkpd-1/80 mb-6 leading-relaxed">
-                Dengan fitur-fitur yang saling terintegrasi, peserta didik dapat belajar secara sistematis 
+                Dengan fitur-fitur yang saling terintegrasi, peserta didik dapat belajar secara sistematis
                 dari pemahaman konsep hingga aplikasi dalam praktikum dan evaluasi.
               </p>
-              <Link 
-                href="/materi" 
+              <Link
+                href="/materi"
                 className="inline-block px-8 py-3 bg-elkpd-2 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
               >
                 Jelajahi Materi Sekarang
@@ -662,14 +662,14 @@ export default function Page() {
       {showExperimentModal && (
         <>
           {/* Backdrop */}
-          <div 
+          <div
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300"
             onClick={() => setShowExperimentModal(false)}
           ></div>
-          
+
           {/* Modal */}
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <div 
+            <div
               className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden transform transition-all duration-300 scale-100"
               onClick={(e) => e.stopPropagation()}
             >
@@ -683,7 +683,7 @@ export default function Page() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
-                
+
                 <div className="flex items-center gap-4 mb-3">
                   <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -705,7 +705,7 @@ export default function Page() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Transpor Aktif */}
-                  <Link 
+                  <Link
                     href="/transpor-aktif"
                     onClick={() => setShowExperimentModal(false)}
                     className="group"
@@ -732,7 +732,7 @@ export default function Page() {
                   </Link>
 
                   {/* Transpor Pasif */}
-                  <Link 
+                  <Link
                     href="/transpor-pasif"
                     onClick={() => setShowExperimentModal(false)}
                     className="group"
