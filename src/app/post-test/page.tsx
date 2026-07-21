@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function PostTestPage() {
   const postTestInfo = [
     {
-      title: "Tujuan Post Test",
+      title: "Tujuan Post-Test",
       description: "Mengukur pemahaman setelah mempelajari materi untuk mengetahui peningkatan pemahaman.",
       icon: "🎯"
     },
@@ -13,13 +13,13 @@ export default function PostTestPage() {
       icon: "📝"
     },
     {
-      title: "Hasil Post Test",
-      description: "Dapatkan analisis kemampuan akhir dan bandingkan dengan hasil pretest untuk melihat peningkatan.",
+      title: "Hasil Post-Test",
+      description: "Dapatkan analisis kemampuan akhir dan bandingkan dengan hasil Pre-Test untuk melihat peningkatan.",
       icon: "📊"
     },
     {
       title: "Persiapan",
-      description: "Pastikan sudah mempelajari semua materi yang telah disediakan sebelum mengerjakan post test.",
+      description: "Pastikan sudah mempelajari semua materi yang telah disediakan sebelum mengerjakan Post-Test.",
       icon: "💡"
     }
   ];
@@ -28,7 +28,7 @@ export default function PostTestPage() {
     <>
       <section className="bg-gradient-to-r from-elkpd-3 to-elkpd-2 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Post Test</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Post-Test</h1>
           <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
             Uji pemahaman akhir anda setelah mempelajari materi untuk mengukur peningkatan pengetahuan.
           </p>
@@ -39,10 +39,10 @@ export default function PostTestPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-elkpd-1 mb-6">Mengapa Perlu Post Test?</h2>
+              <h2 className="text-3xl font-bold text-elkpd-1 mb-6">Mengapa Perlu Post-Test?</h2>
               <p className="text-lg text-elkpd-1/70 leading-relaxed mb-6">
-                Post test membantu mengukur seberapa besar peningkatan pemahaman setelah mempelajari materi. 
-                Dengan membandingkan hasil pretest dan post test, anda dapat mengetahui efektivitas pembelajaran.
+                Post-Test membantu mengukur seberapa besar peningkatan pemahaman setelah mempelajari materi. 
+                Dengan membandingkan hasil Pre-Test dan post test, anda dapat mengetahui efektivitas pembelajaran.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -60,7 +60,7 @@ export default function PostTestPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-elkpd-1 mb-1">Bandingkan Kemajuan</h4>
-                    <p className="text-elkpd-1/70 text-sm">Lihat peningkatan dari pretest ke post test</p>
+                    <p className="text-elkpd-1/70 text-sm">Lihat peningkatan dari Pre-Test ke Post-Test</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -76,7 +76,7 @@ export default function PostTestPage() {
             </div>
             
             <div className="bg-white rounded-2xl p-8 border border-elkpd-3/50 shadow-lg">
-              <h3 className="text-xl font-semibold text-elkpd-1 mb-6 text-center">Informasi Post Test</h3>
+              <h3 className="text-xl font-semibold text-elkpd-1 mb-6 text-center">Informasi Post-Test</h3>
               <div className="space-y-6">
                 <div className="flex items-center justify-between p-4 bg-elkpd-5 rounded-lg">
                   <span className="text-elkpd-1 font-medium">Jumlah Soal</span>
@@ -111,15 +111,15 @@ export default function PostTestPage() {
           <div className="bg-gradient-to-r from-elkpd-4 to-elkpd-3 rounded-3xl p-12 text-center">
             <h2 className="text-3xl font-bold text-elkpd-1 mb-6">Siap untuk Memulai?</h2>
             <p className="text-lg text-elkpd-1/80 mb-8 max-w-2xl mx-auto">
-              Pastikan anda sudah mempelajari semua materi sebelum mengerjakan post test. 
-              Hasil post test akan menunjukkan seberapa besar peningkatan pemahaman anda.
+              Pastikan anda sudah mempelajari semua materi sebelum mengerjakan Post-Test. 
+              Hasil Post-Test akan menunjukkan seberapa besar peningkatan pemahaman anda.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="https://forms.gle/sx6iEAYaNYo5MJj2A" 
                 className="px-8 py-4 bg-elkpd-2 text-white font-semibold rounded-xl hover:bg-elkpd-1 transition-colors duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                Mulai Post Test
+                Mulai Post-Test
               </Link>
             </div>
           </div>

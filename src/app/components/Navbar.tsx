@@ -15,8 +15,8 @@ export default function Navbar() {
     { href: "/bio-task", label: "Bio Task" },
     { href: "/bio-communication", label: "Bio Communication" },
     { href: "/bio-quiz", label: "Bio Quiz" },
-    { href: "/pretest", label: "Pretest" },
-    { href: "/post-test", label: "Post Test" },
+    { href: "/pretest", label: "Pre-Test" },
+    { href: "/post-test", label: "Post-Test" },
   ];
 
   const isActive = (href: string) => {
@@ -30,9 +30,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="/" className="flex items-center space-x-2 group">
-            <img 
-              src="/images/logo.png" 
-              alt="ELKPD Logo" 
+            <img
+              src="/images/logo.png"
+              alt="ELKPD Logo"
               className="w-20 h-20 object-contain group-hover:scale-105 transition-transform duration-300"
             />
             <div>
@@ -40,17 +40,16 @@ export default function Navbar() {
               <p className="text-xs text-elkpd-1/60">Evaluasi & LKPD</p>
             </div>
           </a>
-          
+
           <nav className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`px-4 py-2 rounded-lg transition-all duration-200 font-medium ${
-                  isActive(link.href)
+                className={`px-4 py-2 rounded-lg transition-all duration-200 font-medium ${isActive(link.href)
                     ? "bg-gradient-to-r from-elkpd-2 to-elkpd-1 text-white shadow-md"
                     : "text-elkpd-1 hover:bg-elkpd-4/50"
-                }`}
+                  }`}
               >
                 {link.label}
               </a>

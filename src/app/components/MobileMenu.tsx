@@ -164,7 +164,7 @@ export default function MobileMenu() {
                 onClick={closeMobileMenu}
               >
                 <span className="text-lg group-hover:scale-110 transition-transform duration-200">🎯</span>
-                <span>Pretest</span>
+                <span>Pre-Test</span>
               </a>
               <a
                 href="/post-test"
@@ -176,7 +176,7 @@ export default function MobileMenu() {
                 onClick={closeMobileMenu}
               >
                 <span className="text-lg group-hover:scale-110 transition-transform duration-200">✍️</span>
-                <span>Post Test</span>
+                <span>Post-Test</span>
               </a>
               {/* <a
                 href="/#tujuan-pembelajaran"

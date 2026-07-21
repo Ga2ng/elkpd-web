@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function PretestPage() {
   const pretestInfo = [
     {
-      title: "Tujuan Pretest",
+      title: "Tujuan Pre-Test",
       description: "Mengukur pengetahuan awal sebelum mempelajari materi untuk mengetahui baseline pemahaman.",
       icon: "🎯"
     },
@@ -13,7 +13,7 @@ export default function PretestPage() {
       icon: "📝"
     },
     {
-      title: "Hasil Pretest",
+      title: "Hasil Pre-Test",
       description: "Dapatkan analisis kemampuan awal dan rekomendasi materi yang perlu dipelajari lebih dalam.",
       icon: "📊"
     },
@@ -28,7 +28,7 @@ export default function PretestPage() {
     <>
       <section className="bg-gradient-to-r from-elkpd-3 to-elkpd-2 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Pretest</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Pre-Test</h1>
           <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
             Uji pengetahuan awal anda sebelum mempelajari materi untuk mendapatkan pembelajaran yang lebih efektif.
           </p>
@@ -39,9 +39,9 @@ export default function PretestPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h2 className="text-3xl font-bold text-elkpd-1 mb-6">Mengapa Perlu Pretest?</h2>
+              <h2 className="text-3xl font-bold text-elkpd-1 mb-6">Mengapa Perlu Pre-Test?</h2>
               <p className="text-lg text-elkpd-1/70 leading-relaxed mb-6">
-                Pretest membantu mengidentifikasi area yang sudah dikuasai dan yang perlu dipelajari lebih lanjut. 
+                Pre-Test membantu mengidentifikasi area yang sudah dikuasai dan yang perlu dipelajari lebih lanjut. 
                 Dengan mengetahui kemampuan awal, pembelajaran menjadi lebih terarah dan efisien.
               </p>
               <div className="space-y-4">
@@ -69,14 +69,14 @@ export default function PretestPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-elkpd-1 mb-1">Pengukuran Kemajuan</h4>
-                    <p className="text-elkpd-1/70 text-sm">Bandingkan dengan hasil post test</p>
+                    <p className="text-elkpd-1/70 text-sm">Bandingkan dengan hasil Post-Test</p>
                   </div>
                 </div>
               </div>
             </div>
             
             <div className="bg-white rounded-2xl p-8 border border-elkpd-3/50 shadow-lg">
-              <h3 className="text-xl font-semibold text-elkpd-1 mb-6 text-center">Informasi Pretest</h3>
+              <h3 className="text-xl font-semibold text-elkpd-1 mb-6 text-center">Informasi Pre-Test</h3>
               <div className="space-y-6">
                 <div className="flex items-center justify-between p-4 bg-elkpd-5 rounded-lg">
                   <span className="text-elkpd-1 font-medium">Jumlah Soal</span>
@@ -111,8 +111,8 @@ export default function PretestPage() {
           <div className="bg-gradient-to-r from-elkpd-4 to-elkpd-3 rounded-3xl p-12 text-center">
             <h2 className="text-3xl font-bold text-elkpd-1 mb-6">Siap untuk Memulai?</h2>
             <p className="text-lg text-elkpd-1/80 mb-8 max-w-2xl mx-auto">
-              Pretest akan tersedia segera. Sementara itu, anda dapat mempelajari materi terlebih dahulu 
-              atau langsung mencoba post test untuk menguji pemahaman.
+              Pre-Test akan tersedia segera. Sementara itu, anda dapat mempelajari materi terlebih dahulu 
+              atau langsung mencoba Post-Test untuk menguji pemahaman.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {/* <Link 
@@ -125,7 +125,7 @@ export default function PretestPage() {
                 href="https://forms.gle/s9QWsGLbVWab7UnD6" 
                 className="px-8 py-4 bg-elkpd-2 text-white font-semibold rounded-xl hover:bg-elkpd-1 transition-colors duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                Mulai Pretest
+                Mulai Pre-Test
               </Link>
             </div>
           </div>
@@ -143,7 +143,7 @@ export default function PretestPage() {
             
             <h2 className="text-3xl font-bold mb-4">Pengumpulan Hasil Test</h2>
             <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed">
-              Untuk post test, hasil test dapat di-download dalam format PDF dan dikumpulkan melalui Google Drive yang telah disediakan.
+              Untuk Post-Test, hasil test dapat di-download dalam format PDF dan dikumpulkan melalui Google Drive yang telah disediakan.
             </p>
             
             <div className="bg-white/10 rounded-2xl p-6 mb-8 max-w-2xl mx-auto">
@@ -151,7 +151,7 @@ export default function PretestPage() {
               <div className="grid md:grid-cols-2 gap-4 text-sm text-left">
                 <div className="flex items-start gap-2">
                   <span className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></span>
-                  <span>Download hasil post test (PDF)</span>
+                  <span>Download hasil Post-Test (PDF)</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="w-2 h-2 bg-white/60 rounded-full mt-2 flex-shrink-0"></span>
