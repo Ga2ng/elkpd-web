@@ -58,34 +58,47 @@ export default function HeaderSection({ onExperimentClick }: HeaderSectionProps)
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-20">
-        
+
         {/* Header with Logos - Refined Layout */}
         <div className="flex flex-col lg:flex-row items-start justify-between mb-20">
-          
-          {/* Title Section - Enhanced Typography */}
+
+          {/* Title Section - Modern Traditional (White, Gold, Green) */}
           <div className="flex-1 lg:pr-12 mb-12 lg:mb-0">
             <div className="space-y-8">
+
+              {/* Kicker */}
               <div className="inline-block">
-                <span className="text-sm font-medium text-white/80 tracking-wider uppercase mb-2 block">
+                <span className="text-sm font-semibold text-amber-300 tracking-[0.2em] uppercase mb-2 block drop-shadow-md">
                   E-Learning Document
                 </span>
-                <div className="w-12 h-0.5 bg-gradient-to-r from-elkpd-2 to-green-400 rounded-full"></div>
+                <div className="w-16 h-1 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full shadow-[0_0_8px_rgba(52,211,153,0.5)]"></div>
               </div>
-              
-              <div className="space-y-4">
-                <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight drop-shadow-lg">
+
+              {/* Main Title */}
+              <div className="space-y-5">
+                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-[1.15] drop-shadow-xl">
                   E-LKPD Berbasis Web<br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-elkpd-2">Interaktif</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-green-500 drop-shadow-md">
+                    Interaktif
+                  </span>
                 </h1>
-                
-                <div className="space-y-3 text-lg lg:text-xl text-white/90 max-w-2xl">
-                  <p className="font-medium drop-shadow">Pendekatan Pembelajaran Mendalam</p>
-                  <p className="text-green-400 font-semibold drop-shadow">Sub Materi Transpor Membran</p>
-                  <p className="text-base text-white/80">
-                    Untuk Melatih Keterampilan Berpikir Kreatif Peserta Didik Fase F
+
+                <div className="space-y-4 max-w-2xl">
+                  <p className="text-xl lg:text-2xl font-bold text-white drop-shadow-md">
+                    Pendekatan Pembelajaran Mendalam
+                  </p>
+
+                  {/* White & Gold Sub Materi */}
+                  <p className="text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-amber-500 drop-shadow-lg">
+                    Sub Materi Transpor Membran
+                  </p>
+
+                  <p className="text-lg lg:text-xl font-bold text-white drop-shadow-md">
+                    Untuk Melatih Keterampilan Berpikir Kritis Peserta Didik Fase F
                   </p>
                 </div>
               </div>
+
             </div>
           </div>
 
@@ -133,7 +146,7 @@ export default function HeaderSection({ onExperimentClick }: HeaderSectionProps)
         {/* Visual Content Section - Modern Grid */}
         <div className="mb-20">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            
+
             {/* Images Section */}
             <div className="grid grid-cols-2 gap-6">
               <div className="group">
@@ -147,7 +160,7 @@ export default function HeaderSection({ onExperimentClick }: HeaderSectionProps)
                   <div className="absolute inset-0 bg-gradient-to-t from-green-600/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
-              
+
               <div className="group mt-8">
                 <div className="aspect-square relative overflow-hidden rounded-3xl shadow-xl border-2 border-white/20 backdrop-blur-sm group-hover:scale-105 transition-transform duration-500">
                   <Image
@@ -160,7 +173,7 @@ export default function HeaderSection({ onExperimentClick }: HeaderSectionProps)
                 </div>
               </div>
             </div>
-            
+
             {/* Class Info & CTA */}
             <div className="text-center lg:text-left space-y-12">
               <div>
@@ -210,7 +223,7 @@ export default function HeaderSection({ onExperimentClick }: HeaderSectionProps)
                 Prof. Dr. Yuni Sri Rahayu, M.Si.
               </p>
             </div>
-            
+
             <div className="space-y-2 text-left lg:text-right">
               <span className="text-sm font-medium text-white/70 tracking-wider uppercase drop-shadow">
                 Tahun Penyusunan
