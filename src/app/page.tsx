@@ -426,7 +426,7 @@ export default function Page() {
                       6
                     </div>
                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                      E-LKPD ini berbasis Web dengan pendekatan mendalam yang dirancang untuk melatihkan keterampilan berpikir kreatif Peserta Didik.
+                      E-LKPD ini berbasis Web dengan pendekatan mendalam yang dirancang untuk melatihkan keterampilan berpikir kritis Peserta Didik.
                     </p>
                   </div>
                 </div>
@@ -438,7 +438,7 @@ export default function Page() {
                       7
                     </div>
                     <p className="text-elkpd-1 font-medium leading-relaxed">
-                      Konten yang terdapat dalam E-LKPD adalah berupa materi, video, gambar, PhET simulasi virtual lab, langkah-langkah kegiatan peserta didik, pertanyaan dan kesimpulan.
+                      Konten yang terdapat dalam E-LKPD adalah berupa materi, video, gambar, langkah-langkah kegiatan peserta didik, pertanyaan dan kesimpulan.
                     </p>
                   </div>
                 </div>
@@ -499,6 +499,17 @@ export default function Page() {
                     </div>
                     <p className="text-elkpd-1 font-medium leading-relaxed">
                       Gunakan buku ajar sebagai sumber informasi tambahan untuk menjawab pertanyaan.
+                    </p>
+                  </div>
+                </div>
+                {/* Step 13 */}
+                <div className="group">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-elkpd-5/50 to-elkpd-4/30 border border-elkpd-3/20 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-r from-elkpd-2 to-elkpd-1 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      13
+                    </div>
+                    <p className="text-elkpd-1 font-medium leading-relaxed">
+                      Kerjakan Post-Test setelah menyelesaikan semua rangkaian kegiatan pada E-LKPD
                     </p>
                   </div>
                 </div>
