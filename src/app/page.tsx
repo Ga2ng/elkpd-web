@@ -632,8 +632,7 @@ export default function Page() {
                 Bio Communication
               </h3>
               <p className="text-elkpd-1/70 leading-relaxed">
-                Bio Communication merupakan fitur yang menampung hasil/data yang sudah diperoleh peserta didik dalam
-                <span className="font-bold text-red-500">Bio Experiment</span>  yang berupa Poster dan nantinya akan dipresentasikan oleh semua kelompok. Juga akan merefleksikan pembelajaran yang telah dilaksanakan untuk melihat umpan balik peserta didik selama pembelajaran berlangsung.
+                Bio Communication merupakan fitur yang menampung hasil/data yang sudah diperoleh peserta didik dalam <span className="whitespace-nowrap">Bio Experiment</span> yang berupa Poster dan nantinya akan dipresentasikan oleh semua kelompok. Juga akan merefleksikan pembelajaran yang telah dilaksanakan untuk melihat umpan balik peserta didik selama pembelajaran berlangsung.
               </p>
             </Link>
 
