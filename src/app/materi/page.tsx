@@ -80,18 +80,18 @@ export default function MateriPage() {
           <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-300 rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-block mb-6 px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold">
             📚 Materi Pembelajaran Biologi
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Mekanisme Transpor<br/>Membran Sel
+            Mekanisme Transpor<br />Membran Sel
           </h1>
           <p className="text-lg sm:text-xl opacity-90 max-w-3xl mx-auto leading-relaxed mb-8">
             Pelajari bagaimana molekul dan ion berpindah melalui membran plasma dengan berbagai mekanisme transpor
           </p>
-          
+
           <div className="flex flex-wrap gap-4 justify-center">
             {/* <a
               href="/pdf/materi.pdf"
@@ -127,7 +127,7 @@ export default function MateriPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-elkpd-1 mb-6">Apa itu Transpor Membran?</h2>
               <div className="space-y-4 text-elkpd-1/80 text-lg leading-relaxed">
                 <p>
-                  <strong className="text-elkpd-1">Transpor membran</strong> adalah perpindahan molekul ke dalam atau keluar sel melalui membran plasma.
+                  <strong className="text-elkpd-1">Transpor membran</strong> adalah perpindahan molekul ke dalam dan keluar sel melalui membran plasma.
                 </p>
                 <p>
                   Membran plasma bersifat <strong className="text-elkpd-2">semipermeabel</strong>, artinya hanya molekul tertentu yang bisa melewatinya.
@@ -138,12 +138,12 @@ export default function MateriPage() {
                     Fungsi Utama
                   </h3>
                   <p className="text-base">
-                    Tempat keluar masuknya ion, molekul, serta senyawa dari atau ke dalam sel dengan menggunakan proses tertentu.
+                    Tempat keluar masuknya ion, molekul, serta senyawa dari atau ke dalam sel dengan menggunakan proses tertentu. Proses ini menjaga keseimbangan internal sel (Homeostasis) dengan cara penyaringan melalui membran sel baik transpor pasif maupun transpor aktif.
                   </p>
                 </div>
               </div>
             </div>
-            
+
             <div className="order-1 lg:order-2">
               <div className="bg-gradient-to-br from-elkpd-2 to-blue-600 rounded-3xl p-8 shadow-2xl text-white">
                 <h3 className="text-2xl font-bold mb-6 text-center">Tujuan Transpor Membran</h3>
@@ -176,11 +176,10 @@ export default function MateriPage() {
             <div className="inline-flex bg-gray-100 rounded-2xl p-2 shadow-lg">
               <button
                 onClick={() => setActiveTab("pasif")}
-                className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
-                  activeTab === "pasif"
-                    ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg"
-                    : "text-elkpd-1/70 hover:text-elkpd-1"
-                }`}
+                className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${activeTab === "pasif"
+                  ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg"
+                  : "text-elkpd-1/70 hover:text-elkpd-1"
+                  }`}
               >
                 <span className="flex items-center gap-2">
                   <span className="text-2xl">🌊</span>
@@ -189,11 +188,10 @@ export default function MateriPage() {
               </button>
               <button
                 onClick={() => setActiveTab("aktif")}
-                className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
-                  activeTab === "aktif"
-                    ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
-                    : "text-elkpd-1/70 hover:text-elkpd-1"
-                }`}
+                className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${activeTab === "aktif"
+                  ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg"
+                  : "text-elkpd-1/70 hover:text-elkpd-1"
+                  }`}
               >
                 <span className="flex items-center gap-2">
                   <span className="text-2xl">⚡</span>
@@ -226,10 +224,10 @@ export default function MateriPage() {
                       <div className="text-5xl mb-3">{item.icon}</div>
                       <h4 className="text-2xl font-bold">{item.title}</h4>
                     </div>
-                    
+
                     <div className="p-6">
                       <p className="text-elkpd-1/80 mb-4 leading-relaxed">{item.description}</p>
-                      
+
                       {item.factors && (
                         <div className="space-y-2">
                           <p className="font-semibold text-elkpd-1 mb-3">Faktor yang Mempengaruhi:</p>
@@ -314,18 +312,18 @@ export default function MateriPage() {
                       <p className="text-sm text-elkpd-1/70">Sumber Energi Utama</p>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-4 border-l-4 border-orange-500">
                       <p className="text-elkpd-1">
                         <strong>ATP</strong> = Molekul pembawa energi kimia yang paling banyak ditemukan dalam sel
                       </p>
                     </div>
-                    
+
                     <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-4 border-l-4 border-red-500">
                       <p className="text-elkpd-1 font-semibold mb-2">⚠️ Prinsip Penting:</p>
                       <p className="text-elkpd-1/80">
-                        Jika 1 fosfat lepas → membebaskan 1 energi<br/>
+                        Jika 1 fosfat lepas → membebaskan 1 energi<br />
                         <strong className="text-red-600">Pemecahan ATP = Pembebasan Energi</strong>
                       </p>
                     </div>
