@@ -44,10 +44,10 @@ export default function BioMappingPage() {
                   Setelah kamu membaca dan mempelajari <strong>Bio Info</strong> (materi tentang transpor membran).
                 </p>
                 <p className="text-elkpd-1/80 leading-relaxed text-justify mt-4">
-                  Buatlah <strong>mind mapping</strong> dengan judul utama <strong className="text-elkpd-2">"Transpor Membran"</strong> di tengah, 
+                  Buatlah <strong>mind mapping</strong> dengan judul utama <strong className="text-elkpd-2">"Transpor Membran"</strong> di tengah,
                   lalu kembangkan menjadi dua cabang besar yaitu <strong>Transpor Pasif</strong> dan <strong>Transpor Aktif</strong>.
                 </p>
-                
+
                 <div className="mt-6 space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-elkpd-2 rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
@@ -55,21 +55,21 @@ export default function BioMappingPage() {
                       <p className="text-elkpd-1/80 leading-relaxed"><strong>Jelaskan jenis-jenisnya</strong> dari setiap transpor (Transpor Pasif: difusi, osmosis, dll. Transpor Aktif: pompa ion, dll.)</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-elkpd-2 rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
                     <div className="flex-1">
                       <p className="text-elkpd-1/80 leading-relaxed"><strong>Sertakan contoh zat</strong> yang melewati membran pada setiap jenis transpor</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-elkpd-2 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
                     <div className="flex-1">
                       <p className="text-elkpd-1/80 leading-relaxed"><strong>Faktor-faktor yang memengaruhi</strong> proses transpor membran (suhu, konsentrasi, tekanan, dll.)</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-elkpd-2 rounded-full flex items-center justify-center text-white text-xs font-bold">4</div>
                     <div className="flex-1">
@@ -79,7 +79,7 @@ export default function BioMappingPage() {
                 </div>
 
                 <p className="text-elkpd-1/80 leading-relaxed text-justify mt-6">
-                  <strong className="text-elkpd-2">Gunakan warna, simbol, atau gambar</strong> agar peta konsepmu lebih menarik dan <strong>kreasikan semenarik mungkin agar mudah dipahami</strong>.
+                  <strong className="text-elkpd-2">Gunakan warna, simbol, atau gambar</strong> agar peta konsepmu lebih <strong>menarik dan mudah dipahami</strong>.
                 </p>
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function BioMappingPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
                 </svg>
               </div>
-              
+
               <h3 className="text-2xl font-bold mb-3">Pengumpulan Mind Mapping</h3>
               <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
                 Setelah selesai membuat mind mapping <strong>secara berkelompok</strong>, upload hasil karya kelompok Anda ke Google Drive yang telah disediakan.
@@ -173,7 +173,7 @@ export default function BioMappingPage() {
                   </div>
                 </div>
               </div>
-              
+
               <a
                 href="https://drive.google.com/drive/folders/11gnqNzqO3O9NrQH48txCRikF81vdUbFK?usp=drive_link"
                 target="_blank"
@@ -181,7 +181,7 @@ export default function BioMappingPage() {
                 className="inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-colors duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                 </svg>
                 📁 Upload Mind Mapping ke Google Drive
               </a>
@@ -189,7 +189,7 @@ export default function BioMappingPage() {
           </div>
         </div>
       </section>
-{/* 
+      {/* 
       <section className="py-16 bg-gradient-to-br from-elkpd-5/30 via-white to-elkpd-4/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
