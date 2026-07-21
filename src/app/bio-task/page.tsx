@@ -25,12 +25,12 @@ const QUESTIONS: Question[] = [
   },
   {
     id: 2,
-    text: "Setelah kamu menjawab nomor satu terkait pada kedua artikel peristiwa tersebut termasuk transpor membran aktif atau transpor membran pasif? Jelaskan menggunakan bahasamu masing-masing mengapa peristiwa tesebut dapat terjadi!",
+    text: "Setelah anda menjawab nomor satu terkait pada kedua artikel peristiwa tersebut termasuk transpor membran aktif atau transpor membran pasif? Jelaskan menggunakan bahasa anda masing-masing mengapa peristiwa tesebut dapat terjadi!",
     type: "essay"
   },
   {
     id: 3,
-    text: "Setelah menentukan jenis peristiwa transpor membran pada artikel I dan artikel II, buatlah perbedaan proses mekanismenya menggunakan bahasamu masing-masing!",
+    text: "Setelah menentukan jenis peristiwa transpor membran pada artikel I dan artikel II, buatlah perbedaan proses mekanismenya menggunakan bahasa anda masing-masing!",
     type: "essay"
   },
   {
@@ -40,7 +40,7 @@ const QUESTIONS: Question[] = [
   },
   {
     id: 5,
-    text: "Setelah menemukan contoh lain dari peristiwa transpor membran difusi dan osmosis. Cobalah untuk menjelaskan mekanisme peristiwa transpor membran dari contoh lain yang sudah kamu jawab di nomor empat menggunakan bahasamu masing-masing !",
+    text: "Setelah menemukan contoh lain dari peristiwa transpor membran difusi dan osmosis. Cobalah untuk menjelaskan mekanisme peristiwa transpor membran dari contoh lain yang sudah dijawab pada nomor empat menggunakan bahasa anda masing-masing!",
     type: "essay"
   }
 ];
@@ -563,7 +563,7 @@ export default function BioTaskPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-elkpd-1 leading-relaxed mb-2">{q.text}</h3>
-                    <p className="text-sm text-green-700 mb-3">📝 Soal Essay - Tulis jawaban Anda dengan lengkap dan jelas</p>
+                    <p className="text-sm text-green-700 mb-3">📝 Soal Essay - Tulis jawaban anda dengan lengkap dan jelas</p>
                   </div>
                 </div>
 
