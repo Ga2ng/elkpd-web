@@ -263,7 +263,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat menjelaskan mekanisme <span className="font-semibold text-elkpd-2">transpor aktif</span> dalam kehidupan sehari-hari secara logistik.
+                    Peserta didik dapat menjelaskan mekanisme <span className="font-semibold text-elkpd-2">transpor aktif</span> dalam kehidupan sehari-hari secara logis.
                   </p>
                 </div>
               </div>
@@ -277,7 +277,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat menjelaskan mekanisme <span className="font-semibold text-elkpd-2">transpor pasif</span> dalam kehidupan sehari-hari secara logistik.
+                    Peserta didik dapat menjelaskan mekanisme <span className="font-semibold text-elkpd-2">transpor pasif</span> dalam kehidupan sehari-hari secara logis.
                   </p>
                 </div>
               </div>
@@ -305,7 +305,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat mengidentifikasi dan menjelaskan <span className="font-semibold text-elkpd-2">faktor-faktor yang mempengaruhi</span> proses transpor membran secara logistik.
+                    Peserta didik dapat mengidentifikasi dan menjelaskan <span className="font-semibold text-elkpd-2">faktor-faktor yang mempengaruhi</span> proses transpor membran secara logis.
                   </p>
                 </div>
               </div>
@@ -319,7 +319,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat membentuk konsep transpor membran dengan <span className="font-semibold text-elkpd-2">hasil percobaan</span> serta kesimpulan menarik secara logistik.
+                    Peserta didik dapat membentuk konsep transpor membran dengan <span className="font-semibold text-elkpd-2">hasil percobaan</span> serta kesimpulan menarik secara logis.
                   </p>
                 </div>
               </div>
