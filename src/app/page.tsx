@@ -263,7 +263,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat menjelaskan mekanisme <span className="font-semibold text-elkpd-2">transportasi aktif</span> dalam kehidupan sehari-hari secara logistik.
+                    Peserta didik dapat menjelaskan mekanisme <span className="font-semibold text-elkpd-2">transpor aktif</span> dalam kehidupan sehari-hari secara logistik.
                   </p>
                 </div>
               </div>
@@ -277,7 +277,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat menjelaskan mekanisme <span className="font-semibold text-elkpd-2">transportasi pasif</span> dalam kehidupan sehari-hari secara logistik.
+                    Peserta didik dapat menjelaskan mekanisme <span className="font-semibold text-elkpd-2">transpor pasif</span> dalam kehidupan sehari-hari secara logistik.
                   </p>
                 </div>
               </div>
@@ -305,7 +305,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1">
                   <p className="text-elkpd-1/70 leading-relaxed">
-                    Peserta didik dapat mengidentifikasi dan menjelaskan <span className="font-semibold text-elkpd-2">faktor-faktor yang mempengaruhi</span> proses transportasi membran secara logistik.
+                    Peserta didik dapat mengidentifikasi dan menjelaskan <span className="font-semibold text-elkpd-2">faktor-faktor yang mempengaruhi</span> proses transpor membran secara logistik.
                   </p>
                 </div>
               </div>
